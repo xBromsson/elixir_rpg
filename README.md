@@ -26,7 +26,7 @@ Project Scope:<br>
     
     
     
-** ** Indicates where we are
+** ** Indicates where we are <br>
 Road Map To Deployment
   1. **Define Project Scope**
   2. Develop Front-End
