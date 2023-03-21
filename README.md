@@ -1,22 +1,36 @@
 # Elixir_RPG
 
-Define the project scope:
-Start by defining the features and functionality of your website, along with the audience and purpose of the website. This will help you create a clear idea of what the website should accomplish and guide the development process.
+Goal of The Project: leverage the power of ai models to amplify the users creation experience when it comes to building rpg worlds and their related entities.
 
-Create a site map:
-A site map is a diagram that outlines the structure and content of your website. It provides a visual representation of how the different pages of your site will connect and interact with each other.
+Project Scope:
+  Core Features of Elixir_RPG
+    Character Creator
+    Map Creator
+    Item Creator
+  
+  Other Possible Features of Elixir_RPG
+    Character Creator
+    One Shot Creator
+    Item Creator
+    Creature Creator
+    NPC Creator
+    Map Creator
 
-Design the user interface:
-Once you have a site map, you can design the user interface (UI) for the website. Sketch out wireframes or mockups of each page and map out how users will interact with them. You can use design tools like Sketch, Figma or Adobe XD.
-
-Develop the front-end:
-This is where you build out the visual elements of your website using HTML, CSS, and JavaScript. Focus on creating responsive layouts and optimizing for different screen sizes.
-
-Develop the back-end:
-This is where you build out the functionality of your website, such as user authentication, database management, and API integrations. You can use programming languages like PHP, Ruby, Python, or JavaScript (Node.js) to build out the back-end.
-
-Test the website:
-Before launching, make sure to thoroughly test the website for usability, functionality, and performance. You can use tools like BrowserStack or Selenium for automated testing and debugging.
-
-Launch and maintain:
-Once you're happy with the website, it's time to launch it. Make sure to maintain the website by regularly updating content, fixing bugs, and keeping the website secure.
+  User Experience:
+    User Interface should be simple and inspire a sense of mystical creativity. Simplicity should ilicit a sense of ease and avoid 'cumbersome'
+    
+    
+    
+** ** Indicates where we are
+Road Map To Deployment
+  1. **Define Project Scope**
+  2. Develop Front-End
+  3. Develop Back-End
+  4. Test & Debug
+  5. Launch & Maintain
+  
+Features Road Map
+  **TBD**
+  
+    
+    
