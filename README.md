@@ -18,6 +18,20 @@ Leverage the power of ai models to amplify the users creation experience when it
 ### User Experience
 User Interface should be simple and inspire a sense of mystical creativity. Simplicity should ilicit a sense of ease.<br><br>
 
+### Tech Stack
+  - Javascript
+  - html
+  - css
+  - firebase
+  - react.js
+  - tailwindcss
+  - chatgpt
+
+### APIs
+  - OpenAI
+    - Chat GPT
+    - Dall E
+
 **bold** indicates where we currently are in development
 ### Deployment Road Map
   1. **Define Project Scope**
