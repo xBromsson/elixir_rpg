@@ -10,7 +10,7 @@ Leverage the power of ai models to amplify the users creation experience when it
     - Monstor Creator
 
   
-  - Other Possible Features of Elixir_RP:
+  - Other Possible Features of Elixir_RPG:
     - Character Creator
     - One Shot Creator
     - Item Creator
