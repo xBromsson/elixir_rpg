@@ -33,10 +33,9 @@ User Interface should be simple and inspire a sense of ease, wondor, and possibl
     - Dall E
 
 ### Further Considerations & Research Opportunities
-  - Azgaars map generator github-com/Azgaar/Fantasy-Map-Generator
-<br>
-<br>
-<br>
+  - Azgaars map generator github-com/Azgaar/Fantasy-Map-Generator <br><br><br>
+
+
 **bold** indicates where we currently are in development
 ### Deployment Road Map
   1. **Define Project Scope**
