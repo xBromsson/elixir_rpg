@@ -16,7 +16,7 @@ Leverage the power of ai models to amplify the users creation experience when it
     - NPC Creator
 
 ### User Experience
-User Interface should be simple and inspire a sense of mystical creativity. Simplicity should ilicit a feeling of ease, wondor, and possiblity.<br><br>
+User Interface should be simple and inspire a sense of ease, wondor, and possiblity.<br><br>
 
 ### Tech Stack
   - Javascript
