@@ -18,7 +18,7 @@ Project Scope:<br>
     <li>Item Creator</li>
     <li>Creature Creator</li>
     <li>NPC Creator</li>
-    <li>Map Creator</li>
+    -Map Creator
   </ul>
 
   User Experience:<br>
