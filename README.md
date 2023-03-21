@@ -3,7 +3,7 @@
 Goal of The Project:<br>
 leverage the power of ai models to amplify the users creation experience when it comes to building rpg worlds and their related entities.
 
-Project Scope:<br>
+*Project Scope:<br>
   Core Features of Elixir_RPG<br>
    <ul>
     <li>Character Creator</li>
