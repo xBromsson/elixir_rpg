@@ -17,7 +17,7 @@ Project Scope:<br>
     <li>One Shot Creator</li>
     <li>Item Creator</li>
     <li>Creature Creator</li>
-    <li>NPC Creator</li>
+    -NPC Creator
     -Map Creator
   </ul>
 
