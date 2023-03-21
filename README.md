@@ -1,4 +1,4 @@
-# Elixer_RPG
+# Elixir_RPG
 
 Define the project scope:
 Start by defining the features and functionality of your website, along with the audience and purpose of the website. This will help you create a clear idea of what the website should accomplish and guide the development process.
