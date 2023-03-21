@@ -1,23 +1,27 @@
 # Elixir_RPG
 
-Goal of The Project: 
+Goal of The Project:<br>
 leverage the power of ai models to amplify the users creation experience when it comes to building rpg worlds and their related entities.
 
-Project Scope:
-  Core Features of Elixir_RPG
-    Character Creator
-    Map Creator
-    Item Creator
+Project Scope:<br>
+  Core Features of Elixir_RPG<br>
+   <ul>
+    <li>Character Creator</li>
+    <li>Map Creator</li>
+    <li>Item Creator</li>
+   </ul>
   
-  Other Possible Features of Elixir_RPG
-    Character Creator
-    One Shot Creator
-    Item Creator
-    Creature Creator
-    NPC Creator
-    Map Creator
+  Other Possible Features of Elixir_RPG<br>
+  <ul>
+    <li>Character Creator</li>
+    <li>One Shot Creator</li>
+    <li>Item Creator</li>
+    <li>Creature Creator</li>
+    <li>NPC Creator</li>
+    <li>Map Creator</li>
+  </ul>
 
-  User Experience:
+  User Experience:<br>
     User Interface should be simple and inspire a sense of mystical creativity. Simplicity should ilicit a sense of ease and avoid 'cumbersome'
     
     
