@@ -7,16 +7,13 @@ Leverage the power of ai models to amplify the users creation experience when it
   - Core Features of Elixer_RPG:
     - Character Creator
     - Map Creator
-    - Monstor Creator
+    - Monster Creator
 
   
   - Other Possible Features of Elixir_RPG:
-    - Character Creator
     - One Shot Creator
     - Item Creator
-    - Creature Creator
     - NPC Creator
-    - Map Creator
 
 ### User Experience
 User Interface should be simple and inspire a sense of mystical creativity. Simplicity should ilicit a sense of ease.<br><br>
