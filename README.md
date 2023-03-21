@@ -36,7 +36,7 @@ User Interface should be simple and inspire a sense of ease, wonder, and possibl
   - Azgaars map generator github-com/Azgaar/Fantasy-Map-Generator <br><br><br>
 
 
-**bold** indicates where we currently are in development
+**bold** indicates where I am at currently in development
 ### Deployment Road Map
   1. **Define Project Scope**
   2. Develop Front-End
