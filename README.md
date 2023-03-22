@@ -4,7 +4,7 @@
 Leverage the power of ai models to amplify the users creation experience when it comes to building rpg worlds and their related entities.
 
 ### Project Scope
-  - Core Features of Elixer_RPG:
+  - Core Features of Elixir_RPG:
     - Character Creator
     - Map Creator
     - Monster Creator
