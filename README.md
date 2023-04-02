@@ -26,6 +26,15 @@ User Interface should be simple and inspire a sense of ease, wonder, and possibl
   - react.js
   - tailwindcss
   - chatgpt
+  
+### Other Userful tools / libraries
+  - vite: for creating a react app
+  - axios: library for making http requests
+  - bootstrap: css library for easily creating and styling components
+  - react-icons: huge list of usable icons
+  - zod: validation library. geared for typescript so find an alternative
+  - react-hook-form: an easier way to manage forms in react
+  - hookform resolver: integrated react-hook-form with validation libraries like zod and others
 
 ### APIs
   - OpenAI
