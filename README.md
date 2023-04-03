@@ -20,12 +20,12 @@ User Interface should be simple and inspire a sense of ease, wonder, and possibl
 
 ### Tech Stack
   - Javascript
-  - html
-  - css
-  - firebase
-  - react.js
-  - tailwindcss
-  - chatgpt
+  - HTML
+  - CSS
+  - Firebase
+  - React.js
+  - ChakraUI
+  - Chatgpt
   
 ### Other Userful tools / libraries
   - vite: for creating a react app
