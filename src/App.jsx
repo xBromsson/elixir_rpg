@@ -1,4 +1,5 @@
-import { Grid, GridItem } from "@chakra-ui/react";
+import { Grid, GridItem, Text } from "@chakra-ui/react";
+import CardGrid from "./components/CardGrid";
 
 function App() {
   return (
@@ -9,9 +10,15 @@ function App() {
       templateColumns={"225px 1fr"}
       templateRows={"75px 1fr"}
     >
-      <GridItem bg="gray.600" area={"nav"}></GridItem>
-      <GridItem bg="gray.700" area={"header"}></GridItem>
-      <GridItem bg="gray.800" area={"main"}></GridItem>
+      <GridItem bg="gray.700" area={"nav"}></GridItem>
+      <GridItem bg="gray.800" area={"header"}>
+        <Text color="gray.600" pl={10} pt={2} fontSize="4xl">
+          Elixir_RPG
+        </Text>
+      </GridItem>
+      <GridItem bg="gray.900" area={"main"}>
+        <CardGrid></CardGrid>
+      </GridItem>
     </Grid>
   );
 }
