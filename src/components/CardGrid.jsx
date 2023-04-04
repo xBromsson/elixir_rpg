@@ -1,5 +1,6 @@
-import { Card, SimpleGrid } from "@chakra-ui/react";
+import { SimpleGrid } from "@chakra-ui/react";
 import { useState } from "react";
+import NpcCard from "./NpcCard";
 
 const npc = [
   {
@@ -40,16 +41,12 @@ const CardGrid = () => {
   return (
     <SimpleGrid columns={4} spacing={3} padding={5}>
       {npc.map((n) => (
-        <Card
-          textColor={"gray.500"}
-          fontWeight={700}
-          justifyContent="center"
-          alignItems="center"
-          h={100}
+        <NpcCard
           key={n.name}
-        >
-          {n.name}
-        </Card>
+          name={n.name}
+          race={n.race}
+          flavor={n.flavor}
+        ></NpcCard>
       ))}
     </SimpleGrid>
   );
