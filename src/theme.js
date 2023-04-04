@@ -4,6 +4,11 @@ const colors = {
     main: 'yellow'
 }
 
-const theme = extendTheme({colors})
+const config = {
+    initialColorMode: 'dark',
+    useSystemColorMode: false
+}
+
+const theme = extendTheme({colors, config})
 
 export default theme;
