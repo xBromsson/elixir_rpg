@@ -41,7 +41,8 @@ const CardGrid = () => {
     <SimpleGrid columns={4} spacing={3} padding={5}>
       {npc.map((n) => (
         <Card
-          textColor={"gray.400"}
+          textColor={"gray.500"}
+          fontWeight={700}
           justifyContent="center"
           alignItems="center"
           h={100}

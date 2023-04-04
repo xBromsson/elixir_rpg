@@ -12,7 +12,7 @@ function App() {
     >
       <GridItem bg="gray.700" area={"nav"}></GridItem>
       <GridItem bg="gray.800" area={"header"}>
-        <Text color="gray.600" pl={10} pt={2} fontSize="4xl">
+        <Text color="gray.500" pl={10} pt={2} fontSize="4xl" fontWeight={500}>
           Elixir_RPG
         </Text>
       </GridItem>
