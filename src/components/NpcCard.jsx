@@ -3,9 +3,12 @@ import {
   CardBody,
   CardFooter,
   CardHeader,
+  HStack,
   Heading,
   Text,
 } from "@chakra-ui/react";
+
+import { FaEdit } from "react-icons/fa";
 
 const Props = {
   name: "",
@@ -15,7 +18,7 @@ const Props = {
 
 const NpcCard = ({ name, race, flavor }) => {
   return (
-    <Card>
+    <Card textColor={"gray.400"}>
       <CardHeader>
         <Heading as="h2" size="md">
           {name}
@@ -25,7 +28,11 @@ const NpcCard = ({ name, race, flavor }) => {
       <CardBody>
         <Text> {flavor}</Text>
       </CardBody>
-      <CardFooter></CardFooter>
+      <CardFooter>
+        <HStack>
+          <FaEdit />
+        </HStack>
+      </CardFooter>
     </Card>
   );
 };
