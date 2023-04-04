@@ -1,5 +1,6 @@
 import { Grid, GridItem, Text } from "@chakra-ui/react";
 import CardGrid from "./components/CardGrid";
+import CategoryList from "./components/CategoryList";
 
 function App() {
   return (
@@ -10,7 +11,10 @@ function App() {
       templateColumns={"225px 1fr"}
       templateRows={"75px 1fr"}
     >
-      <GridItem bg="gray.700" area={"nav"}></GridItem>
+      <GridItem bg="gray.700" area={"nav"}>
+        <Text h={"75px"}></Text>
+        <CategoryList></CategoryList>
+      </GridItem>
       <GridItem bg="gray.800" area={"header"}>
         <Text color="gray.500" pl={10} pt={2} fontSize="4xl" fontWeight={500}>
           Elixir_RPG
