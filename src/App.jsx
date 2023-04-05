@@ -12,11 +12,11 @@ function App() {
       templateColumns={"225px 1fr"}
       templateRows={"75px 1fr"}
     >
-      <GridItem bg="gray.700" area={"nav"}>
+      <GridItem bg="gray.800" area={"nav"}>
         <Text h={"75px"}></Text>
         <CategoryList></CategoryList>
       </GridItem>
-      <GridItem bg="gray.800" area={"header"} px={5}>
+      <GridItem bg="gray.900" area={"header"} px={5}>
         <HStack justifyContent={"space-between"}>
           <Text color="gray.500" fontSize="4xl" fontWeight={500}>
             Elixir_RPG
