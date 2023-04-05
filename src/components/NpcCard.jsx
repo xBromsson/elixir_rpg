@@ -18,7 +18,7 @@ const Props = {
 
 const NpcCard = ({ name, race, flavor }) => {
   return (
-    <Card textColor={"gray.400"}>
+    <Card>
       <CardHeader>
         <Heading as="h2" size="md">
           {name}

@@ -1,7 +1,7 @@
 import {
   Card,
   CardBody,
-  Circle,
+  Center,
   HStack,
   Heading,
   Text,
@@ -13,17 +13,17 @@ const Props = {
 };
 const CategoryCard = ({ name, count }) => {
   return (
-    <Card textColor={"gray.400"}>
+    <Card>
       <CardBody>
         <HStack justifyContent={"space-between"}>
           <Heading fontSize={"2xl"} fontWeight={700}>
             {name}
           </Heading>
-          <Circle size={"25px"} bg={"gray.300"}>
-            <Text color={"gray.600"} fontSize={"1xl"} fontWeight={700}>
+          <Center size={"25px"}>
+            <Text fontSize={"1xl"} fontWeight={700}>
               {count}
             </Text>
-          </Circle>
+          </Center>
         </HStack>
       </CardBody>
     </Card>
