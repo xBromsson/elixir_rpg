@@ -16,7 +16,7 @@ const CategoryCard = ({ name, count }) => {
     <Card>
       <CardBody>
         <HStack justifyContent={"space-between"}>
-          <Heading fontSize={"2xl"} fontWeight={700}>
+          <Heading fontSize={"1xl"} fontWeight={700}>
             {name}
           </Heading>
           <Center size={"25px"}>
