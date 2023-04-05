@@ -9,22 +9,20 @@ function App() {
       h="100vh"
       templateAreas={`"nav header" 
                       "nav main"`}
-      templateColumns={"225px 1fr"}
+      templateColumns={"300px 1fr"}
       templateRows={"75px 1fr"}
     >
-      <GridItem area={"nav"}>
+      <GridItem px={5} area={"nav"}>
         <Text h={"75px"}></Text>
         <CategoryList></CategoryList>
       </GridItem>
       <GridItem area={"header"} px={5}>
-        <HStack justifyContent={"space-between"}>
-          <Text fontSize="4xl" fontWeight={500}>
-            Elixir_RPG
-          </Text>
-          <ColorModeSwitch></ColorModeSwitch>
-        </HStack>
+        {" "}
+        <Text h={"75px"} fontSize="4xl" fontWeight={500}>
+          Elixir_RPG
+        </Text>
       </GridItem>
-      <GridItem area={"main"}>
+      <GridItem pr={150} pl={1} area={"main"}>
         <CardGrid></CardGrid>
       </GridItem>
     </Grid>

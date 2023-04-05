@@ -22,7 +22,7 @@ const categories = [
 
 const CategoryList = () => {
   return (
-    <SimpleGrid columns={1} spacing={4} padding={2}>
+    <SimpleGrid columns={1} spacing={4}>
       {categories.map((category) => (
         <CategoryCard
           key={category.name}

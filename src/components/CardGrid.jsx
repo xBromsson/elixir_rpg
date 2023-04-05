@@ -2,6 +2,7 @@ import { SimpleGrid, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import NpcCard from "./NpcCard";
 import { CreatorCard } from "./CreatorCard";
+import MyComponent from "./OpenAi";
 
 const npc = [
   {
@@ -40,7 +41,7 @@ const CardGrid = () => {
   const [npcCharacters, setNpcCharacters] = useState();
 
   return (
-    <SimpleGrid columns={4} spacing={3} padding={5}>
+    <SimpleGrid columns={4} spacing={3}>
       {npc.map((n) => (
         <NpcCard
           key={n.name}
@@ -50,6 +51,7 @@ const CardGrid = () => {
         ></NpcCard>
       ))}
       <CreatorCard></CreatorCard>
+      <MyComponent></MyComponent>
     </SimpleGrid>
   );
 };
