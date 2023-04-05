@@ -1,6 +1,7 @@
 import { SimpleGrid, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import NpcCard from "./NpcCard";
+import { CreatorCard } from "./CreatorCard";
 
 const npc = [
   {
@@ -48,7 +49,7 @@ const CardGrid = () => {
           flavor={n.flavor}
         ></NpcCard>
       ))}
-      <Text>test</Text>
+      <CreatorCard></CreatorCard>
     </SimpleGrid>
   );
 };
