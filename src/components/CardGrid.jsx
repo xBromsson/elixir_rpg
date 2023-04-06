@@ -2,7 +2,6 @@ import { SimpleGrid, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import NpcCard from "./NpcCard";
 import { CreatorCard } from "./CreatorCard";
-import MyComponent from "./OpenAi";
 
 const npc = [
   {
