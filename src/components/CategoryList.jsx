@@ -18,6 +18,10 @@ const categories = [
     name: "NPCs",
     count: 5,
   },
+  {
+    name: "Items",
+    count: 5,
+  },
 ];
 
 const CategoryList = () => {

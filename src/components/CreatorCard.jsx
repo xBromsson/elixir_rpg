@@ -1,6 +1,10 @@
-import { Card, CardBody, Center, Text } from "@chakra-ui/react";
+import { Button, Card, CardBody, Center, Text } from "@chakra-ui/react";
 
-export const CreatorCard = () => {
+const Props = {
+  onCreate: () => {},
+};
+
+export const CreatorCard = ({ onCreate }) => {
   return (
     <Card
       border={"solid"}
@@ -10,10 +14,7 @@ export const CreatorCard = () => {
     >
       <CardBody>
         <Center h={"100%"}>
-          <Text colorScheme={"gray.100"} fontSize={"3xl"}>
-            {" "}
-            +
-          </Text>
+          <Button onClick={onCreate}>Create</Button>
         </Center>
       </CardBody>
     </Card>

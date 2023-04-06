@@ -18,7 +18,7 @@ function App() {
         <Text h={"75px"}></Text>
         <CategoryList></CategoryList>
         <Form></Form>
-        <Generate></Generate>
+        {/* <Generate></Generate> */}
       </GridItem>
       <GridItem area={"header"} px={5}>
         {" "}
@@ -26,7 +26,7 @@ function App() {
           Elixir_RPG
         </Text>
       </GridItem>
-      <GridItem pr={150} pl={1} area={"main"}>
+      <GridItem pr={100} pl={1} area={"main"}>
         <CardGrid></CardGrid>
       </GridItem>
     </Grid>

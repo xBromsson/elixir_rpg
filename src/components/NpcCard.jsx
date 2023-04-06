@@ -3,9 +3,13 @@ import {
   CardBody,
   CardFooter,
   CardHeader,
+  Center,
   HStack,
   Heading,
+  Image,
   Text,
+  Flex,
+  VStack,
 } from "@chakra-ui/react";
 
 import { FaEdit } from "react-icons/fa";
@@ -14,25 +18,35 @@ const Props = {
   name: "",
   race: "",
   flavor: "",
+  image: "",
 };
 
-const NpcCard = ({ name, race, flavor }) => {
+const NpcCard = ({ name, race, flavor, image }) => {
   return (
-    <Card>
-      <CardHeader>
-        <Heading as="h2" size="md">
-          {name}
-        </Heading>
-        <Text>{race}</Text>
-      </CardHeader>
+    <Card overflow={"hidden"}>
+      <Image
+        height={"150px"}
+        objectFit={"cover"}
+        objectPosition={"top"}
+        src={image}
+      ></Image>
+
       <CardBody>
-        <Text> {flavor}</Text>
+        <Flex
+          flexDirection={"column"}
+          justifyContent={"space-between"}
+          height={"100%"}
+        >
+          <Heading as="h2" size="md">
+            {name}
+          </Heading>
+          <Text>{race}</Text>
+          <Text as={"i"}> {flavor}</Text>
+          <HStack justify={"end"}>
+            <FaEdit />
+          </HStack>
+        </Flex>
       </CardBody>
-      <CardFooter>
-        <HStack>
-          <FaEdit />
-        </HStack>
-      </CardFooter>
     </Card>
   );
 };
