@@ -51,7 +51,6 @@ const CardGrid = () => {
         ></NpcCard>
       ))}
       <CreatorCard></CreatorCard>
-      <MyComponent></MyComponent>
     </SimpleGrid>
   );
 };
