@@ -1,10 +1,7 @@
 import { Grid, GridItem, HStack, Text } from "@chakra-ui/react";
 import CardGrid from "./components/CardGrid";
 import CategoryList from "./components/CategoryList";
-import ColorModeSwitch from "./components/ColorModeSwitch";
 import Form from "./components/Form";
-import Generate from "./components/Generate";
-import { useEffect } from "react";
 
 function App() {
   return (
@@ -18,8 +15,6 @@ function App() {
       <GridItem px={5} area={"nav"}>
         <Text h={"75px"}></Text>
         <CategoryList></CategoryList>
-        <Form></Form>
-        {/* <Generate></Generate> */}
       </GridItem>
       <GridItem area={"header"} px={5}>
         {" "}

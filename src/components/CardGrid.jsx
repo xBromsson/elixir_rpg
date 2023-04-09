@@ -2,9 +2,6 @@ import { SimpleGrid } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import NpcCard from "./NpcCard";
 import { CreatorCard } from "./CreatorCard";
-import axios from "axios";
-import getContent from "../modules/getContent";
-import getImage from "../modules/getImage";
 import buildNpc from "../modules/buildNpc";
 
 const npcs = [];
