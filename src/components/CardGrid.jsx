@@ -1,4 +1,4 @@
-import { SimpleGrid } from "@chakra-ui/react";
+import { SimpleGrid, Skeleton } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import NpcCard from "./NpcCard";
 import { CreatorCard } from "./CreatorCard";
@@ -9,11 +9,13 @@ const npcs = [];
 const CardGrid = () => {
   const [initial, setInitial] = useState(true);
   const [build, setBuild] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [npc, setNpc] = useState(npcs);
 
   useEffect(() => {
     !initial
-      ? buildNpc()
+      ? (setIsLoading(true),
+        buildNpc()
           .then((res) => {
             setNpc([
               ...npc,
@@ -21,8 +23,10 @@ const CardGrid = () => {
             ]);
           })
           .catch((err) => {
-            console.log(error);
-          })
+            console.log(err);
+          })).finally(() => {
+          setIsLoading(false);
+        })
       : setInitial(false);
   }, [build]);
 
@@ -42,7 +46,11 @@ const CardGrid = () => {
           flavor={n.flavor}
         ></NpcCard>
       ))}
-      <CreatorCard onCreate={handleCreate}></CreatorCard>
+      {!isLoading ? (
+        <CreatorCard onCreate={handleCreate}></CreatorCard>
+      ) : (
+        <Skeleton></Skeleton>
+      )}
     </SimpleGrid>
   );
 };

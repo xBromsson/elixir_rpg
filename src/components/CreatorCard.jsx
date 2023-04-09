@@ -5,8 +5,6 @@ const Props = {
 };
 
 export const CreatorCard = ({ onCreate }) => {
-  console.log("child rendered");
-
   return (
     <Card
       border={"solid"}
