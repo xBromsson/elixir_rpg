@@ -5,12 +5,12 @@ import theme from "./theme";
 import App from "./App";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <ChakraProvider theme={theme}>
-      <ColorModeScript initialColorMode="theme.config.initialColorMode">
-        {" "}
-      </ColorModeScript>
-      <App />
-    </ChakraProvider>
-  </React.StrictMode>
+  // <React.StrictMode>
+  <ChakraProvider theme={theme}>
+    <ColorModeScript initialColorMode="theme.config.initialColorMode">
+      {" "}
+    </ColorModeScript>
+    <App />
+  </ChakraProvider>
+  // </React.StrictMode>
 );

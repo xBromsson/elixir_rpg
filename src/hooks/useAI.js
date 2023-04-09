@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 const useAI = (model, text, number) => {
   const [response, setResponse] = useState("");
-  const [loading, setLoading] = useState(true);
+  const [isloading, setLoading] = useState(true);
 
   const config = {
     organization: "org-jXq1jagmrAh2SvVmFUvvOHlj",
@@ -75,7 +75,7 @@ const useAI = (model, text, number) => {
     }
   }, [model, text, number, config.endpoint]);
 
-  return { response, loading };
+  return { response, isloading, };
 };
 
 export default useAI;

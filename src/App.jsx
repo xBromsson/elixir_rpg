@@ -4,6 +4,7 @@ import CategoryList from "./components/CategoryList";
 import ColorModeSwitch from "./components/ColorModeSwitch";
 import Form from "./components/Form";
 import Generate from "./components/Generate";
+import { useEffect } from "react";
 
 function App() {
   return (

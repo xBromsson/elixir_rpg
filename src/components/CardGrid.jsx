@@ -1,30 +1,37 @@
-import { SimpleGrid, Text } from "@chakra-ui/react";
-import { useState } from "react";
+import { SimpleGrid } from "@chakra-ui/react";
+import { useState, useEffect } from "react";
 import NpcCard from "./NpcCard";
 import { CreatorCard } from "./CreatorCard";
-import useAI from "../hooks/useAi";
+import axios from "axios";
+import getContent from "../modules/getContent";
+import getImage from "../modules/getImage";
+import buildNpc from "../modules/buildNpc";
 
-const npcs = [
-  {
-    name: "Grommash",
-    race: "Half-Orc",
-    flavor:
-      "I may be half-human, but I've got twice the strength of any orc you'll ever meet!",
-    image:
-      "https://oaidalleapiprodscus.blob.core.windows.net/private/org-jXq1jagmrAh2SvVmFUvvOHlj/user-hQ25tTtiKrYA6dfBSPoVNxn0/img-7sZ1mkghnb0IybGOqxC8fO2l.png?st=2023-04-06T19%3A11%3A28Z&se=2023-04-06T21%3A11%3A28Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-04-06T15%3A54%3A41Z&ske=2023-04-07T15%3A54%3A41Z&sks=b&skv=2021-08-06&sig=WW9AUsxQlCIeAdqfOqQZeUS4lNH0G42X1yule8O5kpU%3D",
-  },
-];
+const npcs = [];
 
 const CardGrid = () => {
-  const { response } = useAI(
-    "content",
-    "create a fantasy character name. It must be first name and last name only",
-    1
-  );
+  const [initial, setInitial] = useState(true);
+  const [build, setBuild] = useState(true);
   const [npc, setNpc] = useState(npcs);
 
+  useEffect(() => {
+    !initial
+      ? buildNpc()
+          .then((res) => {
+            setNpc([
+              ...npc,
+              { image: res[0], name: res[1], race: res[2], flavor: res[3] },
+            ]);
+          })
+          .catch((err) => {
+            console.log(error);
+          })
+      : setInitial(false);
+  }, [build]);
+
   const handleCreate = () => {
-    setNpc([...npc, { name: response }]);
+    console.log("clicked");
+    setBuild(!build);
   };
 
   return (
@@ -32,10 +39,10 @@ const CardGrid = () => {
       {npc.map((n) => (
         <NpcCard
           key={n.name}
+          image={n.image}
           name={n.name}
           race={n.race}
           flavor={n.flavor}
-          image={n.image}
         ></NpcCard>
       ))}
       <CreatorCard onCreate={handleCreate}></CreatorCard>
