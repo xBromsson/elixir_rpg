@@ -35,6 +35,13 @@ const CardGrid = () => {
     setBuild(!build);
   };
 
+  const handleDelete = (id) => {
+    console.log("deleted", id);
+    setNpc(npc.filter((e) => e.name !== id));
+  };
+
+  console.log(npc);
+
   return (
     <SimpleGrid columns={4} spacing={3}>
       {npc.map((n) => (
@@ -44,6 +51,7 @@ const CardGrid = () => {
           name={n.name}
           race={n.race}
           flavor={n.flavor}
+          onDelete={handleDelete}
         ></NpcCard>
       ))}
       {!isLoading ? (

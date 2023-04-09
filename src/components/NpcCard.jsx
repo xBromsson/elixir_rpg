@@ -1,27 +1,19 @@
 import {
   Card,
   CardBody,
-  CardFooter,
-  CardHeader,
-  Center,
   HStack,
   Heading,
   Image,
   Text,
   Flex,
-  VStack,
+  Box,
 } from "@chakra-ui/react";
 
-import { FaEdit } from "react-icons/fa";
+import { FaEdit, FaTrash } from "react-icons/fa";
 
-const Props = {
-  name: "",
-  race: "",
-  flavor: "",
-  image: "",
-};
+const onDelete = (id) => {};
 
-const NpcCard = ({ name, race, flavor, image }) => {
+const NpcCard = ({ name, race, flavor, image, onDelete }) => {
   return (
     <Card overflow={"hidden"}>
       <Image
@@ -44,6 +36,9 @@ const NpcCard = ({ name, race, flavor, image }) => {
           <Text as={"i"}> {flavor}</Text>
           <HStack justify={"end"}>
             <FaEdit />
+            <Box onClick={() => onDelete(name)}>
+              <FaTrash />
+            </Box>
           </HStack>
         </Flex>
       </CardBody>
