@@ -1,0 +1,39 @@
+{
+  "npcs": [
+    {
+      "image": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-jXq1jagmrAh2SvVmFUvvOHlj/user-hQ25tTtiKrYA6dfBSPoVNxn0/img-xsGk8vwljGREaLOGsoVfawkG.png?st=2023-04-10T03%3A52%3A45Z&se=2023-04-10T05%3A52%3A45Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-04-10T04%3A43%3A35Z&ske=2023-04-11T04%3A43%3A35Z&sks=b&skv=2021-08-06&sig=SazrZxsHkSjkAz9HhfMqIfCnfopFa9vkpBVwEgfQkhY%3D",
+      "name": "\n\nAmarantha Fidorai",
+      "race": "\n\nDryadians",
+      "flavor": "\n\n\"The world is my oyster, and I aim to seize every opportunity that comes my way.\"",
+      "id": 8
+    },
+    {
+      "image": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-jXq1jagmrAh2SvVmFUvvOHlj/user-hQ25tTtiKrYA6dfBSPoVNxn0/img-kx1ruK36GYn29AA0iLBb2hUm.png?st=2023-04-10T03%3A52%3A56Z&se=2023-04-10T05%3A52%3A56Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-04-09T12%3A02%3A24Z&ske=2023-04-10T12%3A02%3A24Z&sks=b&skv=2021-08-06&sig=MQy/XWPaDxiUaG%2BuTwvZcn5R%2BhSUESdcH1bGRV8Qiog%3D",
+      "name": "\n\nAnneva Silverwing",
+      "race": ".\n\nElf-kin",
+      "flavor": "\n\n\"I make my own fate, for I am master of my destiny!\"",
+      "id": 10
+    },
+    {
+      "image": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-jXq1jagmrAh2SvVmFUvvOHlj/user-hQ25tTtiKrYA6dfBSPoVNxn0/img-FsG6rGoBdAGvx1Ts87ijst1J.png?st=2023-04-10T03%3A54%3A03Z&se=2023-04-10T05%3A54%3A03Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-04-09T16%3A24%3A54Z&ske=2023-04-10T16%3A24%3A54Z&sks=b&skv=2021-08-06&sig=daLnSRDxkJ/Ul4OmOHJQa4cOubiKO1m4ZbHcQeCx4bw%3D",
+      "name": "\n\nCorinna Fairwin",
+      "race": "\n\nOrcfolk",
+      "flavor": "\n\n\"My courage is unmatched by any other - I fear no foe and will face any challenge head-on.\"",
+      "id": 11
+    },
+    {
+      "image": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-jXq1jagmrAh2SvVmFUvvOHlj/user-hQ25tTtiKrYA6dfBSPoVNxn0/img-aHGr2hg7qlgVDLGjsijTc9if.png?st=2023-04-10T03%3A54%3A53Z&se=2023-04-10T05%3A54%3A53Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-04-09T15%3A35%3A22Z&ske=2023-04-10T15%3A35%3A22Z&sks=b&skv=2021-08-06&sig=nKkF2eU87XbFeStMY0r6cxI0qfWQm8kG6ThSGiAc0mY%3D",
+      "name": "\n\nCarys Fireweaver",
+      "race": "\n\nHalf-Orcs",
+      "flavor": "\n\n\"I'd rather fight for what is right than cower in the shadows of uncertainty.\"",
+      "id": 12
+    },
+    {
+      "image": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-jXq1jagmrAh2SvVmFUvvOHlj/user-hQ25tTtiKrYA6dfBSPoVNxn0/img-OyhFBkZzIg6HMdgKrRMZnth6.png?st=2023-04-10T04%3A52%3A03Z&se=2023-04-10T06%3A52%3A03Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-04-09T23%3A52%3A45Z&ske=2023-04-10T23%3A52%3A45Z&sks=b&skv=2021-08-06&sig=f2JGmauHZk9TzGl7HLEKfSWswknb/%2BigaVRsEclTDhA%3D",
+      "name": "\n\nTasha Hildegaard",
+      "race": "\n\nCentaurs",
+      "flavor": "\n\n\"I have no fear of the unknown, for I am bold and adventure-filled.\"",
+      "id": 13
+    }
+  ]
+}

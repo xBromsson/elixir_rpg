@@ -2,6 +2,7 @@ import { Grid, GridItem, HStack, Text } from "@chakra-ui/react";
 import CardGrid from "./components/CardGrid";
 import CategoryList from "./components/CategoryList";
 import Form from "./components/Form";
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
         </Text>
       </GridItem>
       <GridItem pr={100} pl={1} area={"main"}>
-        <CardGrid></CardGrid>
+        <Outlet />
       </GridItem>
     </Grid>
   );

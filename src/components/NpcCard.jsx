@@ -10,18 +10,19 @@ import {
 } from "@chakra-ui/react";
 
 import { FaEdit, FaTrash } from "react-icons/fa";
+import { Link, useNavigate } from "react-router-dom";
 
-const onDelete = (id) => {};
-
-const NpcCard = ({ name, race, flavor, image, onDelete }) => {
+const NpcCard = ({ id, name, race, flavor, image, onDelete }) => {
   return (
     <Card overflow={"hidden"}>
-      <Image
-        height={"150px"}
-        objectFit={"cover"}
-        objectPosition={"top"}
-        src={image}
-      ></Image>
+      <Link to={"/" + id}>
+        <Image
+          height={"150px"}
+          objectFit={"cover"}
+          objectPosition={"top"}
+          src={image}
+        ></Image>
+      </Link>
 
       <CardBody>
         <Flex
@@ -36,7 +37,7 @@ const NpcCard = ({ name, race, flavor, image, onDelete }) => {
           <Text as={"i"}> {flavor}</Text>
           <HStack justify={"end"}>
             <FaEdit />
-            <Box onClick={() => onDelete(name)}>
+            <Box onClick={() => onDelete(id)}>
               <FaTrash />
             </Box>
           </HStack>
