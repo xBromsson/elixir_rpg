@@ -25,7 +25,10 @@ const CardGrid = () => {
       image: npcData[0],
       name: npcData[1],
       race: npcData[2],
-      flavor: npcData[3],
+      quote: npcData[3],
+      occupation: npcData[4],
+      backstory: npcData[5],
+      personality: npcData[6],
     };
 
     // Create an NPC on the server-side
@@ -119,7 +122,7 @@ const CardGrid = () => {
           image={n.image}
           name={n.name}
           race={n.race}
-          flavor={n.flavor}
+          quote={n.quote}
           onDelete={handleDelete}
         ></NpcCard>
       ))}

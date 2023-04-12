@@ -14,9 +14,12 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
     children: [
-      { path: "/npcs", element: <CardGrid /> },
       {
-        path: "/:id",
+        path: "/npcs/",
+        element: <CardGrid />,
+      },
+      {
+        path: "npcs/:id",
         element: <NpcCardDetail />,
         loader: npcDetailLoader,
       },

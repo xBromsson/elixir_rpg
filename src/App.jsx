@@ -3,8 +3,15 @@ import CardGrid from "./components/CardGrid";
 import CategoryList from "./components/CategoryList";
 import Form from "./components/Form";
 import { Outlet } from "react-router-dom";
+import getTurbo from "./modules/getTurbo";
 
 function App() {
+  // const test = getTurbo("build a fantasy character", 1).then((res) => {
+  //   console.log(res);
+  // });
+
+  // console.log(test);
+
   return (
     <Grid
       h="100vh"

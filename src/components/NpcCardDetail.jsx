@@ -1,10 +1,24 @@
-import { Text } from "@chakra-ui/react";
+import { Container, Image, Heading, Text } from "@chakra-ui/react";
 import { useLoaderData } from "react-router-dom";
 
 function NpcCardDetail() {
-  const npcs = useLoaderData();
+  const npc = useLoaderData();
 
-  return <Text>Npc Details... {npcs.name}</Text>;
+  return (
+    <Container>
+      <Image src={npc.image}></Image>
+      <Heading as="h2" size="md">
+        {npc.name}
+      </Heading>
+      <Heading as="h2" size="md">
+        {npc.race}
+      </Heading>
+      <Text>{npc.occupation}</Text>
+      <Text>{npc.quote}</Text>
+
+      <Text>{npc.backstory}</Text>
+    </Container>
+  );
 }
 
 export default NpcCardDetail;
