@@ -6,9 +6,14 @@ Leverage the power of ai models to amplify the users creation experience when it
 ### Project Scope
   - Core Features of Elixir_RPG:
     - Contextual Entity Creation Using Ai
-      -   Campaigns, Worlds, Cities, Buildings, NPCs, Items, Monsters.
-    -   
-
+      - Campaigns, Worlds, Cities, Buildings, NPCs, Items, Monsters.
+      - User should have range of control over how the Ai generates entities
+      - User should be able to edit all attributes manually
+    - Map creation using Ai
+    -   User should be able to control output
+    -   User should be able to manually link generated cities to the map
+    -   edit using dalle?
+    - Plot creation using Ai. Contextual? 
 
   
   - Other Possible Features of Elixir_RPG:
