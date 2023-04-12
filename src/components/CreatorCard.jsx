@@ -7,11 +7,11 @@ const Props = {
 export const CreatorCard = ({ onCreate }) => {
   return (
     <Card
-      height={"350px"}
       border={"solid"}
       borderWidth={2}
       borderStyle={"dashed"}
       opacity={"25%"}
+      height={"100%"}
     >
       <CardBody>
         <Center h={"100%"}>

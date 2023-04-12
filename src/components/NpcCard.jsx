@@ -7,44 +7,44 @@ import {
   Text,
   Flex,
   Box,
+  CardFooter,
 } from "@chakra-ui/react";
 
 import { FaEdit, FaTrash } from "react-icons/fa";
 import { BiDetail } from "react-icons/bi";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 
-const NpcCard = ({ id, name, race, quote, image, onDelete }) => {
+const NpcCard = ({ name, id, image, onDelete }) => {
   return (
-    <Card height={"100%"} overflow={"hidden"}>
+    <Card borderRadius={3} height={"min-content"} overflow={"hidden"}>
       <Image
-        height={"150px"}
+        h={150}
         objectFit={"cover"}
         objectPosition={"top"}
         src={image}
       ></Image>
-
-      <CardBody>
-        <Flex
-          flexDirection={"column"}
-          justifyContent={"space-between"}
-          height={"100%"}
+      <CardFooter justify={"space-between"}>
+        <Text
+          alignSelf={"start"}
+          whiteSpace={"nowrap"}
+          textOverflow={"clip"}
+          overflow={"hidden"}
         >
-          <Heading as="h2" size="md">
-            {name}
-          </Heading>
-          <Text>{race}</Text>
-          <Text as={"i"}> {quote}</Text>
+          {name}
+        </Text>
+        <HStack justify={"space-between"}>
           <HStack justify={"end"}>
-            <FaEdit />
             <Box onClick={() => onDelete(id)}>
               <FaTrash />
             </Box>
+            <FaEdit />
+
             <Link to={"/npcs/" + id}>
               <BiDetail />
             </Link>
           </HStack>
-        </Flex>
-      </CardBody>
+        </HStack>
+      </CardFooter>
     </Card>
   );
 };

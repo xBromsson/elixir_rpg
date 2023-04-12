@@ -1,14 +1,64 @@
 {
   "npcs": [
     {
-      "image": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-jXq1jagmrAh2SvVmFUvvOHlj/user-hQ25tTtiKrYA6dfBSPoVNxn0/img-NBdtewIJzu7sa56E3OBtS01w.png?st=2023-04-11T01%3A58%3A30Z&se=2023-04-11T03%3A58%3A30Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-04-10T20%3A22%3A31Z&ske=2023-04-11T20%3A22%3A31Z&sks=b&skv=2021-08-06&sig=R8aT45/pCG7DEVvfCCjeDrqUgHv195ldcg2rWrVwkcM%3D",
-      "name": "Sylvis",
+      "image": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-jXq1jagmrAh2SvVmFUvvOHlj/user-hQ25tTtiKrYA6dfBSPoVNxn0/img-zLFh8jpQXQnHMKKZ1TmKV5kP.png?st=2023-04-12T01%3A22%3A25Z&se=2023-04-12T03%3A22%3A25Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-04-12T00%3A21%3A06Z&ske=2023-04-13T00%3A21%3A06Z&sks=b&skv=2021-08-06&sig=WS/jthPYaJkaFve1ohnC6PMrLlbB4Xnq5dSWzClnK/4%3D",
+      "name": "Malakar",
+      "race": "Dragonborn",
+      "quote": "\"Through the flames and the smoke",
+      "occupation": "I rise.\"",
+      "backstory": "Mercenary",
+      "personality": "Malakar was born into a family of renowned dragon riders who served their kingdom for generations. Proving to be a natural fighter and agile flyer",
+      "id": 3
+    },
+    {
+      "image": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-jXq1jagmrAh2SvVmFUvvOHlj/user-hQ25tTtiKrYA6dfBSPoVNxn0/img-2opSJmfp0qwmivIvBaNMRw0T.png?st=2023-04-12T01%3A30%3A56Z&se=2023-04-12T03%3A30%3A56Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-04-12T00%3A18%3A54Z&ske=2023-04-13T00%3A18%3A54Z&sks=b&skv=2021-08-06&sig=yZUbwkgMF1J%2Bzw2TdsUVmrzOjFOA24R6usPIFGuMzPs%3D",
+      "name": "Nira Shadowblade",
+      "race": "Dark Elf",
+      "quote": "\"Those who live in darkness are the ones who see everything\"",
+      "occupation": "Assassin",
+      "backstory": "Nira was born into a wealthy family of Dark Elves. However",
+      "personality": "her family was murdered when she was just a child. Feeling lost and alone",
+      "id": 5
+    },
+    {
+      "image": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-jXq1jagmrAh2SvVmFUvvOHlj/user-hQ25tTtiKrYA6dfBSPoVNxn0/img-qLElALYWJgTuGPypi70TE8eY.png?st=2023-04-12T01%3A35%3A49Z&se=2023-04-12T03%3A35%3A49Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-04-12T00%3A19%3A01Z&ske=2023-04-13T00%3A19%3A01Z&sks=b&skv=2021-08-06&sig=yfBwCwE%2BUvkI/nq5zgyush3Qbd6MH14OoWw8%2B96nxeA%3D",
+      "name": "Thorngrim",
+      "race": "Dwarf",
+      "quote": "\"I may be small",
+      "occupation": "but I am mighty!\"",
+      "backstory": "Blacksmith",
+      "personality": "Thorngrim was born into a long line of blacksmiths",
+      "id": 6
+    },
+    {
+      "image": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-jXq1jagmrAh2SvVmFUvvOHlj/user-hQ25tTtiKrYA6dfBSPoVNxn0/img-9RWkPBKzvKkEF7D7pSyEun0U.png?st=2023-04-12T01%3A35%3A57Z&se=2023-04-12T03%3A35%3A57Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-04-12T00%3A19%3A03Z&ske=2023-04-13T00%3A19%3A03Z&sks=b&skv=2021-08-06&sig=Ehvk0C2zJvjr1rAashh2urvwi%2BsDJ4XRTPgoKqtqbUM%3D",
+      "name": "Gaelen",
+      "race": "Half-Elf",
+      "quote": "\"The strongest steel is forged in the hottest fire.\"",
+      "occupation": "Blacksmith",
+      "backstory": "Gaelen was born to a human mother and elven father",
+      "personality": "who both died when he was young. He grew up on the streets",
+      "id": 7
+    },
+    {
+      "image": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-jXq1jagmrAh2SvVmFUvvOHlj/user-hQ25tTtiKrYA6dfBSPoVNxn0/img-kceSk8ZE8LZqyTFzb1TZ7TCq.png?st=2023-04-12T01%3A41%3A28Z&se=2023-04-12T03%3A41%3A28Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-04-12T00%3A20%3A17Z&ske=2023-04-13T00%3A20%3A17Z&sks=b&skv=2021-08-06&sig=LvVAvsrU32XKNMok%2BQBZtA/fl6UbU6sT2MxcDw3B1wA%3D",
+      "name": "Elvina",
       "race": "Elf",
-      "quote": "\"I will make my own destiny\"",
-      "occupation": "Ranger",
-      "backstory": "Sylvis was born into a family of accomplished elven warriors. However",
-      "personality": "from a young age",
-      "id": 1
+      "quote": "\"I may be soft-spoken",
+      "occupation": "but my arrows speak louder than words\"",
+      "backstory": "Ranger and Protector of the Forest",
+      "personality": "Elvina's mother was an elven ranger who taught her how to use a bow and a sword. Her father was a human who died in a battle against orc invaders. With the blood of both races running through her veins",
+      "id": 8
+    },
+    {
+      "image": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-jXq1jagmrAh2SvVmFUvvOHlj/user-hQ25tTtiKrYA6dfBSPoVNxn0/img-9tXLIdocOsfRnCpAtGPZBwzP.png?st=2023-04-12T01%3A41%3A36Z&se=2023-04-12T03%3A41%3A36Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-04-12T00%3A18%3A58Z&ske=2023-04-13T00%3A18%3A58Z&sks=b&skv=2021-08-06&sig=lMNtwgELeocwGa7OCQMFOenE/HYJfzFaTV2PGY0wE/0%3D",
+      "name": "Arianna",
+      "race": "Elf",
+      "quote": "\"There is magic in everything",
+      "occupation": "you just have to know where to find it\"",
+      "backstory": "Enchantress",
+      "personality": "Arianna was born into a family of powerful Elf enchanters. She was raised in a world of magic",
+      "id": 9
     }
   ],
   "items": []

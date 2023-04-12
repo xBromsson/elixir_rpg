@@ -1,31 +1,17 @@
-import {
-  Card,
-  CardBody,
-  Center,
-  HStack,
-  Heading,
-  Text,
-} from "@chakra-ui/react";
+import { Card, CardBody, Heading } from "@chakra-ui/react";
 
-const Props = {
-  name: "",
-  count: null,
-};
-const CategoryCard = ({ name, count }) => {
+const CategoryCard = ({ name }) => {
   return (
-    <Card>
-      <CardBody>
-        <HStack justifyContent={"space-between"}>
-          <Heading fontSize={"1xl"} fontWeight={700}>
-            {name}
-          </Heading>
-          <Center size={"25px"}>
-            <Text fontSize={"1xl"} fontWeight={700}>
-              {count}
-            </Text>
-          </Center>
-        </HStack>
-      </CardBody>
+    <Card
+      py={2}
+      h={"min-content"}
+      alignItems={"center"}
+      justifyContent={"center"}
+      borderRadius={2}
+    >
+      <Heading fontSize={"xl"} fontWeight={500}>
+        {name}
+      </Heading>
     </Card>
   );
 };

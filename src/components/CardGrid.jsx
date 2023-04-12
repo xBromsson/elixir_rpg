@@ -114,7 +114,7 @@ const CardGrid = () => {
   //   console.log(npc);
 
   return (
-    <SimpleGrid columns={4} spacing={3}>
+    <SimpleGrid columns={[1, 2, 4, 5, 6]} spacing={5}>
       {npcs.map((n) => (
         <NpcCard
           key={n.id}
@@ -129,7 +129,7 @@ const CardGrid = () => {
       {!isLoading ? (
         <CreatorCard onCreate={handleCreate}></CreatorCard>
       ) : (
-        <Skeleton height={"350px"}></Skeleton>
+        <Skeleton></Skeleton>
       )}
     </SimpleGrid>
   );
