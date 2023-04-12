@@ -10,9 +10,9 @@ Leverage the power of ai models to amplify the users creation experience when it
       - User should have range of control over how the Ai generates entities
       - User should be able to edit all attributes manually
     - Map creation using Ai
-    -   User should be able to control output
-    -   User should be able to manually link generated cities to the map
-    -   edit using dalle?
+      - User should be able to control output
+      - User should be able to manually link generated cities to the map
+      - edit using dalle?
     - Plot creation using Ai. Contextual? 
 
   
