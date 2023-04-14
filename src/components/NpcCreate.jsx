@@ -8,16 +8,16 @@ import {
   PopoverTrigger,
   PopoverContent,
   Heading,
+  Text,
+  HStack,
 } from "@chakra-ui/react";
 
 import { GiPotionBall } from "react-icons/gi";
 import NpcSlider from "./NpcSlider";
 
-const Props = {
-  onCreate: () => {},
-};
+const onCreate = () => {};
 
-function NpcCreate({ onCreate }) {
+function NpcCreate({ onCreate, onSliderChange }) {
   return (
     <Card
       border={"solid"}
@@ -40,11 +40,14 @@ function NpcCreate({ onCreate }) {
           <PopoverContent>
             <Box px={2} py={7} textAlign={"center"}>
               <Heading size={"md"}>Alignment</Heading>
-              <NpcSlider></NpcSlider>
-              <Heading size={"md"}>Appearance</Heading>
-              <NpcSlider></NpcSlider>
-              <Heading size={"md"}>Affluence</Heading>
-              <NpcSlider></NpcSlider>
+              <HStack justifyContent={"space-between"} mt={3} mx={2}>
+                <Text>Evil</Text>
+                <Text>Good</Text>
+              </HStack>
+              <NpcSlider
+                onSliderChange={onSliderChange}
+                name="alignment"
+              ></NpcSlider>
             </Box>
 
             <Button px={3} onClick={onCreate}>

@@ -7,8 +7,14 @@ import buildNpcTesting from "../modules/buildNpcTesting";
 const NpcGrid = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [npcs, setNpcs] = useState([]);
+  const [sliderValues, setSliderValues] = useState({ alignment: 1 });
 
-  let num = 1;
+  const handleSliderChange = (name, value) => {
+    setSliderValues((prevValues) => ({
+      ...prevValues,
+      [name]: value,
+    }));
+  };
 
   useEffect(() => {
     // Fetch existing NPCs from the server
@@ -22,7 +28,7 @@ const NpcGrid = () => {
 
   const handleCreate = async () => {
     setIsLoading(true);
-    const npcData = await buildNpcTesting();
+    const npcData = await buildNpcTesting(sliderValues.alignment);
 
     // Create an NPC on the server-side
     fetch("http://localhost:3000/npcs", {
@@ -51,7 +57,7 @@ const NpcGrid = () => {
     <SimpleGrid columns={[1, 2, 4, 5, 6]} spacing={5}>
       {npcs.map((n) => (
         <NpcCard
-          key={num++}
+          key={n.id}
           id={n.id}
           image={n.image}
           name={n.name}
@@ -61,7 +67,10 @@ const NpcGrid = () => {
         ></NpcCard>
       ))}
       {!isLoading ? (
-        <NpcCreate onCreate={handleCreate}></NpcCreate>
+        <NpcCreate
+          onCreate={handleCreate}
+          onSliderChange={handleSliderChange}
+        ></NpcCreate>
       ) : (
         <Skeleton></Skeleton>
       )}

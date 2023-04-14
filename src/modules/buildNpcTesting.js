@@ -2,13 +2,13 @@ import getContent from "./getContent"
 import getImage from "./getImage"
 import getTurbo from "./getTurbo";
 
-async function buildNpcTesting() {
+async function buildNpcTesting(alignment) {
     
     const response = await getTurbo(`Create a fantasy style character with the following attributes, 
 
     Here is a list of characteristics to help guide your character creation at a high level. These are rated on a scale of 1 to 5:
 
-        - Alignment = 3 (1 is absolute evil but 5 is absolute good)
+        - Alignment = ${alignment} (1 is absolute evil but 5 is absolute good)
         - Appearance = 3 (1 is hideous but 5 is beautiful)
         - Affluence = 3 (1 is very poor but 5 is very wealthy)
 
@@ -37,6 +37,8 @@ async function buildNpcTesting() {
 // console.log(character)
     
 character.image = "https://preview.redd.it/i-really-enjoy-making-character-concepts-for-dnd-and-here-v0-7djvh5cv439a1.png?width=640&crop=smart&auto=webp&s=df65473e9b8d448d0439c350f94c4076177c9cf9"
+
+console.log(alignment)
 
     return character
 }

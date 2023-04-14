@@ -9,19 +9,25 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 
-function CreatorControl() {
-  const [sliderValue, setSliderValue] = useState(5);
+function NpcSlider({ name, onSliderChange }) {
+  const [sliderValue, setSliderValue] = useState(3);
+
+  const handleChange = (value) => {
+    setSliderValue(value);
+    onSliderChange(name, value);
+  };
 
   return (
-    <Box m={5}>
+    <Box mx={5}>
       <Slider
-        id="slider"
-        defaultValue={2}
+        id={name}
+        name={name}
+        defaultValue={3}
         min={1}
         max={5}
         colorScheme="teal"
         onChange={(v) => {
-          setSliderValue(v);
+          handleChange(v);
           console.log(v);
         }}
         step={1}
@@ -52,4 +58,4 @@ function CreatorControl() {
   );
 }
 
-export default CreatorControl;
+export default NpcSlider;
