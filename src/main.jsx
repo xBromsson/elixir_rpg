@@ -1,13 +1,11 @@
 import React from "react";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import ReactDOM from "react-dom/client";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
 import theme from "./theme";
 import App from "./App";
-import CardGrid from "./components/CardGrid";
-import NpcCardDetail, {
-  loader as npcDetailLoader,
-} from "./components/NpcCardDetail";
+import NpcGrid from "./components/NpcGrid";
+import NpcDetail, { loader as npcDetailLoader } from "./components/NpcDetail";
 
 const router = createBrowserRouter([
   {
@@ -16,11 +14,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/npcs/",
-        element: <CardGrid />,
+        element: <NpcGrid />,
       },
       {
         path: "npcs/:id",
-        element: <NpcCardDetail />,
+        element: <NpcDetail />,
         loader: npcDetailLoader,
       },
     ],

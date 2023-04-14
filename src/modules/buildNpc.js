@@ -24,7 +24,7 @@ async function buildNpc() {
     // const profession = getContent("create a fantasy character profession. It should be no more than two words", 1);
     // const backstory = getContent(`context: name: ${name} race: ${race} create this characters backstory. it should be set in a fantasy world. do not reference its race but you can reference its name in the story.`, 1);
  
-    console.log(name)
+    console.log([name, race, quote, occupation, backstory, personality])
 
     return new Promise((resolve, reject) => {
         Promise.all([image, name, race, quote, occupation, backstory, personality])

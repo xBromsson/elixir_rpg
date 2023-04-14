@@ -1,9 +1,8 @@
-import { Grid, GridItem, HStack, Text } from "@chakra-ui/react";
-import CardGrid from "./components/CardGrid";
+import { Grid, GridItem, Text } from "@chakra-ui/react";
+
 import CategoryList from "./components/CategoryList";
-import Form from "./components/Form";
+
 import { Outlet } from "react-router-dom";
-import getTurbo from "./modules/getTurbo";
 
 function App() {
   return (

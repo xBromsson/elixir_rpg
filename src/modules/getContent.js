@@ -13,7 +13,7 @@ function getContent(text, number) {
             config.endpoint,
             {
               prompt: text,
-              max_tokens: 150,
+              max_tokens: 250,
               n: number,
               temperature: 0.9,
             },

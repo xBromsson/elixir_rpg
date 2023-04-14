@@ -13,10 +13,10 @@ function getTurbo(text, number) {
             config.endpoint,
             {
                 model: 'gpt-3.5-turbo',
-              messages: [{"role": "system", "content": "You are a great fantasy world builder, able to create rich storys and characters"},{"role": "user", "content": text}],
-              max_tokens: 150,
+              messages: [{"role": "system", "content": "You are a great fantasy world builder, who is unbiased towards any specific race, able to create rich storys and characters that are not sterotypical of what you might expect."},{"role": "user", "content": text}],
+              max_tokens: 350,
               n: number,
-              temperature: 0.9,
+              temperature: 1.25,
             },
             {
               headers: {
