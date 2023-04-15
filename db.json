@@ -1,28 +1,19 @@
 {
   "npcs": [
     {
-      "name": "Aurora",
-      "race": [
-        "gnome"
-      ],
-      "quote": "The ends justify the means. No other way around it.",
-      "occupation": "Alchemist",
-      "appearance": "A gnome with bright red hair and piercing blue eyes. Their narrow face paired with a large and curvy nose gives them a distinctly unique look. The top of their head is shaven as not to interfere with their work with potions and immaculately groomed facial hair graces their chin.",
-      "personality": "Aurora is a shrewd individual with a pragmatic outlook on life. They are willing to do whatever it takes to achieve their goals and is constantly experimenting in their workshop with new, explosive concoctions. They may come across as unapproachable and even antagonistic at first due to their blunt, no-nonsense personality, but those who are determined enough to earn their favor will find a focused and loyal ally.",
+      "name": "Nymia Starweaver",
+      "race": "Half-Elf",
+      "alignment": "neutral good",
+      "quote": "Magic is a gift, but it's only through hard work and determination that one can wield it properly.",
+      "occupation": "Arcane Scholar",
+      "appearance": "Nymia is a slender half-elf with long, flowing silver hair and piercing blue eyes. She wears a deep blue robe adorned with intricate silver embroidery, and carries a gnarled staff that glows with arcane energy.",
+      "personality": "Nymia is a serious and studious individual, but always willing to lend her knowledge and assistance to those in need.",
+      "definingmoment": "Nymia's life changed when she witnessed the destruction wrought by a group of reckless adventurers who had carelessly wielded an artifact of immense power. From then on, she has dedicated her life to studying and understanding magic, in order to prevent such disasters from happening again.",
+      "plothook": "Nymia seeks out the party, seeking their help in recovering a stolen grimoire containing a powerful but dangerous spell. She believes that the individual who stole it may be planning to use it for nefarious purposes.",
+      "secret": "Nymia's mother was an elf, but her father was a powerful human sorcerer whom she never got to know.",
+      "quirk": "Nymia has a habit of talking to herself while studying, which can make her seem a bit eccentric.",
       "image": "https://preview.redd.it/i-really-enjoy-making-character-concepts-for-dnd-and-here-v0-7djvh5cv439a1.png?width=640&crop=smart&auto=webp&s=df65473e9b8d448d0439c350f94c4076177c9cf9",
-      "id": 35
-    },
-    {
-      "name": "Kaela",
-      "race": [
-        "human"
-      ],
-      "quote": "Justice for all is justice for me.",
-      "occupation": "Paladin",
-      "appearance": "Kaela stands tall with chiselled features and striking sapphire eyes. A metallic breastplate adorned with intricate engravings and her long, flowy hair tumbling down in loose waves. Her shield, which shadows her back, bears the symbol of a white dove.",
-      "personality": "Kaela is fiercely devoted to her cause and maintaining peace among her people. Her unwavering righteousness can sometimes shake those who have impure intentions. She is never afraid to speak her truth and stands up against those who she believes do wrong.",
-      "image": "https://preview.redd.it/i-really-enjoy-making-character-concepts-for-dnd-and-here-v0-7djvh5cv439a1.png?width=640&crop=smart&auto=webp&s=df65473e9b8d448d0439c350f94c4076177c9cf9",
-      "id": 36
+      "id": 56
     }
   ],
   "items": []

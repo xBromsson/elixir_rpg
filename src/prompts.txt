@@ -1,0 +1,90 @@
+`Create a fantasy character with the following characteristics:
+
+    - Alignment value (1-10):
+    1: Extremely evil
+    2-3: //you define this
+    4: //you define this
+    5: //you define this
+    6: //you define this
+    7-9: //you define this
+    10: Extremely good
+
+- Intellect value (1-10): 
+1: very low
+2-3: //you define this
+4: //you define this
+5: //you define this
+6: //you define this
+7-9: //you define this
+10: very high
+
+- Physicality value (1-10):
+1: very weak
+2-3: //you define this
+4: //you define this
+5: //you define this
+6: //you define this
+7-9: //you define this
+10: very strong
+
+- Magic value (1-10):
+1: very low
+2-3: //you define this
+4: //you define this
+5: //you define this
+6: //you define this
+7-9: //you define this
+10: very high
+
+    This character's alignment value should be ${alignment}, intellect should be ${intellect}, physical prowess should be ${physicality}, and magical affinity should be ${magic}.
+
+Write in present tense, and provide a JSON-formatted response using these attributes:
+
+{
+"name": "", //unaffected by characteristics
+"alignment": "", 
+"intellect": "", 
+"physicality": "", 
+"magic": "", 
+"race": "", //randomly choose from: "orc", "gnome", "human"
+"quote": "",
+"occupation": "",
+"appearance": "", //a Dall-E prompt description
+"personality": "", //max 3 sentences
+"backstory": "",
+}
+
+`, 1);
+
+
+
+
+THIS ONE IS SPICY GOOD. KEEP IT. 
+
+
+SYSTEM: 
+            {
+                model: 'gpt-3.5-turbo',
+              messages: [{"role": "system", "content": "You are a master of the art of creating a unique and memorable dnd npc character. Your npc characters are full of rich duality and unique characteristics."},{"role": "user", "content": text}],
+              max_tokens: 350,
+              n: number,
+              temperature: .85,
+            },
+
+PROMPT:
+Please create a dnd npc character that will add depth and flavor to our dnd campaign. 
+
+Write in present tense, and you absolutely must provide a response that is formatted for JSON. here is the syntax and attributes you must use:
+
+{
+"name": "", 
+"race": "", //randomly choose from: "orc", "gnome", "human", "elf"
+"alignment": "neutral evil"
+"quote": "",
+"occupation": "", //this should not be stereotypical. e.g. if the character is a gnome they shouldn't automatically be a tinkerer. be creative. limit to 2 words
+"appearance": "", //a Dall-E prompt description. max of 2 sentences
+"personality": "", //max 1 sentence
+"definingmoment": "", //max 2 sentences
+"plothook": "", //max 2 sentences
+"secret": "" //max 1 sentence
+}

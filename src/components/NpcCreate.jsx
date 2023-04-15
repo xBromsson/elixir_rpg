@@ -10,6 +10,7 @@ import {
   Heading,
   Text,
   HStack,
+  Divider,
 } from "@chakra-ui/react";
 
 import { GiPotionBall } from "react-icons/gi";
@@ -37,12 +38,18 @@ function NpcCreate({ onCreate, onSliderChange }) {
               </Stack>
             </Button>
           </PopoverTrigger>
-          <PopoverContent>
-            <Box px={2} py={7} textAlign={"center"}>
-              <Heading size={"md"}>Alignment</Heading>
-              <HStack justifyContent={"space-between"} mt={3} mx={2}>
-                <Text>Evil</Text>
-                <Text>Good</Text>
+          <PopoverContent px={5} py={5}>
+            <Box mx={5} my={5} textAlign={"center"}>
+              <Heading py={1} size={"lg"}>
+                NPC Creator
+              </Heading>
+              <Divider />
+              <Heading as={"u"} textAlign={"left"} pt={5} size={"sm"}>
+                Alignment:
+              </Heading>
+              <HStack justifyContent={"space-between"} mt={3} mx={0}>
+                <Text fontSize={13}>Chaotic Evil</Text>
+                <Text fontSize={13}>Lawful Good</Text>
               </HStack>
               <NpcSlider
                 onSliderChange={onSliderChange}

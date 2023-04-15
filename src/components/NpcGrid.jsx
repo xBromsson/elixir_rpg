@@ -7,7 +7,9 @@ import buildNpcTesting from "../modules/buildNpcTesting";
 const NpcGrid = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [npcs, setNpcs] = useState([]);
-  const [sliderValues, setSliderValues] = useState({ alignment: 1 });
+  const [sliderValues, setSliderValues] = useState({
+    alignment: 5,
+  });
 
   const handleSliderChange = (name, value) => {
     setSliderValues((prevValues) => ({
@@ -28,7 +30,7 @@ const NpcGrid = () => {
 
   const handleCreate = async () => {
     setIsLoading(true);
-    const npcData = await buildNpcTesting(sliderValues.alignment);
+    const npcData = await buildNpcTesting(sliderValues);
 
     // Create an NPC on the server-side
     fetch("http://localhost:3000/npcs", {

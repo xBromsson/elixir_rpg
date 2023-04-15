@@ -2,39 +2,37 @@ import getContent from "./getContent"
 import getImage from "./getImage"
 import getTurbo from "./getTurbo";
 
-async function buildNpcTesting(alignment) {
+async function buildNpcTesting(sliderValues) {
+
+    const { alignment } = sliderValues;
     
-    const response = await getTurbo(`Create a fantasy style character with the following attributes, 
+    const response = await getTurbo(`Please create a dnd npc character that will add depth and flavor to our dnd campaign. 
 
-    Here is a list of characteristics to help guide your character creation at a high level. These are rated on a scale of 1 to 5:
+Write in present tense, and you absolutely must provide a response that is formatted for JSON. here is the syntax and attributes you must use:
 
-        - Alignment = ${alignment} (1 is absolute evil but 5 is absolute good)
-        - Appearance = 3 (1 is hideous but 5 is beautiful)
-        - Affluence = 3 (1 is very poor but 5 is very wealthy)
+{
+"name": "", 
+"race": "", //you must choose completely randomly choose from: "orc", "gnome", "human", "elf", "tabaxi", "dwarf" . 
+"alignment": "${alignment}"
+"quote": "",
+"occupation": "", //be creative. limit to 2 words
+"appearance": "", //a Dall-E prompt description. max of 2 sentences
+"personality": "", //max 1 sentence
+"definingmoment": "", //max 2 sentences. dont use the word 'defining moment' in the response.
+"plothook": "", //max 2 sentences
+"secret": "" //max 1 sentence. be creative and unique.
+"personalityquirk": "" //max 1 sentence. 
+}
 
-    But you can and should also create your own charactistics and ratings in addition to what is already given to help make a well rounded character.
-    And be sure to always speak in present tense.  
+`, 1);
 
-    and always write in present tense and respond using the following syntax and attributes:
 
-    {
-    "name": "", //should not be influenced by the characteristics
-    "race": ["orc", "gnome", "human"], //choose from this array randomly.
-    "quote": "",
-    "occupation": "",
-    "appearance": "", //this will be used in dall-e . so write this as though it is a prompt for dall-e
-    "personality": "", //must be no more than 3 sentences. 
-    }
-
- Do not include the characteristics in your response. Remember your response must be contained inside {}`, 1);
-
-//  console.log(response)
  const character = JSON.parse(response);
 
 
 // const imageResponse = await getImage(`using a fantasy art style, create a fantasy character with a race of ${character.race} with this description. + ${character.appearance}`, 1);
 // character.image = imageResponse
-// console.log(character)
+
     
 character.image = "https://preview.redd.it/i-really-enjoy-making-character-concepts-for-dnd-and-here-v0-7djvh5cv439a1.png?width=640&crop=smart&auto=webp&s=df65473e9b8d448d0439c350f94c4076177c9cf9"
 
