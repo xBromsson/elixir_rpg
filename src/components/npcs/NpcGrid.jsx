@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import NpcCard from "./NpcCard";
 import NpcCreate from "./NpcCreate";
 import buildNpc from "../../modules/buildNpc";
+import buildItem from "../../modules/buildItem";
 
 const NpcGrid = () => {
   const [npcs, setNpcs] = useState(useLoaderData());
@@ -32,6 +33,7 @@ const NpcGrid = () => {
   const handleCreate = async () => {
     setIsLoading(true);
     const npcData = await buildNpc(sliderValues);
+    const itemData = await buildItem(sliderValues);
 
     // Create an NPC on the server-side
     fetch("http://localhost:3000/npcs", {
@@ -42,7 +44,30 @@ const NpcGrid = () => {
       body: JSON.stringify(npcData),
     })
       .then((response) => response.json())
-      .then((createdNpc) => setNpcs([...npcs, createdNpc]))
+      .then(async (createdNpc) => {
+        await fetch("http://localhost:3000/items", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(itemData),
+        })
+          .then((response) => response.json())
+          .then(async (createdItem) => {
+            // Create an entry in the npc_items table on the server-side
+            await fetch("http://localhost:3000/npc_items", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                npc_id: createdNpc.id,
+                item_id: createdItem.id,
+              }),
+            });
+          });
+        setNpcs([...npcs, createdNpc]);
+      })
       .catch((error) => console.error("Error creating NPC:", error))
       .finally(() => setIsLoading(false));
   };
@@ -52,7 +77,16 @@ const NpcGrid = () => {
     fetch(`http://localhost:3000/npcs/` + id, {
       method: "DELETE",
     })
-      .then(() => setNpcs(npcs.filter((e) => e.id !== id)))
+      .then(() => {
+        // Delete npc_item relations for the deleted NPC
+        fetch(`http://localhost:3000/npc_items?npcId=` + id, {
+          method: "DELETE",
+        })
+          .then(() => setNpcs(npcs.filter((e) => e.id !== id)))
+          .catch((error) =>
+            console.error("Error deleting npc_item relations:", error)
+          );
+      })
       .catch((error) => console.error("Error deleting NPC:", error));
   };
 
@@ -67,14 +101,12 @@ const NpcGrid = () => {
           onDelete={handleDelete}
         ></NpcCard>
       ))}
-      {!isLoading ? (
-        <NpcCreate
-          onCreate={handleCreate}
-          onSliderChange={handleSliderChange}
-        ></NpcCreate>
-      ) : (
-        <Skeleton></Skeleton>
-      )}
+
+      <NpcCreate
+        onCreate={handleCreate}
+        onSliderChange={handleSliderChange}
+        isLoading={isLoading}
+      ></NpcCreate>
     </SimpleGrid>
   );
 };

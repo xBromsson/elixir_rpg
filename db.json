@@ -1,49 +1,79 @@
 {
   "npcs": [
     {
-      "name": "Garrick Stonehand",
-      "race": "dwarf",
-      "alignment": "5",
-      "quote": "Gold is temporary, but honor is forever.",
-      "occupation": "Brewer and Blacksmith",
-      "appearance": "Garrick has a thick brown beard that falls all the way down to his chest. His skin is rough and leathery from years spent in front of hot forges.",
-      "personality": "Garrick is honest to a fault, and he takes great pride in his work. He is quick to make friends, but slow to forgive those who cross him or betray his trust.",
-      "definingmoment": "A few years ago, Garrick discovered that a group of bandits had been raiding small towns in the area. He rallied a group of fellow dwarves and led a successful attack against the bandit hideout, earning the respect of many in the community.",
-      "plothook": "Garrick has been tasked with crafting a special weapon for the local lord, but he needs help finding a rare ingredient. He's willing to pay adventurers handsomely for their assistance.",
-      "secret": "Garrick has a secret stash of rare and valuable gems that he keeps hidden away in his workshop. He's never told anyone about it, and he's not likely to anytime soon.",
-      "personalityquirk": "Garrick has a habit of muttering to himself when he's deep in thought, and sometimes he forgets that other people are around.",
+      "name": "Zephyr",
+      "race": "tabaxi",
+      "alignment": "chaotic neutral",
+      "quote": "Life is a game, and I always play to win.",
+      "occupation": "Professional Gambler",
+      "appearance": "Zephyr is a sleek and slender tabaxi, with bright green eyes, and a coat of soft black fur that shines in the light. He wears a crimson vest with gold buttons and a matching feathered hat.",
+      "personality": "Zephyr is charming, cunning, and always in search of his next big score. He is quick-witted and confident, often taking risks that others are too afraid to make.",
+      "definingmoment": "Zephyr's luck changed the day he won a game of chance against a powerful crime lord. Now he travels from city to city, always keeping one step ahead of the law and his enemies.",
+      "plothook": "Zephyr has recently heard rumors of a legendary artifact with a massive payout. He's in search of a team to help him find it and is willing to share the wealth. However, he has made some dangerous enemies along the way and will need to watch his back.",
+      "secret": "Despite being a professional gambler, Zephyr has never been able to shake the guilt he feels for cheating in his first big game. He now refuses to cheat and instead relies on his wit and skill to win.",
+      "personalityquirk": "Zephyr has a habit of flipping a coin whenever he needs to make a decision, even if the outcome is irrelevant to chance.",
       "image": "https://preview.redd.it/i-really-enjoy-making-character-concepts-for-dnd-and-here-v0-7djvh5cv439a1.png?width=640&crop=smart&auto=webp&s=df65473e9b8d448d0439c350f94c4076177c9cf9",
       "id": 1
     },
     {
-      "name": "Kethryllia Shadowborn",
-      "race": "elf",
-      "alignment": "chaotic good",
-      "quote": "I learned everything I know on the streets, and I'm not afraid to use it.",
-      "occupation": "Thief Assassin",
-      "appearance": "Kethryllia is a lithe elf with jet black hair that cascades down her back. She has piercing blue eyes that seem to look straight through you, and a smirk that never leaves her lips.",
-      "personality": "Kethryllia is confident, cunning, and quick-witted. She trusts no one, but is always willing to lend a helping hand to those in need.",
-      "definingmoment": "Kethryllia's life changed forever when she was forced to kill her own brother in self-defense. She vowed to never let anyone get close enough to hurt her like that again.",
-      "plothook": "Kethryllia is a master thief and assassin who has been hired to steal a powerful artifact from a wealthy noble. She needs the party's help to pull off the heist, but can they trust her?",
-      "secret": "Kethryllia is actually a member of a secret organization of assassins who are working to take down a corrupt government from the inside.",
-      "personalityquirk": "Kethryllia can't resist the temptation to steal something shiny and valuable whenever she sees it.",
+      "name": "Zarik Steelshadow",
+      "race": "dwarf",
+      "alignment": "5",
+      "quote": "There's nothing a good ale can't fix.",
+      "occupation": "Brewmaster",
+      "appearance": "Zarik stands at a stout 4 feet and has a magnificent beard that touches the floor. He wears a brewing apron and always carries a wooden cask.",
+      "personality": "Zarik's love for brewing is only surpassed by his love for sharing his creations with others. He's a jovial dwarf always eager to make new friends.",
+      "definingmoment": "Zarik once won a brewing competition and that was the moment he realized he wanted to spend the rest of his life perfecting the art of brewing.",
+      "plothook": "Zarik's best brew, the 'Dragon's Breath', has been stolen and he needs the adventurers to track down the thieves and retrieve his secret recipe.",
+      "secret": "Zarik's beard is not just for show, but it's also a handy storage place for his most prized possession, a flask containing a rare and potent ingredient.",
+      "personalityquirk": "Zarik has a habit of humming a jaunty tune while brewing, and can get very upset if anyone disrupts his rhythm.",
       "image": "https://preview.redd.it/i-really-enjoy-making-character-concepts-for-dnd-and-here-v0-7djvh5cv439a1.png?width=640&crop=smart&auto=webp&s=df65473e9b8d448d0439c350f94c4076177c9cf9",
       "id": 2
     },
     {
-      "name": "Thorngrim Goldbeard",
+      "name": "Halgrim Stonefist",
       "race": "dwarf",
       "alignment": "5",
-      "quote": "I'm not always right, but I'm never wrong.",
-      "occupation": "brewmaster blacksmith",
-      "appearance": "Thorngrim stands at 4 feet tall with a thick, bushy beard and a muscular build. His skin is covered in scars from years of working in the forge, and his eyes twinkle with mischief.",
-      "personality": "Thorngrim is a boisterous and jovial dwarf, always looking for the next great adventure. He has a quick wit and a sharp tongue, and is known for his love of ale and weapons.",
-      "definingmoment": "Thorngrim once defeated a gang of bandits single-handedly using only his trusty warhammer and a barrel of ale. He still proudly displays the warhammer in his brewery as a reminder of his victory.",
-      "plothook": "Thorngrim hires the adventurers to help him recover a stolen keg of his famous ale from a rival brewer, but they soon discover that there is more to the situation than meets the eye.",
-      "secret": "Thorngrim is secretly a member of a secret society of dwarves who believe that ale is the key to unlocking the secrets of the universe.",
-      "personalityquirk": "Thorngrim has a habit of telling tall tales and exaggerating his accomplishments, but he always does it with a twinkle in his eye and a grin on his face.",
+      "quote": "Aye, I may be short, but I'll be the last one standing when the ale runs out!",
+      "occupation": "Tavern Brawler",
+      "appearance": "Halgrim is a stocky, muscular dwarf with a bushy brown beard and a bald head. He has a scar above his left eyebrow and a tattoo of a hammer on his right bicep.",
+      "personality": "Halgrim is fiercely loyal to his friends and enjoys nothing more than a good brawl. He is quick to anger, but just as quick to forgive.",
+      "definingmoment": "Halgrim's defining moment was when he stood up to a gang of orcs who were terrorizing his town. He fought them off single-handedly and emerged victorious.",
+      "plothook": "Halgrim is seeking revenge against the orc warlord who killed his brother in battle. He is willing to go to any lengths to get his revenge, including making a deal with a devil.",
+      "secret": "Halgrim is secretly in love with the town blacksmith, but is too afraid to tell her.",
+      "personalityquirk": "Halgrim has a habit of speaking in dwarven sayings and proverbs, even when they don't make sense in common.",
+      "image": "https://preview.redd.it/i-really-enjoy-making-character-concepts-for-dnd-and-here-v0-7djvh5cv439a1.png?width=640&crop=smart&auto=webp&s=df65473e9b8d448d0439c350f94c4076177c9cf9",
+      "id": 3
+    },
+    {
+      "name": "Rolen Stoneguard",
+      "race": "dwarf",
+      "alignment": "lawful good",
+      "quote": "I'll make sure you never forget the name Rolen Stoneguard!",
+      "occupation": "Brewery owner",
+      "appearance": "Rolen is a muscular dwarf with a thick brown beard and hair tied back in a ponytail. He wears a dark green tunic and brown pants, and always has a mug of ale in his hand.",
+      "personality": "Rolen is fiercely loyal to his friends and family, and will stop at nothing to protect them.",
+      "definingmoment": "When Rolen was young, his family's brewery was attacked by a group of orcs. Rolen fought them off and saved his family, but his father was killed in the attack. Since then, Rolen has dedicated his life to protecting his loved ones and his brewery.",
+      "plothook": "The players are hired by Rolen to investigate a series of thefts that have been occurring at his brewery. As they investigate, they discover that the thefts are being carried out by a rival brewery owner who wants to put Rolen out of business.",
+      "secret": "Rolen is secretly in love with a rival brewery owner's daughter, but he knows that their families would never approve of them being together.",
+      "personalityquirk": "Rolen always talks about his ale as if it were a person, and he gets offended if anyone insults it.",
       "image": "https://preview.redd.it/i-really-enjoy-making-character-concepts-for-dnd-and-here-v0-7djvh5cv439a1.png?width=640&crop=smart&auto=webp&s=df65473e9b8d448d0439c350f94c4076177c9cf9",
       "id": 4
+    },
+    {
+      "name": "Moth",
+      "race": "tabaxi",
+      "alignment": "chaotic good",
+      "quote": "I'm not afraid of the dark, I am the dark.",
+      "occupation": "Shadow Hunter",
+      "appearance": "Moth has black fur and piercing green eyes. She wears a midnight-colored cloak that drapes over her sleek form, and her claws are always sharpened.",
+      "personality": "Moth is cunning and resourceful, but deeply loyal to those she trusts.",
+      "definingmoment": "Moth discovered her ability to blend into the shadows while fleeing from an enemy in her youth, and has honed her skills ever since.",
+      "plothook": "Moth seeks to take down the corrupt government that rules her homeland, and is willing to do whatever it takes to see justice served. She's looking for allies to aid her in her mission.",
+      "secret": "Moth lost her family to the government's oppressive regime, and seeks revenge above all else.",
+      "personalityquirk": "Moth always speaks in a low, purring voice, no matter how serious the situation.",
+      "image": "https://preview.redd.it/i-really-enjoy-making-character-concepts-for-dnd-and-here-v0-7djvh5cv439a1.png?width=640&crop=smart&auto=webp&s=df65473e9b8d448d0439c350f94c4076177c9cf9",
+      "id": 5
     }
   ],
   "items": [
@@ -60,10 +90,64 @@
       "id": 5
     },
     {
-      "name": "The Chalice of Souls",
-      "description": "A beautifully crafted silver chalice with intricate designs etched on its surface. When in possession of the chalice, the wielder can capture the souls of defeated enemies or slain creatures by touching the rim of the chalice to their forehead. The chalice can hold up to 10 souls at a time. Once filled with souls, the chalice can be used to cast powerful spells or summon undead minions to do the bidding of the wielder. However, the souls trapped within the chalice are not content with their captivity and may try to influence or even possess the wielder, causing madness or worse. Only by releasing the souls back into the afterlife can the wielder be free of their influence.",
+      "name": "The Amulet of Secret Whispers",
+      "description": "This amulet is made of a delicate silver chain and features a small, intricately carved obsidian pendant. When worn, the wearer can hear the whispers of secrets that are spoken within a 30-foot radius. The amulet does not differentiate between languages or friend or foe, so it is up to the wearer to determine if the secrets are worth risking exposure. The wearer must attune to the amulet for 24 hours before gaining its effect.",
       "image": "https://mj-gallery.com/e1b6c0a8-cfa0-443b-b33a-ec999ffc9936/grid_0_640_N.webp",
       "id": 6
+    },
+    {
+      "name": "The Eye of Foresight",
+      "description": "This small glass orb is encased in a silver frame and hangs from a silver chain. When held up to the user's eye, they see a vision of a potential future event. However, the vision is not always clear and can be misinterpreted. Once used, the Eye of Foresight cannot be used again for 24 hours. Additionally, the use of the Eye causes a strange sensation in the user's eye and can cause temporary blindness in that eye for 1d4 hours.",
+      "image": "https://mj-gallery.com/e1b6c0a8-cfa0-443b-b33a-ec999ffc9936/grid_0_640_N.webp",
+      "id": 7
+    },
+    {
+      "name": "Ring of Fate",
+      "description": "This golden ring has an intricate engraving of a clock on its surface. Once per day, the wearer can turn the clock's hands backwards, reversing time by one hour. This can be used to undo a single action or decision made within the last hour, as if it never happened. However, the ring's power comes at a cost. Each use of the Ring of Fate causes the wearer to age one year. Overuse can lead to premature aging or even death, making it a high-risk, high-reward item to use.",
+      "image": "https://mj-gallery.com/e1b6c0a8-cfa0-443b-b33a-ec999ffc9936/grid_0_640_N.webp",
+      "id": 8
+    },
+    {
+      "name": "The Tome of Temporal Manipulation",
+      "description": "A large leather-bound tome with intricately drawn sigils and runes covering its surface. It radiates a faint blue aura and hums with a gentle energy.",
+      "abilities": [
+        {
+          "name": "Chronomancy",
+          "description": "The user gains the ability to manipulate time. They can slow or speed up time in a small area for a short period of time, allowing them to dodge attacks or gain an advantage in combat. This ability can also be used outside of combat to quickly age or de-age objects or living creatures."
+        },
+        {
+          "name": "Temporal Sight",
+          "description": "The user gains the ability to see and interact with echoes of past events in a particular location. They can view the events as if they were happening in real-time and gain valuable information or insights into past events."
+        },
+        {
+          "name": "Time Travel",
+          "description": "The user gains the ability to travel through time. They can travel to specific events in the past and change the outcome, or travel to the future to gain valuable information or insights into future events. However, altering the timeline can have unforeseen consequences and should be used with caution."
+        }
+      ],
+      "image": "https://mj-gallery.com/e1b6c0a8-cfa0-443b-b33a-ec999ffc9936/grid_0_640_N.webp",
+      "id": 9
+    }
+  ],
+  "npc_items": [
+    {
+      "npc_id": 2,
+      "item_id": 6,
+      "id": 1
+    },
+    {
+      "npc_id": 3,
+      "item_id": 7,
+      "id": 2
+    },
+    {
+      "npc_id": 4,
+      "item_id": 8,
+      "id": 3
+    },
+    {
+      "npc_id": 5,
+      "item_id": 9,
+      "id": 4
     }
   ],
   "categories": [
