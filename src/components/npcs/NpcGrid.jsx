@@ -2,7 +2,7 @@ import { SimpleGrid, Skeleton } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import NpcCard from "./NpcCard";
 import NpcCreate from "./NpcCreate";
-import buildNpcTesting from "../../modules/buildNpcTesting";
+import buildNpc from "../../modules/buildNpc";
 
 const NpcGrid = () => {
   const [npcs, setNpcs] = useState([]);

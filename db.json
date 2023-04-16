@@ -48,9 +48,16 @@
   ],
   "items": [
     {
-      "name": "Kethryllia Shadowborn",
-      "image": "https://preview.redd.it/i-really-enjoy-making-character-concepts-for-dnd-and-here-v0-7djvh5cv439a1.png?width=640&crop=smart&auto=webp&s=df65473e9b8d448d0439c350f94c4076177c9cf9",
-      "id": 2
+      "name": "The Book of Forgotten Memories",
+      "description": "This leather-bound book is filled with blank pages that magically fill with the memories of the people who hold it. When a person first touches the book, they must make a Wisdom saving throw (DC 15). On a failed save, they lose a random memory from their past. On a successful save, they gain insight into a previously forgotten memory. The book can be used once per day, and each use causes the pages to turn yellow and brittle. If the book is used too many times, it will crumble to dust.",
+      "image": "https://mj-gallery.com/e1b6c0a8-cfa0-443b-b33a-ec999ffc9936/grid_0_640_N.webp",
+      "id": 3
+    },
+    {
+      "name": "The Amulet of Unbroken Will",
+      "description": "This amulet is made of a silver chain that holds a clear crystal in the center. When worn, it grants the wearer the ability to maintain their mental focus and resist any attempts to break their will. The amulet's power can be activated by the wearer, and any mental effects or conditions that would cause the wearer to lose control of their actions or thoughts are instantly dispelled. This includes charms, curses, and other forms of magical or mental control. The amulet also provides the wearer with resistance to psychic damage.",
+      "image": "https://mj-gallery.com/e1b6c0a8-cfa0-443b-b33a-ec999ffc9936/grid_0_640_N.webp",
+      "id": 4
     }
   ],
   "categories": [

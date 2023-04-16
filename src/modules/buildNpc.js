@@ -2,35 +2,43 @@ import getContent from "./getContent"
 import getImage from "./getImage"
 import getTurbo from "./getTurbo";
 
-async function buildNpc() {
-    const image = getImage("A fantasy character. The art style should be professional fantasy", 1);
-    const character = await getTurbo(`Create a fantasy style character with these attributes:
+async function buildNpcTesting(sliderValues) {
 
-    name: 
-    race: 
-    quote: 
-    occupation: 
-    backstory:
-    personality: 
-  
-    (separate each attribute with a comma and a space, do not include the attribute names in your response. they must be in the order I listed them to you.`, 1);
+    const { alignment } = sliderValues;
+    
+    const response = await getTurbo(`Please create a dnd npc character that will add depth and flavor to our dnd campaign. 
 
-    const [name, race, quote, occupation, backstory, personality] = character.split(",").map((str) => str.trim());
+Write in present tense, and you absolutely must provide a response that is formatted for JSON. here is the syntax and attributes you must use:
 
-
-    // const name = getContent("create a fantasy style character name. It must be first name and last name only", 1);
-    // const race = await getContent("create a fantasy style character race. It can be up to two words long but no more", 1 );
-    // const flavor = getContent(`context: name: ${name} race: ${race} . create this fantasy style character quote. It must be only one sentence long. It should express the characters personality.`, 1);
-    // const profession = getContent("create a fantasy character profession. It should be no more than two words", 1);
-    // const backstory = getContent(`context: name: ${name} race: ${race} create this characters backstory. it should be set in a fantasy world. do not reference its race but you can reference its name in the story.`, 1);
- 
-    console.log([name, race, quote, occupation, backstory, personality])
-
-    return new Promise((resolve, reject) => {
-        Promise.all([image, name, race, quote, occupation, backstory, personality])
-        .then((res) => { resolve(res) })
-        .catch((err) => { reject(err) })
-    })
+{
+"name": "", 
+"race": "", //you must choose completely randomly choose from: "orc", "gnome", "human", "elf", "tabaxi", "dwarf" . 
+"alignment": "${alignment}"
+"quote": "",
+"occupation": "", //be creative. limit to 2 words
+"appearance": "", //a Dall-E prompt description. max of 2 sentences
+"personality": "", //max 1 sentence
+"definingmoment": "", //max 2 sentences. dont use the word 'defining moment' in the response.
+"plothook": "", //max 2 sentences
+"secret": "" //max 1 sentence. be creative and unique.
+"personalityquirk": "" //max 1 sentence. 
 }
 
-export default buildNpc;
+`, 1);
+
+
+ const character = JSON.parse(response);
+
+
+// const imageResponse = await getImage(`using a fantasy art style, create a fantasy character with a race of ${character.race} with this description. + ${character.appearance}`, 1);
+// character.image = imageResponse
+
+    
+character.image = "https://preview.redd.it/i-really-enjoy-making-character-concepts-for-dnd-and-here-v0-7djvh5cv439a1.png?width=640&crop=smart&auto=webp&s=df65473e9b8d448d0439c350f94c4076177c9cf9"
+
+console.log(alignment)
+
+    return character
+}
+
+export default buildNpcTesting;

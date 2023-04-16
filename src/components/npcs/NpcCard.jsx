@@ -15,12 +15,7 @@ import { Link } from "react-router-dom";
 
 const NpcCard = ({ name, id, image, onDelete }) => {
   return (
-    <Card
-      zIndex={5}
-      borderRadius={3}
-      height={"min-content"}
-      overflow={"hidden"}
-    >
+    <Card borderRadius={3} height={"min-content"} overflow={"hidden"}>
       {" "}
       <Link to={"http://localhost:5173/npcs/" + id}>
         <Image
@@ -42,11 +37,11 @@ const NpcCard = ({ name, id, image, onDelete }) => {
         </Text>
         <HStack justify={"space-between"}>
           <HStack justify={"end"}>
-            <Box zIndex={10} onClick={() => onDelete(id)}>
+            <Box onClick={() => onDelete(id)}>
               <FaTrash size={13} />
             </Box>
 
-            <FaEdit zIndex={10} />
+            <FaEdit />
           </HStack>
         </HStack>
       </CardFooter>
