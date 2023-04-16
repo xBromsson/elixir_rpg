@@ -1,40 +1,28 @@
-import { SimpleGrid } from "@chakra-ui/react";
+import { SimpleGrid, Spinner } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 import CategoryCard from "./CategoryCard";
 
-const categories = [
-  {
-    name: "Worlds",
-    count: 1,
-  },
-  {
-    name: "Cities",
-    count: 1,
-  },
-  {
-    name: "Buildings",
-    count: 1,
-  },
-  {
-    name: "NPCs",
-    count: 5,
-  },
-  {
-    name: "Items",
-    count: 5,
-  },
-];
-
 const CategoryGrid = () => {
-  return (
+  const [categories, setCategories] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    setIsLoading(true);
+    fetch("http://localhost:3000/categories")
+      .then((response) => response.json())
+      .then((res) => setCategories(res))
+      .catch((err) => console.error("Error fetching Categories:", err))
+      .finally(() => setIsLoading(false));
+  }, []);
+
+  return !isLoading ? (
     <SimpleGrid columns={1} spacing={5}>
       {categories.map((category) => (
-        <CategoryCard
-          key={category.name}
-          name={category.name}
-          count={category.count}
-        ></CategoryCard>
+        <CategoryCard key={category.name} name={category.name}></CategoryCard>
       ))}
     </SimpleGrid>
+  ) : (
+    <Spinner />
   );
 };
 

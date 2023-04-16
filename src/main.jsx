@@ -4,7 +4,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
 import theme from "./theme";
 import App from "./App";
-import NpcGrid from "./components/npcs/NpcGrid";
+import NpcGrid, { loader as npcGridLoader } from "./components/npcs/NpcGrid";
 import ItemGrid, {
   loader as itemGridLoader,
 } from "./components/items/ItemGrid";
@@ -23,6 +23,7 @@ const router = createBrowserRouter([
       {
         path: "/npcs/",
         element: <NpcGrid />,
+        loader: npcGridLoader,
       },
       {
         path: "npcs/:id",

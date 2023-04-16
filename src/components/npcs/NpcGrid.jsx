@@ -1,11 +1,12 @@
 import { SimpleGrid, Skeleton } from "@chakra-ui/react";
+import { useLoaderData } from "react-router-dom";
 import { useState, useEffect } from "react";
 import NpcCard from "./NpcCard";
 import NpcCreate from "./NpcCreate";
 import buildNpc from "../../modules/buildNpc";
 
 const NpcGrid = () => {
-  const [npcs, setNpcs] = useState([]);
+  const [npcs, setNpcs] = useState(useLoaderData());
   const [isLoading, setIsLoading] = useState(false);
   const [sliderValues, setSliderValues] = useState({
     alignment: 5,
@@ -30,7 +31,7 @@ const NpcGrid = () => {
 
   const handleCreate = async () => {
     setIsLoading(true);
-    const npcData = await buildNpcTesting(sliderValues);
+    const npcData = await buildNpc(sliderValues);
 
     // Create an NPC on the server-side
     fetch("http://localhost:3000/npcs", {
@@ -79,3 +80,8 @@ const NpcGrid = () => {
 };
 
 export default NpcGrid;
+
+export async function loader() {
+  const data = await fetch(`http://localhost:3000/npcs`);
+  return data;
+}

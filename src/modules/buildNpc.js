@@ -2,11 +2,14 @@ import getContent from "./getContent"
 import getImage from "./getImage"
 import getTurbo from "./getTurbo";
 
-async function buildNpcTesting(sliderValues) {
+async function buildNpc(sliderValues) {
 
     const { alignment } = sliderValues;
     
-    const response = await getTurbo(`Please create a dnd npc character that will add depth and flavor to our dnd campaign. 
+    const response = await getTurbo(`"You are a master of the art of creating a unique and memorable dnd npc character. 
+    Your npc characters are full of rich duality and unique characteristics."`, 
+    
+    `Please create a dnd npc character that will add depth and flavor to our dnd campaign. 
 
 Write in present tense, and you absolutely must provide a response that is formatted for JSON. here is the syntax and attributes you must use:
 
@@ -41,4 +44,4 @@ console.log(alignment)
     return character
 }
 
-export default buildNpcTesting;
+export default buildNpc;

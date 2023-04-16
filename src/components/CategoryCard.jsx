@@ -1,4 +1,4 @@
-import { Card, CardBody, Heading } from "@chakra-ui/react";
+import { Card, Heading } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
 const CategoryCard = ({ name }) => {

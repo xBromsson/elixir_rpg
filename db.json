@@ -31,19 +31,19 @@
       "id": 2
     },
     {
-      "name": "Gormash the Bloody",
-      "race": "orc",
-      "alignment": "chaotic evil",
-      "quote": "I live for the thrill of battle and the spill of blood.",
-      "occupation": "mercenary captain",
-      "appearance": "Gormash is a hulking brute of an orc, standing at over 7 feet tall with rippling muscles and jagged scars covering his green skin. He exudes a savage intensity that is matched only by the ferocity of his battle cry.",
-      "personality": "Gormash is a ruthless and bloodthirsty warrior who will stop at nothing to achieve victory in battle. He has little regard for the lives of others and revels in the chaos and destruction of combat.",
-      "definingmoment": "Gormash's thirst for blood and conquest was ignited when he witnessed the slaughter of his entire clan at the hands of a rival orc tribe. He swore to avenge his fallen kin and has been waging a brutal campaign of revenge ever since.",
-      "plothook": "Gormash and his band of mercenaries have been hired by a local warlord to aid in their campaign of conquest. As the party crosses paths with Gormash, they must navigate the dangerous and unpredictable world of mercenary politics and decide where their loyalties lie.",
-      "secret": "Despite his fearsome reputation, Gormash harbors a deep-seated fear of magic, which he believes to be a tool of weakness and cowardice.",
-      "personalityquirk": "Gormash has a habit of referring to himself in the third person, as if he is narrating his own story.",
+      "name": "Thorngrim Goldbeard",
+      "race": "dwarf",
+      "alignment": "5",
+      "quote": "I'm not always right, but I'm never wrong.",
+      "occupation": "brewmaster blacksmith",
+      "appearance": "Thorngrim stands at 4 feet tall with a thick, bushy beard and a muscular build. His skin is covered in scars from years of working in the forge, and his eyes twinkle with mischief.",
+      "personality": "Thorngrim is a boisterous and jovial dwarf, always looking for the next great adventure. He has a quick wit and a sharp tongue, and is known for his love of ale and weapons.",
+      "definingmoment": "Thorngrim once defeated a gang of bandits single-handedly using only his trusty warhammer and a barrel of ale. He still proudly displays the warhammer in his brewery as a reminder of his victory.",
+      "plothook": "Thorngrim hires the adventurers to help him recover a stolen keg of his famous ale from a rival brewer, but they soon discover that there is more to the situation than meets the eye.",
+      "secret": "Thorngrim is secretly a member of a secret society of dwarves who believe that ale is the key to unlocking the secrets of the universe.",
+      "personalityquirk": "Thorngrim has a habit of telling tall tales and exaggerating his accomplishments, but he always does it with a twinkle in his eye and a grin on his face.",
       "image": "https://preview.redd.it/i-really-enjoy-making-character-concepts-for-dnd-and-here-v0-7djvh5cv439a1.png?width=640&crop=smart&auto=webp&s=df65473e9b8d448d0439c350f94c4076177c9cf9",
-      "id": 3
+      "id": 4
     }
   ],
   "items": [
@@ -54,27 +54,33 @@
       "id": 3
     },
     {
-      "name": "The Amulet of Unbroken Will",
-      "description": "This amulet is made of a silver chain that holds a clear crystal in the center. When worn, it grants the wearer the ability to maintain their mental focus and resist any attempts to break their will. The amulet's power can be activated by the wearer, and any mental effects or conditions that would cause the wearer to lose control of their actions or thoughts are instantly dispelled. This includes charms, curses, and other forms of magical or mental control. The amulet also provides the wearer with resistance to psychic damage.",
+      "name": "The Eye of the Oracle",
+      "description": "A small, intricately carved crystal, shaped like an eye. When gazed into, the beholder can see into the future, but only for a single moment at a time. The visions are often cryptic and require interpretation, but they can be incredibly helpful in predicting what lies ahead.",
       "image": "https://mj-gallery.com/e1b6c0a8-cfa0-443b-b33a-ec999ffc9936/grid_0_640_N.webp",
-      "id": 4
+      "id": 5
+    },
+    {
+      "name": "The Chalice of Souls",
+      "description": "A beautifully crafted silver chalice with intricate designs etched on its surface. When in possession of the chalice, the wielder can capture the souls of defeated enemies or slain creatures by touching the rim of the chalice to their forehead. The chalice can hold up to 10 souls at a time. Once filled with souls, the chalice can be used to cast powerful spells or summon undead minions to do the bidding of the wielder. However, the souls trapped within the chalice are not content with their captivity and may try to influence or even possess the wielder, causing madness or worse. Only by releasing the souls back into the afterlife can the wielder be free of their influence.",
+      "image": "https://mj-gallery.com/e1b6c0a8-cfa0-443b-b33a-ec999ffc9936/grid_0_640_N.webp",
+      "id": 6
     }
   ],
   "categories": [
     {
-      "name": "Worlds"
+      "name": "worlds"
     },
     {
-      "name": "Cities"
+      "name": "cities"
     },
     {
-      "name": "Buildings"
+      "name": "buildings"
     },
     {
-      "name": "NPCs"
+      "name": "npcs"
     },
     {
-      "name": "Items"
+      "name": "items"
     }
   ]
 }

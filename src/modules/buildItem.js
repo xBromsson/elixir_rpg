@@ -9,12 +9,14 @@ async function buildItem(sliderValues) {
     
     `Please create a unique item that will add depth and flavor to our dnd campaign. 
 
-    Write in present tense, and you absolutely must provide a response that is formatted for JSON. here is the syntax and attributes you must use:
+    You absolutely must provide a response that is formatted for JSON. here is the syntax and attributes you must use:
 
     {
     "name": "", 
     "description": "",
     }
+
+    remember it must be in JSON format. 
 
     `, 1);
 
