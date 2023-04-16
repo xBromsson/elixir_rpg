@@ -24,7 +24,7 @@ const categories = [
   },
 ];
 
-const CategoryList = () => {
+const CategoryGrid = () => {
   return (
     <SimpleGrid columns={1} spacing={5}>
       {categories.map((category) => (
@@ -38,4 +38,4 @@ const CategoryList = () => {
   );
 };
 
-export default CategoryList;
+export default CategoryGrid;

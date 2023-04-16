@@ -1,11 +1,4 @@
-import {
-  Container,
-  Image,
-  Heading,
-  Text,
-  Center,
-  SimpleGrid,
-} from "@chakra-ui/react";
+import { Container, Image, Heading, Text, SimpleGrid } from "@chakra-ui/react";
 import { useLoaderData } from "react-router-dom";
 
 function NpcDetail() {

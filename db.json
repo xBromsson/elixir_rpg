@@ -1,20 +1,73 @@
 {
   "npcs": [
     {
-      "name": "Nymia Starweaver",
-      "race": "Half-Elf",
-      "alignment": "neutral good",
-      "quote": "Magic is a gift, but it's only through hard work and determination that one can wield it properly.",
-      "occupation": "Arcane Scholar",
-      "appearance": "Nymia is a slender half-elf with long, flowing silver hair and piercing blue eyes. She wears a deep blue robe adorned with intricate silver embroidery, and carries a gnarled staff that glows with arcane energy.",
-      "personality": "Nymia is a serious and studious individual, but always willing to lend her knowledge and assistance to those in need.",
-      "definingmoment": "Nymia's life changed when she witnessed the destruction wrought by a group of reckless adventurers who had carelessly wielded an artifact of immense power. From then on, she has dedicated her life to studying and understanding magic, in order to prevent such disasters from happening again.",
-      "plothook": "Nymia seeks out the party, seeking their help in recovering a stolen grimoire containing a powerful but dangerous spell. She believes that the individual who stole it may be planning to use it for nefarious purposes.",
-      "secret": "Nymia's mother was an elf, but her father was a powerful human sorcerer whom she never got to know.",
-      "quirk": "Nymia has a habit of talking to herself while studying, which can make her seem a bit eccentric.",
+      "name": "Garrick Stonehand",
+      "race": "dwarf",
+      "alignment": "5",
+      "quote": "Gold is temporary, but honor is forever.",
+      "occupation": "Brewer and Blacksmith",
+      "appearance": "Garrick has a thick brown beard that falls all the way down to his chest. His skin is rough and leathery from years spent in front of hot forges.",
+      "personality": "Garrick is honest to a fault, and he takes great pride in his work. He is quick to make friends, but slow to forgive those who cross him or betray his trust.",
+      "definingmoment": "A few years ago, Garrick discovered that a group of bandits had been raiding small towns in the area. He rallied a group of fellow dwarves and led a successful attack against the bandit hideout, earning the respect of many in the community.",
+      "plothook": "Garrick has been tasked with crafting a special weapon for the local lord, but he needs help finding a rare ingredient. He's willing to pay adventurers handsomely for their assistance.",
+      "secret": "Garrick has a secret stash of rare and valuable gems that he keeps hidden away in his workshop. He's never told anyone about it, and he's not likely to anytime soon.",
+      "personalityquirk": "Garrick has a habit of muttering to himself when he's deep in thought, and sometimes he forgets that other people are around.",
       "image": "https://preview.redd.it/i-really-enjoy-making-character-concepts-for-dnd-and-here-v0-7djvh5cv439a1.png?width=640&crop=smart&auto=webp&s=df65473e9b8d448d0439c350f94c4076177c9cf9",
-      "id": 56
+      "id": 1
+    },
+    {
+      "name": "Kethryllia Shadowborn",
+      "race": "elf",
+      "alignment": "chaotic good",
+      "quote": "I learned everything I know on the streets, and I'm not afraid to use it.",
+      "occupation": "Thief Assassin",
+      "appearance": "Kethryllia is a lithe elf with jet black hair that cascades down her back. She has piercing blue eyes that seem to look straight through you, and a smirk that never leaves her lips.",
+      "personality": "Kethryllia is confident, cunning, and quick-witted. She trusts no one, but is always willing to lend a helping hand to those in need.",
+      "definingmoment": "Kethryllia's life changed forever when she was forced to kill her own brother in self-defense. She vowed to never let anyone get close enough to hurt her like that again.",
+      "plothook": "Kethryllia is a master thief and assassin who has been hired to steal a powerful artifact from a wealthy noble. She needs the party's help to pull off the heist, but can they trust her?",
+      "secret": "Kethryllia is actually a member of a secret organization of assassins who are working to take down a corrupt government from the inside.",
+      "personalityquirk": "Kethryllia can't resist the temptation to steal something shiny and valuable whenever she sees it.",
+      "image": "https://preview.redd.it/i-really-enjoy-making-character-concepts-for-dnd-and-here-v0-7djvh5cv439a1.png?width=640&crop=smart&auto=webp&s=df65473e9b8d448d0439c350f94c4076177c9cf9",
+      "id": 2
+    },
+    {
+      "name": "Gormash the Bloody",
+      "race": "orc",
+      "alignment": "chaotic evil",
+      "quote": "I live for the thrill of battle and the spill of blood.",
+      "occupation": "mercenary captain",
+      "appearance": "Gormash is a hulking brute of an orc, standing at over 7 feet tall with rippling muscles and jagged scars covering his green skin. He exudes a savage intensity that is matched only by the ferocity of his battle cry.",
+      "personality": "Gormash is a ruthless and bloodthirsty warrior who will stop at nothing to achieve victory in battle. He has little regard for the lives of others and revels in the chaos and destruction of combat.",
+      "definingmoment": "Gormash's thirst for blood and conquest was ignited when he witnessed the slaughter of his entire clan at the hands of a rival orc tribe. He swore to avenge his fallen kin and has been waging a brutal campaign of revenge ever since.",
+      "plothook": "Gormash and his band of mercenaries have been hired by a local warlord to aid in their campaign of conquest. As the party crosses paths with Gormash, they must navigate the dangerous and unpredictable world of mercenary politics and decide where their loyalties lie.",
+      "secret": "Despite his fearsome reputation, Gormash harbors a deep-seated fear of magic, which he believes to be a tool of weakness and cowardice.",
+      "personalityquirk": "Gormash has a habit of referring to himself in the third person, as if he is narrating his own story.",
+      "image": "https://preview.redd.it/i-really-enjoy-making-character-concepts-for-dnd-and-here-v0-7djvh5cv439a1.png?width=640&crop=smart&auto=webp&s=df65473e9b8d448d0439c350f94c4076177c9cf9",
+      "id": 3
     }
   ],
-  "items": []
+  "items": [
+    {
+      "name": "Kethryllia Shadowborn",
+      "image": "https://preview.redd.it/i-really-enjoy-making-character-concepts-for-dnd-and-here-v0-7djvh5cv439a1.png?width=640&crop=smart&auto=webp&s=df65473e9b8d448d0439c350f94c4076177c9cf9",
+      "id": 2
+    }
+  ],
+  "categories": [
+    {
+      "name": "Worlds"
+    },
+    {
+      "name": "Cities"
+    },
+    {
+      "name": "Buildings"
+    },
+    {
+      "name": "NPCs"
+    },
+    {
+      "name": "Items"
+    }
+  ]
 }

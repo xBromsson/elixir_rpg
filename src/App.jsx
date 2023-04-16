@@ -1,6 +1,6 @@
 import { Grid, GridItem, Text } from "@chakra-ui/react";
 
-import CategoryList from "./components/CategoryList";
+import CategoryGrid from "./components/CategoryGrid";
 
 import { Outlet } from "react-router-dom";
 
@@ -14,7 +14,7 @@ function App() {
       templateRows={"125px 1fr"}
     >
       <GridItem px={5} area={"nav"}>
-        <CategoryList></CategoryList>
+        <CategoryGrid></CategoryGrid>
       </GridItem>
       <GridItem alignSelf={"center"} area={"header"} px={5}>
         {" "}

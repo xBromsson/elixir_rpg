@@ -2,11 +2,11 @@ import { SimpleGrid, Skeleton } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import NpcCard from "./NpcCard";
 import NpcCreate from "./NpcCreate";
-import buildNpcTesting from "../modules/buildNpcTesting";
+import buildNpcTesting from "../../modules/buildNpcTesting";
 
 const NpcGrid = () => {
-  const [isLoading, setIsLoading] = useState(false);
   const [npcs, setNpcs] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const [sliderValues, setSliderValues] = useState({
     alignment: 5,
   });
@@ -63,8 +63,6 @@ const NpcGrid = () => {
           id={n.id}
           image={n.image}
           name={n.name}
-          race={n.race}
-          quote={n.quote}
           onDelete={handleDelete}
         ></NpcCard>
       ))}
