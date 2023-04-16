@@ -15,7 +15,6 @@ Leverage the power of ai models to amplify the users creation experience when it
       - edit maps using dalle?
     - Plot creation using Ai. Contextual? 
 
-  
   - Other Possible Features of Elixir_RPG:
     - Pre-Trained Ai Models for specific RP content
     - Quest Creator
