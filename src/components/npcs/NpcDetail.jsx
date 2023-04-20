@@ -16,6 +16,11 @@ import {
   CardFooter,
   HStack,
   Spacer,
+  Tabs,
+  TabList,
+  Tab,
+  TabPanels,
+  TabPanel,
 } from "@chakra-ui/react";
 import { useLoaderData } from "react-router-dom";
 import ItemCard from "../items/ItemCard";
@@ -25,91 +30,96 @@ function NpcDetail() {
 
   return (
     <Card>
-      <CardBody>
-        {" "}
-        <Grid
-          h={"100 vh"}
-          templateAreas={`"left right"
-                    "items items"`}
-          templateColumns={"35% 1fr"}
-          templateRows={"1fr 1fr"}
-        >
-          <GridItem p={5} area={"left"}>
-            <Card align={"center"} overflow={"hidden"}>
-              {" "}
-              <Image width={"100%"} src={npc.image}></Image>
-              <CardFooter>
-                {" "}
-                <Text as={"i"}>"{npc.quote}"</Text>
-              </CardFooter>
-            </Card>
-          </GridItem>
+      <Tabs variant="enclosed">
+        <TabList mb="1em">
+          <Tab>Overview</Tab>
+          <Tab>Items</Tab>
+          <Tab>Notes</Tab>
+        </TabList>
 
-          <GridItem p={5} area={"right"}>
-            <Card h={"100%"}>
+        <TabPanels>
+          <TabPanel>
+            {/* Overview Tab */}
+            <Card>
               <CardBody>
                 {" "}
-                <Stack w={"50%"}>
-                  <HStack>
-                    <Heading as="h1" size="xl">
-                      {npc.name}
-                    </Heading>
-                  </HStack>
-                  <Divider width={"65%"} />
-                  <HStack>
-                    <Heading size={"md"}>{npc.race}</Heading>
-                    <Text size="md">| {npc.occupation}</Text>
-                    <Text fontSize={"md"}>| {npc.alignment}</Text>
-                  </HStack>
-                  <Spacer />
-                  <Spacer />
-                  <Heading fontSize={"md"}>Back Story</Heading>
-                  <Text>{npc.definingmoment}</Text>
-                  <Spacer />
-                  <Heading fontSize={"md"}>Personality</Heading>
-                  <Text>{npc.personality}</Text>
-                  <Spacer />
-                  <Heading fontSize={"md"}>Quirk</Heading>
-                  <Text>{npc.personalityquirk}</Text>
-                  <Spacer />
-                  <Heading fontSize={"md"}>Plot Hook</Heading>
-                  <Text>{npc.plothook}</Text> <Spacer />
-                  <Heading fontSize={"md"}>Secret</Heading>
-                  <Text>{npc.secret}</Text>
-                  <Spacer />
-                </Stack>
+                <Grid
+                  h={"100 vh"}
+                  templateAreas={`"left right"`}
+                  templateColumns={"35% 1fr"}
+                  templateRows={"1fr"}
+                >
+                  <GridItem p={5} area={"left"}>
+                    <Card align={"center"} overflow={"hidden"}>
+                      {" "}
+                      <Image width={"100%"} src={npc.image}></Image>
+                      <CardFooter>
+                        {" "}
+                        <Text as={"i"}>"{npc.quote}"</Text>
+                      </CardFooter>
+                    </Card>
+                  </GridItem>
+
+                  <GridItem p={5} area={"right"}>
+                    <Card h={"100%"}>
+                      <CardBody>
+                        {" "}
+                        <Stack w={"50%"}>
+                          <HStack>
+                            <Heading as="h1" size="xl">
+                              {npc.name}
+                            </Heading>
+                          </HStack>
+                          <Divider width={"65%"} />
+                          <HStack>
+                            <Heading size={"md"}>{npc.race}</Heading>
+                            <Text size="md">| {npc.occupation}</Text>
+                            <Text fontSize={"md"}>| {npc.alignment}</Text>
+                          </HStack>
+                          <Spacer />
+                          <Spacer />
+                          <Heading fontSize={"md"}>Back Story</Heading>
+                          <Text>{npc.definingmoment}</Text>
+                          <Spacer />
+                          <Heading fontSize={"md"}>Personality</Heading>
+                          <Text>{npc.personality}</Text>
+                          <Spacer />
+                          <Heading fontSize={"md"}>Quirk</Heading>
+                          <Text>{npc.personalityquirk}</Text>
+                          <Spacer />
+                          <Heading fontSize={"md"}>Plot Hook</Heading>
+                          <Text>{npc.plothook}</Text> <Spacer />
+                          <Heading fontSize={"md"}>Secret</Heading>
+                          <Text>{npc.secret}</Text>
+                          <Spacer />
+                        </Stack>
+                      </CardBody>
+                    </Card>
+                  </GridItem>
+                </Grid>
               </CardBody>
             </Card>
-          </GridItem>
+          </TabPanel>
+          <TabPanel>
+            {/* Items Tab */}
 
-          <GridItem area={"items"}>
-            <Card w={"50%"}>
-              <CardHeader>
-                {" "}
-                <Heading as="h1" size="xl">
-                  Items:
-                </Heading>
-              </CardHeader>
-
-              <CardBody>
-                <SimpleGrid columns={4}>
-                  {" "}
-                  {items.map((item) => {
-                    return (
-                      <ItemCard
-                        key={item.id}
-                        id={item.id}
-                        name={item.name}
-                        image={item.image}
-                      ></ItemCard>
-                    );
-                  })}
-                </SimpleGrid>
-              </CardBody>
-            </Card>
-          </GridItem>
-        </Grid>
-      </CardBody>
+            <SimpleGrid columns={[1, 2, 4, 5, 6]} spacing={5}>
+              {items.map((item) => (
+                <ItemCard
+                  key={item.id}
+                  id={item.id}
+                  name={item.name}
+                  image={item.image}
+                ></ItemCard>
+              ))}
+            </SimpleGrid>
+          </TabPanel>
+          <TabPanel>
+            {/* Notes Tab */}
+            {/* Empty for now */}
+          </TabPanel>
+        </TabPanels>
+      </Tabs>
     </Card>
   );
 }
