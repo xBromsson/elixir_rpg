@@ -1,6 +1,15 @@
-import { SimpleGrid, Skeleton } from "@chakra-ui/react";
+import {
+  SimpleGrid,
+  InputGroup,
+  InputRightElement,
+  Input,
+  Box,
+  HStack,
+  Button,
+} from "@chakra-ui/react";
 import { useLoaderData } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { FaFilter, FaSort, FaSearch } from "react-icons/fa";
 import NpcCard from "./NpcCard";
 import NpcCreate from "./NpcCreate";
 import buildNpc from "../../modules/buildNpc";
@@ -101,23 +110,43 @@ const NpcGrid = () => {
   };
 
   return (
-    <SimpleGrid columns={[1, 2, 4, 5, 6]} spacing={5}>
-      {npcs.map((n) => (
-        <NpcCard
-          key={n.id}
-          id={n.id}
-          image={n.image}
-          name={n.name}
-          onDelete={handleDelete}
-        ></NpcCard>
-      ))}
+    <Box>
+      <HStack w={"30%"} py={3}>
+        <InputGroup>
+          <Input></Input>
+          <InputRightElement>
+            <Button p={3}>
+              <FaSearch size={"100%"} />
+            </Button>
+          </InputRightElement>
+        </InputGroup>
 
-      <NpcCreate
-        onCreate={handleCreate}
-        onSliderChange={handleSliderChange}
-        isLoading={isLoading}
-      ></NpcCreate>
-    </SimpleGrid>
+        <Button>
+          <FaFilter />
+        </Button>
+        <Button>
+          <FaSort />
+        </Button>
+      </HStack>
+
+      <SimpleGrid columns={[1, 2, 4, 5, 6]} spacing={5}>
+        {npcs.map((n) => (
+          <NpcCard
+            key={n.id}
+            id={n.id}
+            image={n.image}
+            name={n.name}
+            onDelete={handleDelete}
+          ></NpcCard>
+        ))}
+
+        <NpcCreate
+          onCreate={handleCreate}
+          onSliderChange={handleSliderChange}
+          isLoading={isLoading}
+        ></NpcCreate>
+      </SimpleGrid>
+    </Box>
   );
 };
 
