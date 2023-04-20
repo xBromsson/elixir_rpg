@@ -1,4 +1,22 @@
-import { Container, Image, Heading, Text, SimpleGrid } from "@chakra-ui/react";
+import {
+  Stack,
+  StackDivider,
+  Divider,
+  Box,
+  Container,
+  Image,
+  Heading,
+  Text,
+  SimpleGrid,
+  Grid,
+  GridItem,
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  HStack,
+  Spacer,
+} from "@chakra-ui/react";
 import { useLoaderData } from "react-router-dom";
 import ItemCard from "../items/ItemCard";
 
@@ -6,56 +24,93 @@ function NpcDetail() {
   const { items, ...npc } = useLoaderData();
 
   return (
-    <SimpleGrid columns={2}>
-      <Container>
-        <Image src={npc.image}></Image>
+    <Card>
+      <CardBody>
+        {" "}
+        <Grid
+          h={"100 vh"}
+          templateAreas={`"left right"
+                    "items items"`}
+          templateColumns={"35% 1fr"}
+          templateRows={"1fr 1fr"}
+        >
+          <GridItem p={5} area={"left"}>
+            <Card align={"center"} overflow={"hidden"}>
+              {" "}
+              <Image width={"100%"} src={npc.image}></Image>
+              <CardFooter>
+                {" "}
+                <Text as={"i"}>"{npc.quote}"</Text>
+              </CardFooter>
+            </Card>
+          </GridItem>
 
-        <Text as={"i"} textAlign={"center"}>
-          "{npc.quote}"
-        </Text>
-        <Text fontSize={"xl"}>Appearance</Text>
-        <Text>{npc.appearance}</Text>
-        <Text fontSize={"xl"}>ITEMS</Text>
-        <SimpleGrid columns={2}>
-          {" "}
-          {items.map((item) => {
-            return (
-              <ItemCard
-                key={item.id}
-                id={item.id}
-                name={item.name}
-                image={item.image}
-              ></ItemCard>
-            );
-          })}
-        </SimpleGrid>
-      </Container>
-      <Container>
-        <Heading as="h1" size="lg">
-          {npc.name}
-        </Heading>
-        <Heading as="h2" size="md">
-          {npc.race}
-        </Heading>
-        <Heading as="h3" size="sm">
-          {npc.occupation}
-        </Heading>
-        <Heading as="h3" size="sm">
-          {npc.alignment}
-        </Heading>
+          <GridItem p={5} area={"right"}>
+            <Card h={"100%"}>
+              <CardBody>
+                {" "}
+                <Stack w={"50%"}>
+                  <HStack>
+                    <Heading as="h1" size="xl">
+                      {npc.name}
+                    </Heading>
+                  </HStack>
+                  <Divider width={"65%"} />
+                  <HStack>
+                    <Heading size={"md"}>{npc.race}</Heading>
+                    <Text size="md">| {npc.occupation}</Text>
+                    <Text fontSize={"md"}>| {npc.alignment}</Text>
+                  </HStack>
+                  <Spacer />
+                  <Spacer />
+                  <Heading fontSize={"md"}>Back Story</Heading>
+                  <Text>{npc.definingmoment}</Text>
+                  <Spacer />
+                  <Heading fontSize={"md"}>Personality</Heading>
+                  <Text>{npc.personality}</Text>
+                  <Spacer />
+                  <Heading fontSize={"md"}>Quirk</Heading>
+                  <Text>{npc.personalityquirk}</Text>
+                  <Spacer />
+                  <Heading fontSize={"md"}>Plot Hook</Heading>
+                  <Text>{npc.plothook}</Text> <Spacer />
+                  <Heading fontSize={"md"}>Secret</Heading>
+                  <Text>{npc.secret}</Text>
+                  <Spacer />
+                </Stack>
+              </CardBody>
+            </Card>
+          </GridItem>
 
-        <Text fontSize={"xl"}>Back Story</Text>
-        <Text>{npc.definingmoment}</Text>
-        <Text fontSize={"xl"}>Personality</Text>
-        <Text>{npc.personality}</Text>
-        <Text fontSize={"xl"}>Plot Hook</Text>
-        <Text>{npc.plothook}</Text>
-        <Text fontSize={"xl"}>Quirk</Text>
-        <Text>{npc.personalityquirk}</Text>
-        <Text fontSize={"xl"}>Secret</Text>
-        <Text>{npc.secret}</Text>
-      </Container>
-    </SimpleGrid>
+          <GridItem area={"items"}>
+            <Card w={"50%"}>
+              <CardHeader>
+                {" "}
+                <Heading as="h1" size="xl">
+                  Items:
+                </Heading>
+              </CardHeader>
+
+              <CardBody>
+                <SimpleGrid columns={4}>
+                  {" "}
+                  {items.map((item) => {
+                    return (
+                      <ItemCard
+                        key={item.id}
+                        id={item.id}
+                        name={item.name}
+                        image={item.image}
+                      ></ItemCard>
+                    );
+                  })}
+                </SimpleGrid>
+              </CardBody>
+            </Card>
+          </GridItem>
+        </Grid>
+      </CardBody>
+    </Card>
   );
 }
 

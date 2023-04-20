@@ -10,7 +10,7 @@ const NpcGrid = () => {
   const [npcs, setNpcs] = useState(useLoaderData());
   const [isLoading, setIsLoading] = useState(false);
   const [sliderValues, setSliderValues] = useState({
-    alignment: 5,
+    alignment: "neutral",
   });
 
   const handleSliderChange = (name, value) => {
@@ -20,15 +20,15 @@ const NpcGrid = () => {
     }));
   };
 
-  useEffect(() => {
-    // Fetch existing NPCs from the server
-    setIsLoading(true);
-    fetch("http://localhost:3000/npcs")
-      .then((response) => response.json())
-      .then((data) => setNpcs(data))
-      .catch((error) => console.error("Error fetching NPCs:", error))
-      .finally(() => setIsLoading(false));
-  }, []);
+  // useEffect(() => {
+  //   // Fetch existing NPCs from the server
+  // //   setIsLoading(true);
+  // //   fetch("http://localhost:3000/npcs")
+  // //     .then((response) => response.json())
+  // //     .then((data) => setNpcs(data))
+  // //     .catch((error) => console.error("Error fetching NPCs:", error))
+  // //     .finally(() => setIsLoading(false));
+  // // }, []);
 
   const handleCreate = async () => {
     setIsLoading(true);
@@ -78,13 +78,23 @@ const NpcGrid = () => {
       method: "DELETE",
     })
       .then(() => {
-        // Delete npc_item relations for the deleted NPC
-        fetch(`http://localhost:3000/npc_items?npcId=` + id, {
-          method: "DELETE",
-        })
-          .then(() => setNpcs(npcs.filter((e) => e.id !== id)))
+        // Fetch npc_item relations for the deleted NPC
+        fetch(`http://localhost:3000/npc_items?npc_id=` + id)
+          .then((response) => response.json())
+          .then((npcItems) => {
+            // Iterate over the fetched npc_items and delete them one by one
+            npcItems.forEach((npcItem) => {
+              fetch(`http://localhost:3000/npc_items/` + npcItem.id, {
+                method: "DELETE",
+              }).catch((error) =>
+                console.error("Error deleting npc_item relation:", error)
+              );
+            });
+            // Update the local state to remove the deleted NPC
+            setNpcs(npcs.filter((e) => e.id !== id));
+          })
           .catch((error) =>
-            console.error("Error deleting npc_item relations:", error)
+            console.error("Error fetching npc_item relations:", error)
           );
       })
       .catch((error) => console.error("Error deleting NPC:", error));

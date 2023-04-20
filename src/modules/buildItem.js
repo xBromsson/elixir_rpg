@@ -5,23 +5,30 @@ async function buildItem(sliderValues) {
 
     const { alignment } = sliderValues;
     
-    const response = await getTurbo(`"You are a master of the art of creating a unique and memorable dnd item.`, 
+    const response = await getTurbo(`"You are a master of the art of creating a unique and memorable dnd items.`, 
     
     `Please create a unique item that will add depth and flavor to our dnd campaign. 
 
-    You absolutely must provide a response that is formatted for JSON. here is the syntax and attributes you must use:
+    You absolutely must provide a response that is formatted for JSON. here is the syntax and attributes you must use.:
 
     {
     "name": "", 
-    "description": "",
+    "type": "armor",
+    "rarity": "very common", 
+    "usefulness": "not useful",
+    "description": "", 
+    "requirements": "",
+    "effects": "" 
     }
 
     remember it must be in JSON format. 
 
     `, 1);
 
-
+    console.log(response)
  const item = JSON.parse(response);
+
+
 
 
 // const imageResponse = await getImage(`using a fantasy art style, create a fantasy character with a race of ${character.race} with this description. + ${character.appearance}`, 1);
