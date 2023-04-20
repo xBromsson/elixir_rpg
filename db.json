@@ -14,6 +14,66 @@
       "personalityquirk": "Kethril has a habit of spitting on his hands before handling any valuable items he finds.",
       "image": "https://preview.redd.it/i-really-enjoy-making-character-concepts-for-dnd-and-here-v0-7djvh5cv439a1.png?width=640&crop=smart&auto=webp&s=df65473e9b8d448d0439c350f94c4076177c9cf9",
       "id": 2
+    },
+    {
+      "name": "Grok Stonefist",
+      "race": "dwarf",
+      "alignment": "neutral",
+      "quote": "I don't care for your politics or your war. I just want to drink and live in peace.",
+      "occupation": "Tavern Keeper",
+      "appearance": "Grok is a grizzled old dwarf with a thick beard that reaches his knees. He's missing his left eye, but it doesn't seem to slow him down.",
+      "personality": "Grok may seem gruff and unapproachable, but he has a heart of gold and will help anyone in need.",
+      "definingmoment": "When Grok's wife died of an illness, he closed himself off from the world for years. It wasn't until a group of adventurers stumbled into his tavern and showed him kindness that he began to open up again.",
+      "plothook": "Grok has been having trouble with some rowdy patrons lately. He suspects they may be working for someone who wants to run him out of business.",
+      "secret": "Grok has a stash of gold hidden beneath the floorboards of his tavern that he's been saving for years in case he ever needs to flee the city.",
+      "personalityquirk": "Grok has a habit of speaking his mind, no matter how blunt or rude it may come across.",
+      "image": "https://preview.redd.it/i-really-enjoy-making-character-concepts-for-dnd-and-here-v0-7djvh5cv439a1.png?width=640&crop=smart&auto=webp&s=df65473e9b8d448d0439c350f94c4076177c9cf9",
+      "id": 3
+    },
+    {
+      "name": "Kethril Ironfist",
+      "race": "dwarf",
+      "alignment": "lawful good",
+      "quote": "Moradin's blessings be upon ye.",
+      "occupation": "brewmaster blacksmith",
+      "appearance": "A stocky dwarf with a thick beard, adorned with a hammer symbol of Moradin. His bright blue eyes sparkle with energy as he looks around the room.",
+      "personality": "Kethril is a devout follower of Moradin and takes pride in his work as a brewmaster and blacksmith. He is always willing to lend a hand to those in need.",
+      "definingmoment": "Kethril once saved an entire village from a raging fire using only his strength and knowledge of the forge.",
+      "plothook": "Kethril has been asked by the local lord to craft a powerful weapon to help defend against an upcoming orc invasion.",
+      "secret": "Kethril has a deep fear of fire, stemming from the memory of the fire that destroyed his childhood home.",
+      "personalityquirk": "Kethril is always humming a dwarven tune while he works.",
+      "image": "https://preview.redd.it/i-really-enjoy-making-character-concepts-for-dnd-and-here-v0-7djvh5cv439a1.png?width=640&crop=smart&auto=webp&s=df65473e9b8d448d0439c350f94c4076177c9cf9",
+      "id": 4
+    },
+    {
+      "name": "Gruffnok the Unpredictable",
+      "race": "orc",
+      "alignment": "chaotic evil",
+      "quote": "I have no patience for fools!",
+      "occupation": "mercenary captain",
+      "appearance": "Gruffnok stands at an imposing 7 feet tall, his muscular green body adorned with scars and tattered armor. His beady red eyes seem to glow with a fierce intensity, and his wild hair and beard give him a feral appearance.",
+      "personality": "Gruffnok is a ruthless and cunning leader, always looking out for himself and his profits. He has a sharp tongue and isn't afraid to use it to berate or intimidate those around him.",
+      "definingmoment": "During a particularly brutal battle, Gruffnok was faced with the choice to either retreat and save his own skin, or stay and fight to the death with his men. He chose to fight, and emerged victorious, earning the loyalty and respect of his soldiers.",
+      "plothook": "Gruffnok is currently seeking out a powerful artifact rumored to be hidden deep within a dangerous dungeon. He's willing to hire adventurers to help him find it, but he's not above betraying them or abandoning them to their fate.",
+      "secret": "Gruffnok is secretly a devout follower of a powerful demon lord, and is willing to do whatever it takes to earn his favor and ascend to a position of true power.",
+      "personalityquirk": "Gruffnok has a strange obsession with collecting the heads of his enemies and displaying them as trophies in his private chambers.",
+      "image": "https://preview.redd.it/i-really-enjoy-making-character-concepts-for-dnd-and-here-v0-7djvh5cv439a1.png?width=640&crop=smart&auto=webp&s=df65473e9b8d448d0439c350f94c4076177c9cf9",
+      "id": 5
+    },
+    {
+      "name": "Krak'gar Bloodfist",
+      "race": "orc",
+      "alignment": "neutral",
+      "quote": "Blood for blood.",
+      "occupation": "Mercenary Captain",
+      "appearance": "Krak'gar is a hulking, muscular figure with green skin and a prominent scar over his left eye. He wears a suit of blackened plate armor adorned with the skull of a dragon as his helmet.",
+      "personality": "Krak'gar is stoic and speaks only when necessary, but is fiercely loyal to those he considers his own.",
+      "definingmoment": "Krak'gar earned the respect of his tribe by defeating the previous chief in single combat, and has since become a renowned warrior and leader among the orcs.",
+      "plothook": "Krak'gar has been hired to protect a wealthy merchant caravan traveling through dangerous territory, but he is keeping a secret about the true nature of the cargo.",
+      "secret": "Krak'gar is haunted by his past mistakes and seeks redemption through acts of valor.",
+      "personalityquirk": "Krak'gar has a soft spot for children and will go out of his way to protect them.",
+      "image": "https://preview.redd.it/i-really-enjoy-making-character-concepts-for-dnd-and-here-v0-7djvh5cv439a1.png?width=640&crop=smart&auto=webp&s=df65473e9b8d448d0439c350f94c4076177c9cf9",
+      "id": 6
     }
   ],
   "items": [
@@ -27,9 +87,69 @@
       "effects": "The Weary Traveler's Cloak gives the wearer a sense of comfort and familiarity, allowing them to rest more easily on their travels. When worn during a long rest, the wearer gains an extra hit die and regains an additional 1d4 hit points. Additionally, once per day, the wearer can use the cloak to conjure a small campfire, providing warmth and light for up to 4 hours. The campfire disappears after 4 hours or if extinguished by the wearer.",
       "image": "https://mj-gallery.com/e1b6c0a8-cfa0-443b-b33a-ec999ffc9936/grid_0_640_N.webp",
       "id": 1
+    },
+    {
+      "name": "Amulet of Remembrance",
+      "type": "accessory",
+      "rarity": "rare",
+      "usefulness": "very useful",
+      "description": "This small amulet is made of a silver chain with a tear-shaped sapphire in the center. When worn, it imbues the wearer with memories and knowledge of forgotten or lost things.",
+      "requirements": "Attunement by a creature with a wisdom score of 14 or higher",
+      "effects": "When wearing the Amulet of Remembrance, the wearer has advantage on all Intelligence, Wisdom, and Charisma checks related to history, lore, or remembering forgotten knowledge. Additionally, once per long rest, the wearer may ask the DM for a piece of information they would have no way of knowing, and the DM will provide the answer. The answer can be about anything in the game world, from the location of a hidden treasure to a secret about a powerful NPC. The answer will be true and accurate, but the DM has final say on how much detail to provide.",
+      "image": "https://mj-gallery.com/e1b6c0a8-cfa0-443b-b33a-ec999ffc9936/grid_0_640_N.webp",
+      "id": 2
+    },
+    {
+      "name": "Cloak of Familiarity",
+      "type": "clothing",
+      "rarity": "rare",
+      "usefulness": "very useful",
+      "description": "This brown cloak appears unremarkable at first but upon closer inspection, it is clear that the material is made from a patchwork of different fabrics and colors. When worn, the cloak gives the wearer an uncanny ability to blend into any environment or social group they encounter, as if they belong there.",
+      "requirements": "",
+      "effects": "The Cloak of Familiarity grants the wearer a +3 bonus to Charisma (Persuasion) checks when trying to persuade others that they belong in a particular social group or environment. Additionally, the wearer gains advantage on Dexterity (Stealth) checks to blend into their surroundings when in an environment where they are not already known.",
+      "image": "https://mj-gallery.com/e1b6c0a8-cfa0-443b-b33a-ec999ffc9936/grid_0_640_N.webp",
+      "id": 3
+    },
+    {
+      "name": "Mantle of Memories",
+      "type": "armor",
+      "rarity": "legendary",
+      "usefulness": "extremely useful",
+      "description": "A flowing cloak made of shimmering fabric that is imbued with magical memories. The cloak is adorned with tiny crystals that shine with a soft blue light.",
+      "requirements": "",
+      "effects": "Whenever the wearer is hit with an attack, they can activate the Mantle of Memories to access a random memory from their past. This memory can be a helpful moment from their childhood, a successful battle from their past, or a happy moment with loved ones. The memory grants the wearer advantage on their next attack or ability check. Once used, the memory fades and cannot be accessed again. The cloak also has a limited number of charges that recharge over time. Additionally, the Mantle of Memories grants its wearer immunity to psychic damage, as the memories protect their mind from harm.",
+      "image": "https://mj-gallery.com/e1b6c0a8-cfa0-443b-b33a-ec999ffc9936/grid_0_640_N.webp",
+      "id": 4
+    },
+    {
+      "name": "Cloak of Memories",
+      "type": "armor",
+      "rarity": "rare",
+      "usefulness": "moderately useful",
+      "description": "A tattered, grey cloak that smells of old books and campfire smoke. It is covered in intricate embroidery and beading, depicting scenes of ancient battles, forgotten legends, and the history of a long-lost kingdom.",
+      "requirements": "Requires attunement by a creature with the ability to cast spells.",
+      "effects": "While wearing the Cloak of Memories, the wearer can use it to store up to five memories. To store a memory, the wearer must cast the Memory spell (as described in the Player's Handbook) and touch the cloak. The memory is then stored within the cloak, and the wearer can retrieve it later by casting the Memory spell again and touching the cloak. The memory is then played back in perfect detail, as if the wearer were experiencing it all over again. Additionally, the wearer gains advantage on all History checks related to the memories stored within the cloak.",
+      "image": "https://mj-gallery.com/e1b6c0a8-cfa0-443b-b33a-ec999ffc9936/grid_0_640_N.webp",
+      "id": 5
     }
   ],
-  "npc_items": [],
+  "npc_items": [
+    {
+      "npc_id": 3,
+      "item_id": 2,
+      "id": 1
+    },
+    {
+      "npc_id": 4,
+      "item_id": 3,
+      "id": 2
+    },
+    {
+      "npc_id": 6,
+      "item_id": 5,
+      "id": 3
+    }
+  ],
   "categories": [
     {
       "name": "worlds"

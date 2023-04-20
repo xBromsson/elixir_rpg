@@ -6,10 +6,32 @@ import {
   Box,
   HStack,
   Button,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverFooter,
+  PopoverArrow,
+  PopoverCloseButton,
+  PopoverAnchor,
+  Checkbox,
+  CheckboxGroup,
+  VStack,
+  FormControl,
+  FormLabel,
+  Stack,
+  Collapse,
 } from "@chakra-ui/react";
 import { useLoaderData } from "react-router-dom";
 import { useState } from "react";
-import { FaFilter, FaSort, FaSearch } from "react-icons/fa";
+import {
+  FaFilter,
+  FaSort,
+  FaSearch,
+  FaSortAlphaDownAlt,
+  FaSortAlphaDown,
+} from "react-icons/fa";
 import NpcCard from "./NpcCard";
 import NpcCreate from "./NpcCreate";
 import buildNpc from "../../modules/buildNpc";
@@ -21,6 +43,10 @@ const NpcGrid = () => {
   const [sliderValues, setSliderValues] = useState({
     alignment: "neutral",
   });
+  const [searchTerm, setSearchTerm] = useState("");
+  const [sortOrder, setSortOrder] = useState("asc");
+  const [alignmentFilter, setAlignmentFilter] = useState([]);
+  const [showAlignmentFilters, setShowAlignmentFilters] = useState(false);
 
   const handleSliderChange = (name, value) => {
     setSliderValues((prevValues) => ({
@@ -28,16 +54,6 @@ const NpcGrid = () => {
       [name]: value,
     }));
   };
-
-  // useEffect(() => {
-  //   // Fetch existing NPCs from the server
-  // //   setIsLoading(true);
-  // //   fetch("http://localhost:3000/npcs")
-  // //     .then((response) => response.json())
-  // //     .then((data) => setNpcs(data))
-  // //     .catch((error) => console.error("Error fetching NPCs:", error))
-  // //     .finally(() => setIsLoading(false));
-  // // }, []);
 
   const handleCreate = async () => {
     setIsLoading(true);
@@ -109,36 +125,118 @@ const NpcGrid = () => {
       .catch((error) => console.error("Error deleting NPC:", error));
   };
 
+  const handleSearch = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const handleSort = () => {
+    setSortOrder((prevSortOrder) => (prevSortOrder === "asc" ? "desc" : "asc"));
+  };
+
+  const handleAlignmentFilterChange = (values) => {
+    setAlignmentFilter(values);
+  };
+
+  const clearAllAlignments = () => {
+    setAlignmentFilter([]);
+  };
+
   return (
     <Box>
       <HStack w={"30%"} py={3}>
         <InputGroup>
-          <Input></Input>
+          <Input value={searchTerm} onChange={handleSearch}></Input>
           <InputRightElement>
-            <Button p={3}>
-              <FaSearch size={"100%"} />
-            </Button>
+            <FaSearch />
           </InputRightElement>
         </InputGroup>
 
-        <Button>
-          <FaFilter />
+        <Button onClick={handleSort}>
+          {sortOrder === "asc" ? <FaSortAlphaDown /> : <FaSortAlphaDownAlt />}
         </Button>
-        <Button>
-          <FaSort />
-        </Button>
+        <Popover>
+          <PopoverTrigger>
+            <Button>
+              <FaFilter />
+            </Button>
+          </PopoverTrigger>
+          <PopoverContent>
+            <PopoverArrow />
+            <PopoverCloseButton />
+            <PopoverHeader>Filter Options</PopoverHeader>
+            <PopoverBody>
+              <FormControl>
+                <Checkbox
+                  isChecked={showAlignmentFilters}
+                  onChange={(e) => setShowAlignmentFilters(e.target.checked)}
+                >
+                  Filter by Alignment
+                </Checkbox>
+                <Collapse in={showAlignmentFilters}>
+                  <Stack direction="row" my={3}>
+                    {" "}
+                    <Button size="sm" onClick={clearAllAlignments}>
+                      clear all
+                    </Button>
+                  </Stack>
+
+                  <CheckboxGroup
+                    value={alignmentFilter}
+                    onChange={handleAlignmentFilterChange}
+                  >
+                    <VStack alignItems="start" mt={3}>
+                      <Checkbox value="chaotic evil">Chaotic Evil</Checkbox>
+                      <Checkbox value="neutral evil">Neutral Evil</Checkbox>
+                      <Checkbox value="lawful evil">Lawful Evil</Checkbox>
+                      <Checkbox value="chaotic neutral">
+                        Chaotic Neutral
+                      </Checkbox>
+                      <Checkbox value="neutral">Neutral</Checkbox>
+                      <Checkbox value="lawful neutral">Lawful Neutral</Checkbox>
+                      <Checkbox value="chaotic good">Chaotic Good</Checkbox>
+                      <Checkbox value="neutral good">Neutral Good</Checkbox>
+                      <Checkbox value="lawful good">Lawful Good</Checkbox>
+                    </VStack>
+                  </CheckboxGroup>
+                </Collapse>
+              </FormControl>
+            </PopoverBody>
+          </PopoverContent>
+        </Popover>
       </HStack>
 
       <SimpleGrid columns={[1, 2, 4, 5, 6]} spacing={5}>
-        {npcs.map((n) => (
-          <NpcCard
-            key={n.id}
-            id={n.id}
-            image={n.image}
-            name={n.name}
-            onDelete={handleDelete}
-          ></NpcCard>
-        ))}
+        {/* filter the npcs list based on the search term, then map filtered list to a card on grid */}
+        {npcs
+          .filter(
+            (n) =>
+              n.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+              n.race.toLowerCase().includes(searchTerm.toLowerCase()) ||
+              n.alignment.toLowerCase().includes(searchTerm.toLowerCase())
+          )
+          .filter((n) => {
+            if (alignmentFilter.length === 0) {
+              return true;
+            } else {
+              return alignmentFilter.includes(n.alignment.toLowerCase());
+            }
+          })
+          .sort((a, b) => {
+            if (sortOrder === "asc") {
+              return a.name.localeCompare(b.name);
+            } else {
+              return b.name.localeCompare(a.name);
+            }
+          })
+          .map((n) => (
+            <NpcCard
+              key={n.id}
+              id={n.id}
+              image={n.image}
+              name={n.name}
+              onDelete={handleDelete}
+            ></NpcCard>
+          ))}
 
         <NpcCreate
           onCreate={handleCreate}
