@@ -42,7 +42,24 @@ const ItemGrid = () => {
     fetch(`http://localhost:3000/items/` + id, {
       method: "DELETE",
     })
-      .then(() => setItems(items.filter((e) => e.id !== id)))
+      .then(() => {
+        // fetch npc_item relations for the deleted Item
+        fetch(`http://localhost:3000/npc_items?item_id=` + id)
+          .then((response) => response.json())
+          .then((relationships) => {
+            //iterate over the fetched related npc_items and delete them one by one
+            relationships.forEach((relation) => {
+              fetch(`http://localhost:3000/npc_items/` + relation.id, {
+                method: "DELETE",
+              }).catch((error) =>
+                console.error("error deleting npc_item relation:", error)
+              );
+            });
+          });
+
+        //update the local state to remove the deleted item
+        setItems(items.filter((e) => e.id !== id));
+      })
       .catch((error) => console.error("Error deleting ITEM:", error));
   };
 

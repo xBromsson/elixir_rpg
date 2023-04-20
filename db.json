@@ -1,38 +1,32 @@
 {
-  "npcs": [],
+  "npcs": [
+    {
+      "name": "Kethril Brightshard",
+      "race": "dwarf",
+      "alignment": "neutral",
+      "quote": "If it's not made of gold, it's not worth my time.",
+      "occupation": "treasure hunter",
+      "appearance": "Kethril is a stout dwarf with a bushy beard and piercing blue eyes. His armor is adorned with gold filigree.",
+      "personality": "Kethril is single-minded in his pursuit of treasure and will stop at nothing to get it.",
+      "definingmoment": "Kethril's obsession with treasure began when he discovered a cache of long-lost dwarven gold in a secret chamber. Since then, he has been on a never-ending quest to find more.",
+      "plothook": "Kethril claims to have knowledge of a legendary hoard of gold hidden deep in the mountains, but he needs a group of adventurers to help him get to it.",
+      "secret": "Kethril's true motivation for finding treasure is not just for the wealth, but to fund the rebuilding of his clan's ancestral home, which was destroyed in a goblin invasion.",
+      "personalityquirk": "Kethril has a habit of spitting on his hands before handling any valuable items he finds.",
+      "image": "https://preview.redd.it/i-really-enjoy-making-character-concepts-for-dnd-and-here-v0-7djvh5cv439a1.png?width=640&crop=smart&auto=webp&s=df65473e9b8d448d0439c350f94c4076177c9cf9",
+      "id": 2
+    }
+  ],
   "items": [
     {
-      "name": "The Cloak of Hidden Passages",
+      "name": "The Weary Traveler's Cloak",
       "type": "armor",
       "rarity": "rare",
       "usefulness": "very useful",
-      "description": "This cloak is made of a unique material that allows the wearer to pass through solid objects for a short period of time. The cloak is gray and has a few tears in it, but they do not affect its magical properties.",
-      "requirements": "The wearer must attune to the cloak and have a minimum Dexterity score of 15.",
-      "effects": "While wearing the cloak, the wearer can pass through solid objects for up to 10 minutes per day. The cloak cannot be used to move through living creatures or magical barriers. Additionally, the wearer cannot carry anything with them while passing through solid objects. Finally, the wearer will take 1d4 force damage for every 10 feet they move while inside a solid object.",
+      "description": "This cloak is a dusty grey, adorned with patches and loose threads. Despite its appearance, it radiates warmth and comfort. It seems to know the burden of a weary traveler.",
+      "requirements": "None",
+      "effects": "The Weary Traveler's Cloak gives the wearer a sense of comfort and familiarity, allowing them to rest more easily on their travels. When worn during a long rest, the wearer gains an extra hit die and regains an additional 1d4 hit points. Additionally, once per day, the wearer can use the cloak to conjure a small campfire, providing warmth and light for up to 4 hours. The campfire disappears after 4 hours or if extinguished by the wearer.",
       "image": "https://mj-gallery.com/e1b6c0a8-cfa0-443b-b33a-ec999ffc9936/grid_0_640_N.webp",
       "id": 1
-    },
-    {
-      "name": "The Tattered Cloak of Memories",
-      "type": "armor",
-      "rarity": "rare",
-      "usefulness": "high",
-      "description": "This cloak is made from tattered pieces of fabric that seem to shift and flow in a hypnotic pattern. It is said that anyone who wears it will be filled with the memories of those who have worn it before.",
-      "requirements": "Attunement",
-      "effects": "While wearing The Tattered Cloak of Memories, the wearer gains the ability to recall the experiences of those who have worn it before. They can gain insight into the places it has been, the battles it has seen, or the people it has protected. The memories are random, and the wearer cannot control what they see or feel. The cloak also provides a +2 bonus to the wearer's Charisma, as their personality becomes infused with the memories of the cloak's previous wearers.",
-      "image": "https://mj-gallery.com/e1b6c0a8-cfa0-443b-b33a-ec999ffc9936/grid_0_640_N.webp",
-      "id": 2
-    },
-    {
-      "name": "Cloak of Misdirection",
-      "type": "armor",
-      "rarity": "rare",
-      "usefulness": "very useful",
-      "description": "This cloak is made of a strange fabric that seems to shimmer and shift, making it difficult to track. When worn, it grants the wearer the ability to misdirect their enemies with a flick of their wrist.",
-      "requirements": "Wearer must have proficiency in Deception.",
-      "effects": "Once per short rest, the wearer may use a bonus action to roll a Deception check against any enemy within 30 feet. If the check is successful, the enemy has disadvantage on their next attack against the wearer. Additionally, the wearer gains advantage on Stealth checks while wearing this cloak.",
-      "image": "https://mj-gallery.com/e1b6c0a8-cfa0-443b-b33a-ec999ffc9936/grid_0_640_N.webp",
-      "id": 3
     }
   ],
   "npc_items": [],
