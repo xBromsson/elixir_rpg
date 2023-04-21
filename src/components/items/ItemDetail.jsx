@@ -1,9 +1,7 @@
 import {
-  Container,
   Image,
   Heading,
   Text,
-  SimpleGrid,
   Card,
   CardFooter,
   Grid,

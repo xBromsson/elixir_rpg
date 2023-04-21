@@ -11,24 +11,18 @@ import {
   PopoverContent,
   PopoverHeader,
   PopoverBody,
-  PopoverFooter,
   PopoverArrow,
   PopoverCloseButton,
-  PopoverAnchor,
   Checkbox,
   CheckboxGroup,
   VStack,
   FormControl,
-  FormLabel,
   Stack,
   Collapse,
 } from "@chakra-ui/react";
-// FIREBASE MAY NOT NEED A LOADER.
-// import { useLoaderData } from "react-router-dom";
 import { useState, useEffect } from "react";
 import {
   FaFilter,
-  FaSort,
   FaSearch,
   FaSortAlphaDownAlt,
   FaSortAlphaDown,
@@ -61,7 +55,6 @@ const NpcGrid = () => {
   const [alignmentFilter, setAlignmentFilter] = useState([]);
   const [showAlignmentFilters, setShowAlignmentFilters] = useState(false);
 
-  //NEW FIREBASE REFACTORED
   useEffect(() => {
     const unsubscribe = onSnapshot(
       query(collection(db, "npcs"), orderBy("name", sortOrder)),
@@ -75,7 +68,6 @@ const NpcGrid = () => {
     );
     return () => unsubscribe();
   }, [sortOrder]);
-  //////
 
   const handleSliderChange = (name, value) => {
     setSliderValues((prevValues) => ({
@@ -89,7 +81,6 @@ const NpcGrid = () => {
     const npcData = await buildNpc(sliderValues);
     const itemData = await buildItem(sliderValues);
 
-    //NEW FIREBASE REFACTORED
     try {
       // Create an NPC in the Firestore database
       const npcRef = await addDoc(collection(db, "npcs"), npcData);
@@ -111,47 +102,9 @@ const NpcGrid = () => {
     } finally {
       setIsLoading(false);
     }
-
-    // OLD CODE (JSON DB) BEFORE FIREBASE REFACTOR...
-    // Create an NPC on the server-side
-    // fetch("http://localhost:3000/npcs", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(npcData),
-    // })
-    //   .then((response) => response.json())
-    //   .then(async (createdNpc) => {
-    //     await fetch("http://localhost:3000/items", {
-    //       method: "POST",
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //       },
-    //       body: JSON.stringify(itemData),
-    //     })
-    //       .then((response) => response.json())
-    //       .then(async (createdItem) => {
-    //         // Create an entry in the npc_items table on the server-side
-    //         await fetch("http://localhost:3000/npc_items", {
-    //           method: "POST",
-    //           headers: {
-    //             "Content-Type": "application/json",
-    //           },
-    //           body: JSON.stringify({
-    //             npc_id: createdNpc.id,
-    //             item_id: createdItem.id,
-    //           }),
-    //         });
-    //       });
-    //     setNpcs([...npcs, createdNpc]);
-    //   })
-    //   .catch((error) => console.error("Error creating NPC:", error))
-    //   .finally(() => setIsLoading(false));
   };
 
   const handleDelete = async (id) => {
-    //NEW CODE FIREBASE REFACTOR
     try {
       // Delete the NPC from the Firestore database
       await deleteDoc(doc(db, "npcs", id));
@@ -169,47 +122,11 @@ const NpcGrid = () => {
         await deleteDoc(doc(db, "npc_items", npcItemDoc.id));
       }
 
-      // // Get the related npc_item documents and delete them from the npc_items collection
-      // const npcItemsQuerySnapshot = await getDocs(npcItemsQuery);
-      // npcItemsQuerySnapshot.forEach(async (doc) => {
-      //   const npcItem = doc.data();
-
-      //   // Delete the npc_item document from the Firestore database
-      //   await deleteDoc(doc(db, "npc_items", doc.id));
-      // });
-
       // Update the local state to remove the deleted NPC
       setNpcs(npcs.filter((e) => e.id !== id));
     } catch (error) {
       console.error("Error deleting NPC and its related Items:", error);
     }
-
-    // OLD CODE (JSON DB) BEFORE FIREBASE REFACTOR...
-    // Delete an NPC on the server-side
-    // fetch(`http://localhost:3000/npcs/` + id, {
-    //   method: "DELETE",
-    // })
-    //   .then(() => {
-    //     // Fetch npc_item relations for the deleted NPC
-    //     fetch(`http://localhost:3000/npc_items?npc_id=` + id)
-    //       .then((response) => response.json())
-    //       .then((npcItems) => {
-    //         // Iterate over the fetched npc_items and delete them one by one
-    //         npcItems.forEach((npcItem) => {
-    //           fetch(`http://localhost:3000/npc_items/` + npcItem.id, {
-    //             method: "DELETE",
-    //           }).catch((error) =>
-    //             console.error("Error deleting npc_item relation:", error)
-    //           );
-    //         });
-    //         // Update the local state to remove the deleted NPC
-    //         setNpcs(npcs.filter((e) => e.id !== id));
-    //       })
-    //       .catch((error) =>
-    //         console.error("Error fetching npc_item relations:", error)
-    //       );
-    //   })
-    //   .catch((error) => console.error("Error deleting NPC:", error));
   };
 
   const handleSearch = (event) => {
@@ -337,9 +254,3 @@ const NpcGrid = () => {
 };
 
 export default NpcGrid;
-
-//FIRE BASE REFACTOR MAY NOT NEED A LOADER.
-// export async function loader() {
-//   const data = await fetch(`http://localhost:3000/npcs`);
-//   return data;
-// }

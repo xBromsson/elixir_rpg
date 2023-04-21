@@ -1,9 +1,6 @@
 import {
   Stack,
-  StackDivider,
   Divider,
-  Box,
-  Container,
   Image,
   Heading,
   Text,
@@ -11,7 +8,6 @@ import {
   Grid,
   GridItem,
   Card,
-  CardHeader,
   CardBody,
   CardFooter,
   HStack,
