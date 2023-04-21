@@ -1,12 +1,20 @@
 import { Card, Image, CardFooter, HStack, Text, Box } from "@chakra-ui/react";
 import { FaEdit, FaTrash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useParams, useLocation } from "react-router-dom";
 
 const ItemCard = ({ name, id, image, onDelete }) => {
+  const { id: npcId } = useParams();
+  const location = useLocation();
+
+  const isNpcDetailRoute = location.pathname.includes("/npcs/");
+  const linkPath = isNpcDetailRoute
+    ? `/npcs/${npcId}/items/${id}`
+    : `/items/${id}`;
+
   return (
     <Card borderRadius={3} height={"min-content"} overflow={"hidden"}>
       {" "}
-      <Link to={"http://localhost:5173/items/" + id}>
+      <Link to={linkPath}>
         <Image
           h={150}
           objectFit={"cover"}

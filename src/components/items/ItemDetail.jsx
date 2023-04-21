@@ -18,17 +18,18 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../firebase/firebaseConfig";
 
 const ItemDetail = () => {
-  const { id } = useParams();
+  const { id, itemId } = useParams();
   const [item, setItem] = useState(null);
 
   useEffect(() => {
     const fetchItem = async () => {
-      const itemDoc = await getDoc(doc(db, "items", id));
+      const targetId = itemId || id;
+      const itemDoc = await getDoc(doc(db, "items", targetId));
       setItem({ id: itemDoc.id, ...itemDoc.data() });
     };
 
     fetchItem();
-  }, [id]);
+  }, [id, itemId]);
 
   if (!item) {
     return <div>Loading...</div>;

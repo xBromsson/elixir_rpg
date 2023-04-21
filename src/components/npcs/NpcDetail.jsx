@@ -28,18 +28,21 @@ import {
   where,
 } from "firebase/firestore";
 import { db } from "../../firebase/firebaseConfig";
-import { useParams } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 function NpcDetail() {
   const { id } = useParams();
   const [npc, setNpc] = useState(null);
   const [items, setItems] = useState([]);
+  const [loadingNpc, setLoadingNpc] = useState(true);
+  const [loadingItems, setLoadingItems] = useState(true);
 
   useEffect(() => {
     const fetchNpcAndItems = async () => {
       const npcDoc = await getDoc(doc(db, "npcs", id));
       setNpc({ id: npcDoc.id, ...npcDoc.data() });
+      setLoadingNpc(false);
 
       const npcItemsQuery = query(
         collection(db, "npc_items"),
@@ -56,14 +59,19 @@ function NpcDetail() {
       setItems(
         itemDocs.map((itemDoc) => ({ id: itemDoc.id, ...itemDoc.data() }))
       );
+      setLoadingItems(false);
     };
 
     fetchNpcAndItems();
   }, [id]);
 
-  if (!npc || !items.length) {
+  if (loadingNpc || loadingItems) {
     return <div>Loading...</div>;
   }
+
+  // if (!npc || !items.length) {
+  //   return <div>Loading...</div>;
+  // }
 
   return (
     <Card>
@@ -140,6 +148,7 @@ function NpcDetail() {
                     ></ItemCard>
                   ))}
                 </SimpleGrid>
+                <Outlet />
               </TabPanel>
               <TabPanel>
                 {/* Notes Tab */}

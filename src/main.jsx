@@ -21,6 +21,12 @@ const router = createBrowserRouter([
       {
         path: "npcs/:id",
         element: <NpcDetail />,
+        children: [
+          {
+            path: "items/:itemId",
+            element: <ItemDetail />,
+          },
+        ],
       },
       {
         path: "/items/",
