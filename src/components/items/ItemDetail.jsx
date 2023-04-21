@@ -14,11 +14,27 @@ import {
   Divider,
   Spacer,
 } from "@chakra-ui/react";
-import { useLoaderData } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../../firebase/firebaseConfig";
 
 const ItemDetail = () => {
-  const [item, setItem] = useState(useLoaderData());
+  const { id } = useParams();
+  const [item, setItem] = useState(null);
+
+  useEffect(() => {
+    const fetchItem = async () => {
+      const itemDoc = await getDoc(doc(db, "items", id));
+      setItem({ id: itemDoc.id, ...itemDoc.data() });
+    };
+
+    fetchItem();
+  }, [id]);
+
+  if (!item) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <Card>
@@ -84,8 +100,3 @@ const ItemDetail = () => {
 };
 
 export default ItemDetail;
-
-export async function loader({ params }) {
-  const data = await fetch(`http://localhost:3000/items/${params.id}`);
-  return data;
-}

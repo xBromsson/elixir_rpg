@@ -22,11 +22,52 @@ import {
   TabPanels,
   TabPanel,
 } from "@chakra-ui/react";
-import { useLoaderData } from "react-router-dom";
 import ItemCard from "../items/ItemCard";
+import {
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  query,
+  where,
+} from "firebase/firestore";
+import { db } from "../../firebase/firebaseConfig";
+import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 function NpcDetail() {
-  const { items, ...npc } = useLoaderData();
+  const { id } = useParams();
+  const [npc, setNpc] = useState(null);
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    const fetchNpcAndItems = async () => {
+      const npcDoc = await getDoc(doc(db, "npcs", id));
+      setNpc({ id: npcDoc.id, ...npcDoc.data() });
+
+      const npcItemsQuery = query(
+        collection(db, "npc_items"),
+        where("npc_id", "==", id)
+      );
+      const npcItemsQuerySnapshot = await getDocs(npcItemsQuery);
+      const itemIds = npcItemsQuerySnapshot.docs.map(
+        (doc) => doc.data().item_id
+      );
+
+      const itemDocs = await Promise.all(
+        itemIds.map((itemId) => getDoc(doc(db, "items", itemId)))
+      );
+      setItems(
+        itemDocs.map((itemDoc) => ({ id: itemDoc.id, ...itemDoc.data() }))
+      );
+    };
+
+    fetchNpcAndItems();
+  }, [id]);
+
+  if (!npc || !items.length) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <Card>
@@ -117,24 +158,3 @@ function NpcDetail() {
 }
 
 export default NpcDetail;
-
-export async function loader({ params }) {
-  const npcResponse = await fetch(`http://localhost:3000/npcs/${params.id}`);
-  const npcData = await npcResponse.json();
-
-  const npcItemsResponse = await fetch(
-    `http://localhost:3000/npc_items?npc_id=${params.id}` // Use the correct key here
-  );
-  const npcItemsData = await npcItemsResponse.json();
-
-  const itemIds = npcItemsData.map((npcItem) => npcItem.item_id); // Use the correct key here
-
-  const itemsPromises = itemIds.map(async (itemId) => {
-    const itemResponse = await fetch(`http://localhost:3000/items/${itemId}`);
-    return itemResponse.json();
-  });
-
-  const items = await Promise.all(itemsPromises);
-
-  return { ...npcData, items };
-}

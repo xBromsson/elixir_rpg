@@ -1,7 +1,5 @@
 import { Grid, GridItem, Text } from "@chakra-ui/react";
-
 import CategoryGrid from "./components/CategoryGrid";
-
 import { Outlet } from "react-router-dom";
 
 function App() {

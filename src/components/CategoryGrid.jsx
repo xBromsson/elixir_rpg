@@ -1,5 +1,7 @@
 import { SimpleGrid, Spinner } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
+import { collection, getDocs, query, orderBy } from "firebase/firestore";
+import { db } from "../firebase/firebaseConfig";
 import CategoryCard from "./CategoryCard";
 
 const CategoryGrid = () => {
@@ -8,11 +10,24 @@ const CategoryGrid = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch("http://localhost:3000/categories")
-      .then((response) => response.json())
-      .then((res) => setCategories(res))
-      .catch((err) => console.error("Error fetching Categories:", err))
-      .finally(() => setIsLoading(false));
+
+    const fetchCategories = async () => {
+      try {
+        const categoriesQuery = query(
+          collection(db, "categories"),
+          orderBy("name")
+        );
+        const querySnapshot = await getDocs(categoriesQuery);
+        const categoriesData = querySnapshot.docs.map((doc) => doc.data());
+        setCategories(categoriesData);
+      } catch (err) {
+        console.error("Error fetching Categories:", err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchCategories();
   }, []);
 
   return !isLoading ? (
