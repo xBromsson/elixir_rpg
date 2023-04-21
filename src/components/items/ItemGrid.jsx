@@ -21,6 +21,7 @@ const ItemGrid = () => {
     alignment: 5,
   });
 
+  // Fetches the initial data from the db
   useEffect(() => {
     const fetchItems = async () => {
       const itemDocs = await getDocs(collection(db, "items"));
@@ -30,13 +31,7 @@ const ItemGrid = () => {
     fetchItems();
   }, []);
 
-  const handleSliderChange = (name, value) => {
-    setSliderValues((prevValues) => ({
-      ...prevValues,
-      [name]: value,
-    }));
-  };
-
+  // Creates a new item in the db and then updates local state variable
   const handleCreate = async () => {
     setIsLoading(true);
     const itemData = await buildItem(sliderValues);
@@ -51,6 +46,7 @@ const ItemGrid = () => {
     }
   };
 
+  // Deletes specific item in db as well as any relationships it has, and then updates local state variable
   const handleDelete = async (id) => {
     try {
       // Delete an ITEM in Firestore
@@ -73,6 +69,14 @@ const ItemGrid = () => {
     } catch (error) {
       console.error("Error deleting ITEM:", error);
     }
+  };
+
+  // Recieves the slider values and updates the local state variable
+  const handleSliderChange = (name, value) => {
+    setSliderValues((prevValues) => ({
+      ...prevValues,
+      [name]: value,
+    }));
   };
 
   return (
