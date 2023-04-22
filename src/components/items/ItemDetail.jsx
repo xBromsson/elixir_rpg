@@ -21,6 +21,7 @@ const ItemDetail = () => {
   const { id, itemId } = useParams();
   const [item, setItem] = useState(null);
 
+  //fetches the specific item data
   useEffect(() => {
     const fetchItem = async () => {
       const targetId = itemId || id;
@@ -31,6 +32,7 @@ const ItemDetail = () => {
     fetchItem();
   }, [id, itemId]);
 
+  //written by gpt, should rewrite to make more sense
   if (!item) {
     return <div>Loading...</div>;
   }
