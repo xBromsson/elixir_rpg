@@ -38,6 +38,7 @@ function NpcDetail() {
   const [loadingNpc, setLoadingNpc] = useState(true);
   const [loadingItems, setLoadingItems] = useState(true);
 
+  //fetches initial npc data and updates local state variable.
   useEffect(() => {
     const fetchNpcAndItems = async () => {
       const npcDoc = await getDoc(doc(db, "npcs", id));
@@ -65,13 +66,10 @@ function NpcDetail() {
     fetchNpcAndItems();
   }, [id]);
 
+  //needs to be revisted. originally written by chatgpt
   if (loadingNpc || loadingItems) {
     return <div>Loading...</div>;
   }
-
-  // if (!npc || !items.length) {
-  //   return <div>Loading...</div>;
-  // }
 
   return (
     <Card>

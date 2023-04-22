@@ -55,6 +55,7 @@ const NpcGrid = () => {
   const [alignmentFilter, setAlignmentFilter] = useState([]);
   const [showAlignmentFilters, setShowAlignmentFilters] = useState(false);
 
+  // fetches initial npc data from db and updates local state variable
   useEffect(() => {
     const unsubscribe = onSnapshot(
       query(collection(db, "npcs"), orderBy("name", sortOrder)),
@@ -69,6 +70,7 @@ const NpcGrid = () => {
     return () => unsubscribe();
   }, [sortOrder]);
 
+  // receives data from npcCreate slider and updates local slidevalue variable
   const handleSliderChange = (name, value) => {
     setSliderValues((prevValues) => ({
       ...prevValues,
@@ -76,6 +78,7 @@ const NpcGrid = () => {
     }));
   };
 
+  // Creates an NPC and Item? updates db and local state variable
   const handleCreate = async () => {
     setIsLoading(true);
     const npcData = await buildNpc(sliderValues);
@@ -129,18 +132,22 @@ const NpcGrid = () => {
     }
   };
 
+  // updates search state variable
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
   };
 
+  // updates sort order
   const handleSort = () => {
     setSortOrder((prevSortOrder) => (prevSortOrder === "asc" ? "desc" : "asc"));
   };
 
+  // updates alignment filter values
   const handleAlignmentFilterChange = (values) => {
     setAlignmentFilter(values);
   };
 
+  // clears any selected alignment filters
   const clearAllAlignments = () => {
     setAlignmentFilter([]);
   };
@@ -210,7 +217,7 @@ const NpcGrid = () => {
       </HStack>
 
       <SimpleGrid columns={[1, 2, 4, 5, 6]} spacing={5}>
-        {/* filter the npcs list based on the search term, then map filtered list to a card on grid */}
+        {/* filter the npcs list based on search, filter, and sort selections and then map filtered list to a card on grid */}
         {npcs &&
           npcs
             .filter(
