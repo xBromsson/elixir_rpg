@@ -44,10 +44,10 @@ const ItemDetail = () => {
         <Grid
           h={"100 vh"}
           templateAreas={`"left right"`}
-          templateColumns={"25% 1fr"}
+          templateColumns={"20% 1fr"}
           templateRows={"1fr"}
         >
-          <GridItem p={5} area={"left"}>
+          <GridItem p={0} area={"left"}>
             <Card align={"center"} overflow={"hidden"}>
               {" "}
               <Image width={"100%"} src={item.image}></Image>
@@ -58,7 +58,7 @@ const ItemDetail = () => {
             </Card>
           </GridItem>
 
-          <GridItem p={5} area={"right"}>
+          <GridItem px={5} area={"right"}>
             <Card h={"100%"}>
               <CardBody>
                 {" "}

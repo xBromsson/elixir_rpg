@@ -1,7 +1,8 @@
 import {
+  Badge,
   Card,
   CardBody,
-  Divider,
+  Container,
   HStack,
   Heading,
   Spacer,
@@ -11,36 +12,41 @@ import {
 
 const NpcOverview = ({ npc }) => {
   return (
-    <Card>
+    <Card bg={"gray.800"}>
       <CardBody>
-        <Stack w={"100%%"}>
+        <Stack spacing={1}>
+          <Heading as="h1" size="lg">
+            {npc.name}
+          </Heading>
           <HStack>
-            <Heading as="h1" size="lg">
-              {npc.name}
-            </Heading>
+            <Badge size={"md"}>{npc.race}</Badge>
+            <Badge size="md"> {npc.occupation}</Badge>
+            <Badge size={"md"}> {npc.alignment}</Badge>
           </HStack>
-          <HStack>
-            <Text size={"md"}>{npc.race}</Text>
-            <Text size="md">| {npc.occupation}</Text>
-            <Text fontSize={"md"}>| {npc.alignment}</Text>
-          </HStack>
+        </Stack>
+
+        <Stack spacing={5}>
           <Spacer />
-          <Spacer />
-          <Heading fontSize={"md"}>Back Story</Heading>
-          <Text>{npc.definingmoment}</Text>
-          <Spacer />
-          <Heading fontSize={"md"}>Personality</Heading>
-          <Text>{npc.personality}</Text>
-          <Spacer />
-          <Heading fontSize={"md"}>Quirk</Heading>
-          <Text>{npc.personalityquirk}</Text>
-          <Spacer />
-          <Heading fontSize={"md"}>Plot Hook</Heading>
-          <Text>{npc.plothook}</Text>
-          <Spacer />
-          <Heading fontSize={"md"}>Secret</Heading>
-          <Text>{npc.secret}</Text>
-          <Spacer />
+          <Container>
+            <Heading fontSize={"md"}>Back Story</Heading>
+            <Text>{npc.definingmoment}</Text>
+          </Container>
+          <Container>
+            <Heading fontSize={"md"}>Personality</Heading>
+            <Text>{npc.personality}</Text>
+          </Container>
+          <Container>
+            <Heading fontSize={"md"}>Quirk</Heading>
+            <Text>{npc.personalityquirk}</Text>
+          </Container>
+          <Container>
+            <Heading fontSize={"md"}>Plot Hook</Heading>
+            <Text>{npc.plothook}</Text>
+          </Container>
+          <Container>
+            <Heading fontSize={"md"}>Secret</Heading>
+            <Text>{npc.secret}</Text>
+          </Container>
         </Stack>
       </CardBody>
     </Card>

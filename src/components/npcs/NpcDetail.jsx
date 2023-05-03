@@ -1,17 +1,10 @@
 import {
-  Stack,
-  Divider,
   Image,
-  Heading,
   Text,
-  SimpleGrid,
   Grid,
   GridItem,
   Card,
-  CardBody,
   CardFooter,
-  HStack,
-  Spacer,
   Tabs,
   TabList,
   Tab,
@@ -74,7 +67,7 @@ function NpcDetail() {
   }
 
   return (
-    <Card>
+    <Card colorScheme="yellow">
       <Grid
         h={"100 vh"}
         templateAreas={`"left right"`}
@@ -82,7 +75,7 @@ function NpcDetail() {
         templateRows={"1fr"}
       >
         <GridItem p={5} area={"left"}>
-          <Card align={"center"} overflow={"hidden"}>
+          <Card bg={"gray.800"} align={"center"} overflow={"hidden"}>
             <Image width={"100%"} src={npc.image}></Image>
             <CardFooter>
               <Text as={"i"}>"{npc.quote}"</Text>
@@ -91,7 +84,7 @@ function NpcDetail() {
         </GridItem>
 
         <GridItem p={5} area={"right"}>
-          <Tabs variant="enclosed">
+          <Tabs colorScheme="gray.800">
             <TabList mb="1em">
               <Tab>Overview</Tab>
               <Tab as={Link} to={`/npcs/${id}/items`}>
@@ -101,17 +94,17 @@ function NpcDetail() {
             </TabList>
 
             <TabPanels>
-              <TabPanel>
+              <TabPanel p={0}>
                 {/* Overview Tab */}
                 <NpcOverview npc={npc} />
               </TabPanel>
-              <TabPanel>
+              <TabPanel p={0}>
                 {/* Items Tab */}
                 <OutletDataProvider value={{ items }}>
                   <Outlet />
                 </OutletDataProvider>
               </TabPanel>
-              <TabPanel>
+              <TabPanel p={0}>
                 {/* Notes Tab */}
                 {/* Empty for now */}
               </TabPanel>

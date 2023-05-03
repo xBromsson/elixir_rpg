@@ -12,6 +12,8 @@ import {
   HStack,
   Divider,
   Skeleton,
+  PopoverArrow,
+  PopoverCloseButton,
 } from "@chakra-ui/react";
 import { FaRegPlusSquare } from "react-icons/fa";
 import NpcSlider from "./NpcSlider";
@@ -21,7 +23,7 @@ const onCreate = () => {};
 function NpcCreate({ onCreate, onSliderChange }) {
   return (
     <Box>
-      <Popover>
+      <Popover placement="bottom-start">
         <PopoverTrigger>
           <Button>
             <FaRegPlusSquare />
@@ -49,6 +51,8 @@ function NpcCreate({ onCreate, onSliderChange }) {
           <Button px={3} onClick={onCreate}>
             Confirm
           </Button>
+          <PopoverArrow />
+          <PopoverCloseButton />
         </PopoverContent>
       </Popover>
     </Box>

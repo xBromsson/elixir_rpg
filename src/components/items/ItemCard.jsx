@@ -1,5 +1,5 @@
 import { Card, Image, CardFooter, HStack, Text, Box } from "@chakra-ui/react";
-import { FaEdit, FaTrash } from "react-icons/fa";
+import { FaTrash } from "react-icons/fa";
 import { Link, useParams, useLocation } from "react-router-dom";
 
 const ItemCard = ({ name, id, image, onDelete }) => {
@@ -13,35 +13,35 @@ const ItemCard = ({ name, id, image, onDelete }) => {
 
   return (
     <Card borderRadius={3} height={"min-content"} overflow={"hidden"}>
-      {" "}
-      <Link to={linkPath}>
-        <Image
-          h={150}
-          objectFit={"cover"}
-          objectPosition={"top"}
-          src={image}
-        ></Image>
-      </Link>
-      <CardFooter py={2} pr={2} justify={"space-between"}>
-        {" "}
+      <Box>
+        <Link to={linkPath}>
+          <Image h={175} objectFit={"cover"} width={"100%"} src={image}></Image>
+        </Link>
         <Text
-          alignSelf={"start"}
-          whiteSpace={"nowrap"}
-          textOverflow={"clip"}
-          overflow={"hidden"}
+          position="absolute"
+          left={2}
+          bottom={2}
+          fontWeight="bold"
+          color="white"
+          bg="rgba(0, 0, 0, 0.5)"
+          p={1}
         >
           {name}
         </Text>
-        <HStack justify={"space-between"}>
-          <HStack justify={"end"}>
-            <Box onClick={() => onDelete(id)}>
-              <FaTrash size={13} />
-            </Box>
 
-            <FaEdit />
-          </HStack>
-        </HStack>
-      </CardFooter>
+        <Box
+          onClick={() => onDelete(id)}
+          position="absolute"
+          right={2}
+          bottom={2}
+          fontWeight="bold"
+          color="white"
+          bg="rgba(0, 0, 0, 0.5)"
+          p={1}
+        >
+          <FaTrash size={13} />
+        </Box>
+      </Box>
     </Card>
   );
 };

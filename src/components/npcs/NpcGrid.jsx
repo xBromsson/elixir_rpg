@@ -20,6 +20,7 @@ import {
   Stack,
   Collapse,
   Text,
+  Container,
 } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import {
@@ -155,8 +156,8 @@ const NpcGrid = () => {
   };
 
   return (
-    <Box>
-      <HStack justify={"space-between"}>
+    <Box m={0}>
+      <HStack pb={2} justify={"space-between"}>
         <HStack>
           <NpcCreate
             onCreate={handleCreate}
@@ -164,7 +165,7 @@ const NpcGrid = () => {
             isLoading={isLoading}
           ></NpcCreate>
         </HStack>
-        <HStack w={"30%"} py={3}>
+        <HStack w={"30%"}>
           <InputGroup>
             <Input value={searchTerm} onChange={handleSearch}></Input>
             <InputRightElement>
@@ -175,7 +176,7 @@ const NpcGrid = () => {
           <Button onClick={handleSort}>
             {sortOrder === "asc" ? <FaSortAlphaDown /> : <FaSortAlphaDownAlt />}
           </Button>
-          <Popover>
+          <Popover placement="bottom-end">
             <PopoverTrigger>
               <Button>
                 <FaFilter />
@@ -262,7 +263,7 @@ const NpcGrid = () => {
                 onDelete={handleDelete}
               ></NpcCard>
             ))}
-        {isLoading ? <Text>Loading...</Text> : null}
+        {isLoading ? <Text>Loading...</Text> : null}{" "}
       </SimpleGrid>
     </Box>
   );

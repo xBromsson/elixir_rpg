@@ -5,12 +5,7 @@ import { Link } from "react-router-dom";
 
 const NpcCard = ({ name, id, image, onDelete }) => {
   return (
-    <Card
-      colorScheme="teal"
-      borderRadius={3}
-      height={"min-content"}
-      overflow={"hidden"}
-    >
+    <Card borderRadius={3} height={"min-content"} overflow={"hidden"}>
       {" "}
       <Box position="relative" width="100%" maxWidth="300px">
         <Link to={"http://localhost:5173/npcs/" + id}>
