@@ -44,7 +44,7 @@ const ItemDetail = () => {
         <Grid
           h={"100 vh"}
           templateAreas={`"left right"`}
-          templateColumns={"35% 1fr"}
+          templateColumns={"25% 1fr"}
           templateRows={"1fr"}
         >
           <GridItem p={5} area={"left"}>

@@ -1,16 +1,6 @@
-import {
-  Card,
-  HStack,
-  Image,
-  Text,
-  Box,
-  CardFooter,
-  LinkBox,
-  LinkOverlay,
-} from "@chakra-ui/react";
+import { Card, Image, Text, Box } from "@chakra-ui/react";
 
-import { FaEdit, FaTrash } from "react-icons/fa";
-import { BiDetail } from "react-icons/bi";
+import { FaTrash } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const NpcCard = ({ name, id, image, onDelete }) => {
@@ -22,34 +12,34 @@ const NpcCard = ({ name, id, image, onDelete }) => {
       overflow={"hidden"}
     >
       {" "}
-      <Link to={"http://localhost:5173/npcs/" + id}>
-        <Image
-          h={150}
-          objectFit={"cover"}
-          objectPosition={"top"}
-          src={image}
-        ></Image>
-      </Link>
-      <CardFooter py={2} pr={2} justify={"space-between"}>
-        {" "}
+      <Box position="relative" width="100%" maxWidth="300px">
+        <Link to={"http://localhost:5173/npcs/" + id}>
+          <Image src={image} alt="npc image" width="100%" objectFit="cover" />
+        </Link>
         <Text
-          alignSelf={"start"}
-          whiteSpace={"nowrap"}
-          textOverflow={"clip"}
-          overflow={"hidden"}
+          position="absolute"
+          left={2}
+          bottom={2}
+          fontWeight="bold"
+          color="white"
+          bg="rgba(0, 0, 0, 0.5)"
+          p={1}
         >
           {name}
         </Text>
-        <HStack justify={"space-between"}>
-          <HStack justify={"end"}>
-            <Box onClick={() => onDelete(id)}>
-              <FaTrash size={13} />
-            </Box>
-
-            <FaEdit />
-          </HStack>
-        </HStack>
-      </CardFooter>
+        <Box
+          onClick={() => onDelete(id)}
+          position="absolute"
+          right={2}
+          bottom={2}
+          fontWeight="bold"
+          color="white"
+          bg="rgba(0, 0, 0, 0.5)"
+          p={1}
+        >
+          <FaTrash size={13} />
+        </Box>
+      </Box>
     </Card>
   );
 };

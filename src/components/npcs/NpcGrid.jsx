@@ -19,6 +19,7 @@ import {
   FormControl,
   Stack,
   Collapse,
+  Text,
 } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import {
@@ -26,6 +27,7 @@ import {
   FaSearch,
   FaSortAlphaDownAlt,
   FaSortAlphaDown,
+  FaRegPlusSquare,
 } from "react-icons/fa";
 import NpcCard from "./NpcCard";
 import NpcCreate from "./NpcCreate";
@@ -154,66 +156,77 @@ const NpcGrid = () => {
 
   return (
     <Box>
-      <HStack w={"30%"} py={3}>
-        <InputGroup>
-          <Input value={searchTerm} onChange={handleSearch}></Input>
-          <InputRightElement>
-            <FaSearch />
-          </InputRightElement>
-        </InputGroup>
+      <HStack justify={"space-between"}>
+        <HStack>
+          <NpcCreate
+            onCreate={handleCreate}
+            onSliderChange={handleSliderChange}
+            isLoading={isLoading}
+          ></NpcCreate>
+        </HStack>
+        <HStack w={"30%"} py={3}>
+          <InputGroup>
+            <Input value={searchTerm} onChange={handleSearch}></Input>
+            <InputRightElement>
+              <FaSearch />
+            </InputRightElement>
+          </InputGroup>
 
-        <Button onClick={handleSort}>
-          {sortOrder === "asc" ? <FaSortAlphaDown /> : <FaSortAlphaDownAlt />}
-        </Button>
-        <Popover>
-          <PopoverTrigger>
-            <Button>
-              <FaFilter />
-            </Button>
-          </PopoverTrigger>
-          <PopoverContent>
-            <PopoverArrow />
-            <PopoverCloseButton />
-            <PopoverHeader>Filter Options</PopoverHeader>
-            <PopoverBody>
-              <FormControl>
-                <Checkbox
-                  isChecked={showAlignmentFilters}
-                  onChange={(e) => setShowAlignmentFilters(e.target.checked)}
-                >
-                  Filter by Alignment
-                </Checkbox>
-                <Collapse in={showAlignmentFilters}>
-                  <Stack direction="row" my={3}>
-                    {" "}
-                    <Button size="sm" onClick={clearAllAlignments}>
-                      clear all
-                    </Button>
-                  </Stack>
-
-                  <CheckboxGroup
-                    value={alignmentFilter}
-                    onChange={handleAlignmentFilterChange}
+          <Button onClick={handleSort}>
+            {sortOrder === "asc" ? <FaSortAlphaDown /> : <FaSortAlphaDownAlt />}
+          </Button>
+          <Popover>
+            <PopoverTrigger>
+              <Button>
+                <FaFilter />
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent>
+              <PopoverArrow />
+              <PopoverCloseButton />
+              <PopoverHeader>Filter Options</PopoverHeader>
+              <PopoverBody>
+                <FormControl>
+                  <Checkbox
+                    isChecked={showAlignmentFilters}
+                    onChange={(e) => setShowAlignmentFilters(e.target.checked)}
                   >
-                    <VStack alignItems="start" mt={3}>
-                      <Checkbox value="chaotic evil">Chaotic Evil</Checkbox>
-                      <Checkbox value="neutral evil">Neutral Evil</Checkbox>
-                      <Checkbox value="lawful evil">Lawful Evil</Checkbox>
-                      <Checkbox value="chaotic neutral">
-                        Chaotic Neutral
-                      </Checkbox>
-                      <Checkbox value="neutral">Neutral</Checkbox>
-                      <Checkbox value="lawful neutral">Lawful Neutral</Checkbox>
-                      <Checkbox value="chaotic good">Chaotic Good</Checkbox>
-                      <Checkbox value="neutral good">Neutral Good</Checkbox>
-                      <Checkbox value="lawful good">Lawful Good</Checkbox>
-                    </VStack>
-                  </CheckboxGroup>
-                </Collapse>
-              </FormControl>
-            </PopoverBody>
-          </PopoverContent>
-        </Popover>
+                    Filter by Alignment
+                  </Checkbox>
+                  <Collapse in={showAlignmentFilters}>
+                    <Stack direction="row" my={3}>
+                      {" "}
+                      <Button size="sm" onClick={clearAllAlignments}>
+                        clear all
+                      </Button>
+                    </Stack>
+
+                    <CheckboxGroup
+                      value={alignmentFilter}
+                      onChange={handleAlignmentFilterChange}
+                    >
+                      <VStack alignItems="start" mt={3}>
+                        <Checkbox value="chaotic evil">Chaotic Evil</Checkbox>
+                        <Checkbox value="neutral evil">Neutral Evil</Checkbox>
+                        <Checkbox value="lawful evil">Lawful Evil</Checkbox>
+                        <Checkbox value="chaotic neutral">
+                          Chaotic Neutral
+                        </Checkbox>
+                        <Checkbox value="neutral">Neutral</Checkbox>
+                        <Checkbox value="lawful neutral">
+                          Lawful Neutral
+                        </Checkbox>
+                        <Checkbox value="chaotic good">Chaotic Good</Checkbox>
+                        <Checkbox value="neutral good">Neutral Good</Checkbox>
+                        <Checkbox value="lawful good">Lawful Good</Checkbox>
+                      </VStack>
+                    </CheckboxGroup>
+                  </Collapse>
+                </FormControl>
+              </PopoverBody>
+            </PopoverContent>
+          </Popover>
+        </HStack>
       </HStack>
 
       <SimpleGrid columns={[1, 2, 4, 5, 6]} spacing={5}>
@@ -249,12 +262,7 @@ const NpcGrid = () => {
                 onDelete={handleDelete}
               ></NpcCard>
             ))}
-
-        <NpcCreate
-          onCreate={handleCreate}
-          onSliderChange={handleSliderChange}
-          isLoading={isLoading}
-        ></NpcCreate>
+        {isLoading ? <Text>Loading...</Text> : null}
       </SimpleGrid>
     </Box>
   );

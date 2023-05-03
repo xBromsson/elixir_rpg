@@ -8,6 +8,8 @@ import NpcGrid from "./components/npcs/NpcGrid";
 import ItemGrid from "./components/items/ItemGrid";
 import ItemDetail from "./components/items/ItemDetail";
 import NpcDetail from "./components/npcs/NpcDetail";
+import NpcItems from "./components/npcs/NpcItems";
+import NpcOverview from "./components/npcs/NpcOverview";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +24,10 @@ const router = createBrowserRouter([
         path: "npcs/:id",
         element: <NpcDetail />,
         children: [
+          {
+            path: "items",
+            element: <NpcItems />,
+          },
           {
             path: "items/:itemId",
             element: <ItemDetail />,

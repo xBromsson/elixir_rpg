@@ -18,7 +18,6 @@ import {
   TabPanels,
   TabPanel,
 } from "@chakra-ui/react";
-import ItemCard from "../items/ItemCard";
 import {
   collection,
   doc,
@@ -28,8 +27,11 @@ import {
   where,
 } from "firebase/firestore";
 import { db } from "../../firebase/firebaseConfig";
-import { Outlet, useParams } from "react-router-dom";
+import { Outlet, useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import Breadcrumb from "../BreadCrumb";
+import NpcOverview from "./NpcOverview";
+import { OutletDataProvider } from "../../modules/OutletContext";
 
 function NpcDetail() {
   const { id } = useParams();
@@ -66,7 +68,7 @@ function NpcDetail() {
     fetchNpcAndItems();
   }, [id]);
 
-  //needs to be revisted. originally written by chatgpt
+  //displays loading when data is beign fetched... needs to be revisted. originally written by chatgpt
   if (loadingNpc || loadingItems) {
     return <div>Loading...</div>;
   }
@@ -76,7 +78,7 @@ function NpcDetail() {
       <Grid
         h={"100 vh"}
         templateAreas={`"left right"`}
-        templateColumns={"35% 1fr"}
+        templateColumns={"25% 1fr"}
         templateRows={"1fr"}
       >
         <GridItem p={5} area={"left"}>
@@ -92,61 +94,22 @@ function NpcDetail() {
           <Tabs variant="enclosed">
             <TabList mb="1em">
               <Tab>Overview</Tab>
-              <Tab>Items</Tab>
+              <Tab as={Link} to={`/npcs/${id}/items`}>
+                Items
+              </Tab>
               <Tab>Notes</Tab>
             </TabList>
 
             <TabPanels>
               <TabPanel>
                 {/* Overview Tab */}
-                <Card>
-                  <CardBody>
-                    <Stack w={"50%"}>
-                      <HStack>
-                        <Heading as="h1" size="xl">
-                          {npc.name}
-                        </Heading>
-                      </HStack>
-                      <Divider width={"65%"} />
-                      <HStack>
-                        <Heading size={"md"}>{npc.race}</Heading>
-                        <Text size="md">| {npc.occupation}</Text>
-                        <Text fontSize={"md"}>| {npc.alignment}</Text>
-                      </HStack>
-                      <Spacer />
-                      <Spacer />
-                      <Heading fontSize={"md"}>Back Story</Heading>
-                      <Text>{npc.definingmoment}</Text>
-                      <Spacer />
-                      <Heading fontSize={"md"}>Personality</Heading>
-                      <Text>{npc.personality}</Text>
-                      <Spacer />
-                      <Heading fontSize={"md"}>Quirk</Heading>
-                      <Text>{npc.personalityquirk}</Text>
-                      <Spacer />
-                      <Heading fontSize={"md"}>Plot Hook</Heading>
-                      <Text>{npc.plothook}</Text>
-                      <Spacer />
-                      <Heading fontSize={"md"}>Secret</Heading>
-                      <Text>{npc.secret}</Text>
-                      <Spacer />
-                    </Stack>
-                  </CardBody>
-                </Card>
+                <NpcOverview npc={npc} />
               </TabPanel>
               <TabPanel>
                 {/* Items Tab */}
-                <SimpleGrid columns={[1, 2, 4, 5]} spacing={5}>
-                  {items.map((item) => (
-                    <ItemCard
-                      key={item.id}
-                      id={item.id}
-                      name={item.name}
-                      image={item.image}
-                    ></ItemCard>
-                  ))}
-                </SimpleGrid>
-                <Outlet />
+                <OutletDataProvider value={{ items }}>
+                  <Outlet />
+                </OutletDataProvider>
               </TabPanel>
               <TabPanel>
                 {/* Notes Tab */}
