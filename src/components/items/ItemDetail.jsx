@@ -9,8 +9,9 @@ import {
   CardBody,
   Stack,
   HStack,
-  Divider,
+  Container,
   Spacer,
+  Badge,
 } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
@@ -48,7 +49,7 @@ const ItemDetail = () => {
           templateRows={"1fr"}
         >
           <GridItem p={0} area={"left"}>
-            <Card align={"center"} overflow={"hidden"}>
+            <Card bg={"gray.800"} align={"center"} overflow={"hidden"}>
               {" "}
               <Image width={"100%"} src={item.image}></Image>
               <CardFooter>
@@ -59,36 +60,35 @@ const ItemDetail = () => {
           </GridItem>
 
           <GridItem px={5} area={"right"}>
-            <Card h={"100%"}>
+            <Card bg={"gray.800"}>
               <CardBody>
                 {" "}
-                <Stack w={"50%"}>
+                <Stack spacing={1}>
+                  <Heading as="h1" size="xl">
+                    {item.name}
+                  </Heading>
+
                   <HStack>
-                    <Heading as="h1" size="xl">
-                      {item.name}
-                    </Heading>
+                    <Badge size={"md"}>{item.type}</Badge>
+                    <Badge size="md"> {item.rarity}</Badge>
                   </HStack>
-                  <Divider width={"65%"} />
-                  <HStack>
-                    <Heading size={"md"}>type</Heading>
-                    <Text size="md">| value</Text>
-                    <Text fontSize={"md"}>| something else</Text>
-                  </HStack>
-                  <Spacer />
-                  <Spacer />
-                  <Heading fontSize={"md"}>Description</Heading>
-                  <Text>{item.description}</Text>
-                  <Spacer />
-                  <Heading fontSize={"md"}>Personality</Heading>
-                  <Text>text</Text>
-                  <Spacer />
-                  <Heading fontSize={"md"}>Quirk</Heading>
-                  <Text>text</Text>
-                  <Spacer />
-                  <Heading fontSize={"md"}>Plot Hook</Heading>
-                  <Text>text</Text> <Spacer />
-                  <Heading fontSize={"md"}>Secret</Heading>
-                  <Text>text</Text>
+
+                  <Stack spacing={5}>
+                    <Spacer />
+                    <Container>
+                      <Heading fontSize={"md"}>Description</Heading>
+                      <Text>{item.description}</Text>
+                    </Container>
+                    <Container>
+                      <Heading fontSize={"md"}>Effects</Heading>
+                      <Text>{item.effects}</Text>
+                    </Container>
+                    <Container>
+                      <Heading fontSize={"md"}>Requirements</Heading>
+                      <Text>{item.requirements}</Text>
+                    </Container>
+                  </Stack>
+
                   <Spacer />
                 </Stack>
               </CardBody>

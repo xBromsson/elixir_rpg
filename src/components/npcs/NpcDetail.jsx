@@ -67,7 +67,7 @@ function NpcDetail() {
   }
 
   return (
-    <Card colorScheme="yellow">
+    <Card>
       <Grid
         h={"100 vh"}
         templateAreas={`"left right"`}

@@ -48,30 +48,35 @@ import {
 } from "firebase/firestore";
 
 const NpcGrid = () => {
+  //npc grid states
   const [npcs, setNpcs] = useState();
   const [isLoading, setIsLoading] = useState(false);
+
+  //npcCreate states
   const [sliderValues, setSliderValues] = useState({
     alignment: "neutral",
   });
+  const [roleValue, setRoleValue] = useState("Unspecified");
+
+  //filter control states
   const [searchTerm, setSearchTerm] = useState("");
-  const [sortOrder, setSortOrder] = useState("asc");
+  const [sortOrder, setSortOrder] = useState(null);
   const [alignmentFilter, setAlignmentFilter] = useState([]);
   const [showAlignmentFilters, setShowAlignmentFilters] = useState(false);
 
   // fetches initial npc data from db and updates local state variable
   useEffect(() => {
-    const unsubscribe = onSnapshot(
-      query(collection(db, "npcs"), orderBy("name", sortOrder)),
-      (snapshot) => {
-        const loadedNpcs = snapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-        setNpcs(loadedNpcs);
-      }
-    );
+    const npcQuery = query(collection(db, "npcs"));
+
+    const unsubscribe = onSnapshot(npcQuery, (snapshot) => {
+      const loadedNpcs = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setNpcs(loadedNpcs);
+    });
     return () => unsubscribe();
-  }, [sortOrder]);
+  }, []);
 
   // receives data from npcCreate slider and updates local slidevalue variable
   const handleSliderChange = (name, value) => {
@@ -81,10 +86,14 @@ const NpcGrid = () => {
     }));
   };
 
+  const handleRoleChange = (v) => {
+    setRoleValue(v);
+  };
+
   // Creates an NPC and Item? updates db and local state variable
   const handleCreate = async () => {
     setIsLoading(true);
-    const npcData = await buildNpc(sliderValues);
+    const npcData = await buildNpc(sliderValues, roleValue);
     const itemData = await buildItem(sliderValues);
 
     try {
@@ -102,6 +111,7 @@ const NpcGrid = () => {
         item_id: createdItem.id,
       });
 
+      //updates local state to match db
       setNpcs([...npcs, createdNpc]);
     } catch (error) {
       console.error("Error creating NPC and Item:", error);
@@ -162,6 +172,7 @@ const NpcGrid = () => {
           <NpcCreate
             onCreate={handleCreate}
             onSliderChange={handleSliderChange}
+            onRoleChange={handleRoleChange}
             isLoading={isLoading}
           ></NpcCreate>
         </HStack>
@@ -248,7 +259,9 @@ const NpcGrid = () => {
               }
             })
             .sort((a, b) => {
-              if (sortOrder === "asc") {
+              if (sortOrder === null) {
+                return 0;
+              } else if (sortOrder === "asc") {
                 return a.name.localeCompare(b.name);
               } else {
                 return b.name.localeCompare(a.name);

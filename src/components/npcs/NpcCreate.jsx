@@ -1,9 +1,6 @@
 import {
   Button,
-  Card,
-  CardBody,
   Box,
-  Stack,
   Popover,
   PopoverTrigger,
   PopoverContent,
@@ -11,16 +8,17 @@ import {
   Text,
   HStack,
   Divider,
-  Skeleton,
   PopoverArrow,
   PopoverCloseButton,
+  Radio,
+  RadioGroup,
+  Stack,
 } from "@chakra-ui/react";
 import { FaRegPlusSquare } from "react-icons/fa";
 import NpcSlider from "./NpcSlider";
+import { useState } from "react";
 
-const onCreate = () => {};
-
-function NpcCreate({ onCreate, onSliderChange }) {
+function NpcCreate({ onCreate, onSliderChange, onRoleChange }) {
   return (
     <Box>
       <Popover placement="bottom-start">
@@ -35,17 +33,32 @@ function NpcCreate({ onCreate, onSliderChange }) {
               NPC Creator
             </Heading>
             <Divider />
-            <Heading as={"u"} textAlign={"left"} pt={5} size={"sm"}>
-              Alignment:
-            </Heading>
-            <HStack justifyContent={"space-between"} mt={3} mx={0}>
-              <Text fontSize={13}>Chaotic Evil</Text>
-              <Text fontSize={13}>Lawful Good</Text>
-            </HStack>
-            <NpcSlider
-              onSliderChange={onSliderChange}
-              name="alignment"
-            ></NpcSlider>
+            <Box p={2}>
+              <Heading as={"u"} textAlign={"left"} pt={5} size={"sm"}>
+                Alignment:
+              </Heading>
+              <HStack justifyContent={"space-between"} mt={3} mx={0}>
+                <Text fontSize={13}>Chaotic Evil</Text>
+                <Text fontSize={13}>Lawful Good</Text>
+              </HStack>
+              <NpcSlider
+                onSliderChange={onSliderChange}
+                name="alignment"
+              ></NpcSlider>
+            </Box>
+            <Box>
+              <Heading as={"u"} textAlign={"left"} pt={5} size={"sm"}>
+                Role:
+              </Heading>
+              <RadioGroup defaultValue="unspecified" onChange={onRoleChange}>
+                <Stack p={2}>
+                  <Radio value="unspecified">Unspecified</Radio>
+                  <Radio value="merchant">Merchant</Radio>
+                  <Radio value="antagonist">Antagonist</Radio>
+                  <Radio value="quest giver">Quest Giver</Radio>
+                </Stack>
+              </RadioGroup>
+            </Box>
           </Box>
 
           <Button px={3} onClick={onCreate}>
