@@ -52,10 +52,6 @@ const ItemDetail = () => {
             <Card bg={"gray.800"} align={"center"} overflow={"hidden"}>
               {" "}
               <Image width={"100%"} src={item.image}></Image>
-              <CardFooter>
-                {" "}
-                <Text as={"i"}>"something about the item here"</Text>
-              </CardFooter>
             </Card>
           </GridItem>
 
@@ -69,8 +65,9 @@ const ItemDetail = () => {
                   </Heading>
 
                   <HStack>
-                    <Badge size={"md"}>{item.type}</Badge>
+                    <Badge size={"md"}>{item.category}</Badge>
                     <Badge size="md"> {item.rarity}</Badge>
+                    <Badge size="md"> {item.magical}</Badge>
                   </HStack>
 
                   <Stack spacing={5}>

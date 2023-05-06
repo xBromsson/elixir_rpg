@@ -86,6 +86,7 @@ const NpcGrid = () => {
     }));
   };
 
+  // recieves data from npcCreate role selector and updates local rolevalue variable
   const handleRoleChange = (v) => {
     setRoleValue(v);
   };
@@ -102,14 +103,14 @@ const NpcGrid = () => {
       const createdNpc = { id: npcRef.id, ...npcData };
 
       // Create an Item in the Firestore database
-      const itemRef = await addDoc(collection(db, "items"), itemData);
-      const createdItem = { id: itemRef.id, ...itemData };
+      // const itemRef = await addDoc(collection(db, "items"), itemData);
+      // const createdItem = { id: itemRef.id, ...itemData };
 
       // Create an entry in the npc_items collection in the Firestore database
-      await addDoc(collection(db, "npc_items"), {
-        npc_id: createdNpc.id,
-        item_id: createdItem.id,
-      });
+      // await addDoc(collection(db, "npc_items"), {
+      //   npc_id: createdNpc.id,
+      //   item_id: createdItem.id,
+      // });
 
       //updates local state to match db
       setNpcs([...npcs, createdNpc]);

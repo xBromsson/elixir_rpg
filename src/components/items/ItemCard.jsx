@@ -13,9 +13,9 @@ const ItemCard = ({ name, id, image, onDelete }) => {
 
   return (
     <Card borderRadius={3} height={"min-content"} overflow={"hidden"}>
-      <Box>
+      <Box position="relative" width="100%" maxWidth="300px">
         <Link to={linkPath}>
-          <Image h={175} objectFit={"cover"} width={"100%"} src={image}></Image>
+          <Image h={237} objectFit={"cover"} width={"100%"} src={image}></Image>
         </Link>
         <Text
           position="absolute"

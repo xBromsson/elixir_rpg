@@ -11,7 +11,7 @@ async function buildNpc(sliderValues, role) {
     
     `Please create a dnd npc character that will add depth and flavor to our dnd campaign. This npc characters role in our compaign should be ${role}
 
-Write in present tense, and your response must absolutely be formatted for JSON without any errors. here is the syntax and attributes you must use:
+Write in present tense, and your response must explicitly be formatted for JSON without any errors. here is the syntax and attributes you must use:
 
 {
 "name": "", 
@@ -26,6 +26,8 @@ Write in present tense, and your response must absolutely be formatted for JSON 
 "secret": "" //max 1 sentence. be creative and unique.
 "personalityquirk": "" //max 1 sentence. 
 }
+
+remember your response must be a JSON object. 
 
 `, 1);
 

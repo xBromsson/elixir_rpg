@@ -16,7 +16,6 @@ import {
 } from "@chakra-ui/react";
 import { FaRegPlusSquare } from "react-icons/fa";
 import NpcSlider from "./NpcSlider";
-import { useState } from "react";
 
 function NpcCreate({ onCreate, onSliderChange, onRoleChange }) {
   return (

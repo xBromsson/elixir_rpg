@@ -1,4 +1,4 @@
-import { SimpleGrid, Skeleton } from "@chakra-ui/react";
+import { Box, HStack, SimpleGrid, Skeleton, Text } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import {
   collection,
@@ -17,9 +17,7 @@ import buildItem from "../../modules/buildItem";
 const ItemGrid = () => {
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [sliderValues, setSliderValues] = useState({
-    alignment: 5,
-  });
+  const [typeValue, setTypeValue] = useState("random");
 
   // Fetches the initial data from the db
   useEffect(() => {
@@ -34,7 +32,7 @@ const ItemGrid = () => {
   // Creates a new item in the db and then updates local state variable
   const handleCreate = async () => {
     setIsLoading(true);
-    const itemData = await buildItem(sliderValues);
+    const itemData = await buildItem(typeValue);
 
     try {
       const createdItemRef = await addDoc(collection(db, "items"), itemData);
@@ -71,35 +69,32 @@ const ItemGrid = () => {
     }
   };
 
-  // Recieves the slider values and updates the local state variable
-  const handleSliderChange = (name, value) => {
-    setSliderValues((prevValues) => ({
-      ...prevValues,
-      [name]: value,
-    }));
+  // Recieves the itemType value and updates the local state variable
+  const handleTypeChange = (v) => {
+    setTypeValue(v);
   };
 
+  console.log(typeValue);
+
   return (
-    <SimpleGrid columns={[1, 2, 4, 5, 6]} spacing={5}>
-      {items &&
-        items.map((n) => (
-          <ItemCard
-            key={n.id}
-            id={n.id}
-            image={n.image}
-            name={n.name}
-            onDelete={handleDelete}
-          ></ItemCard>
-        ))}
-      {!isLoading ? (
-        <ItemCreate
-          onCreate={handleCreate}
-          onSliderChange={handleSliderChange}
-        ></ItemCreate>
-      ) : (
-        <Skeleton></Skeleton>
-      )}
-    </SimpleGrid>
+    <Box>
+      <HStack pb={2}>
+        <ItemCreate onCreate={handleCreate} onTypeChange={handleTypeChange} />
+      </HStack>
+      <SimpleGrid columns={[1, 2, 4, 5, 6]} spacing={5}>
+        {items &&
+          items.map((n) => (
+            <ItemCard
+              key={n.id}
+              id={n.id}
+              image={n.image}
+              name={n.name}
+              onDelete={handleDelete}
+            ></ItemCard>
+          ))}
+        {isLoading ? <Text>Loading...</Text> : null}
+      </SimpleGrid>
+    </Box>
   );
 };
 
