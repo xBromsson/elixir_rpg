@@ -5,18 +5,26 @@ Leverage the power of ai models to amplify the users creation experience when it
 
 ### Project Scope
   - Core Features of Elixir_RPG:
-    - Character Creator
-    - Map Creator
-    - Monster Creator
+    - Contextual Entity Creation Using Ai
+      - Campaigns, Worlds, Cities, Buildings, NPCs, Items, Monsters.
+      - User should have range of control over how the Ai generates entities
+      - User should be able to edit all attributes manually
+    - Map creation using Ai
+      - User should be able to control output
+      - User should be able to manually link generated cities to the map
+      - edit maps using dalle?
+    - Plot creation using Ai. Contextual? 
 
-  
   - Other Possible Features of Elixir_RPG:
-    - One Shot Creator
-    - Item Creator
-    - NPC Creator
+    - Pre-Trained Ai Models for specific RP content
+    - Quest Creator
+    - Third Party Content Integration
+    - Audio Creator
+    - Narration Creator
+    - Animation Creator
 
 ### User Experience
-User Interface should be simple and inspire a sense of ease, wonder, and possiblity. It should feel like you have fallen to the effects of some mysterious elixir that enables you to draw deep from the ether to create entire worlds.<br><br>
+User Interface should be simple and inspire a sense of ease, wonder, and possiblity. It should feel like you have fallen to the effects of an elixir that enables you to draw from the ether to create entire worlds with ease.<br><br>
 
 ### Tech Stack
   - Javascript
@@ -40,6 +48,7 @@ User Interface should be simple and inspire a sense of ease, wonder, and possibl
   - OpenAI
     - Chat GPT
     - Dall E
+    - MidJourney (api release date: unknown)
 
 ### Further Considerations & Research Opportunities
   - Azgaars map generator github-com/Azgaar/Fantasy-Map-Generator <br><br><br>
@@ -54,7 +63,10 @@ User Interface should be simple and inspire a sense of ease, wonder, and possibl
   5. Launch & Maintain
   
 ### Features Road Map
-  **TBD**
+  - Entity Creators
+    - Item
+    - NPC
+    - 
   
     
     
