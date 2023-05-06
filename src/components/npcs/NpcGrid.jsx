@@ -95,7 +95,6 @@ const NpcGrid = () => {
   const handleCreate = async () => {
     setIsLoading(true);
     const npcData = await buildNpc(sliderValues, roleValue);
-    const itemData = await buildItem(sliderValues);
 
     try {
       // Create an NPC in the Firestore database
