@@ -5,33 +5,29 @@ import getTurbo from "./getTurbo";
 async function buildNpc(sliderValues, role) {
   const { alignment } = sliderValues;
 
-  const response = await getTurbo(
-    `"You are a master at the art of creating a unique and memorable dnd npc character. 
-    Your npc characters are full of rich duality and unique characteristics."`,
-
-    `Please create a dnd npc character that will add depth and flavor to our dnd campaign. This npc characters role in our compaign should be ${role}
-
-Write in present tense, and your response must be formatted for JSON without any errors. here is the syntax and attributes you must use:
-
-{
-"name": "", 
-"race": "", //you must choose completely randomly choose from: "orc", "gnome", "human", "elf", "tabaxi", "dwarf" . 
-"alignment": "${alignment}", // do NOT change this property
-"quote": "",
-"occupation": "", //be creative. limit to 2 words
-"appearance": "", //a Dall-E prompt description. max of 2 sentences
-"personality": "", //max 1 sentence
-"definingmoment": "", //max 3 sentences. dont use the word 'defining moment' in the response.
-"plothook": "", //max 2 sentences
-"secret": "" //max 1 sentence. be creative and unique.
-"personalityquirk": "" //max 1 sentence. 
-}
-
-remember your response must be a JSON object. 
-
-`,
-    1
-  );
+  const response = await getTurbo(`"You are really good at creating memorable
+  dnd characters. They are always unique and add depth to any dnd campaign`, 
+  
+  `"please create a dnd character whose role in our campaign is a(n) ${role}. Your character MUST be created as a JSON
+  object as follows:
+  
+  {
+      "name": "", 
+      "race": "",  
+      "alignment": "${alignment}",
+      "quote": "",
+      "occupation": "", 
+      "appearance": "", //a Dall-E prompt description. max of 2 sentences
+      "personality": "", //max 1 sentence
+      "definingmoment": "", //max 3 sentences. dont use the word 'defining moment' in the response.
+      "plothook": "", //max 2 sentences
+      "secret": "" //max 1 sentence. be creative and unique.
+      "personalityquirk": "" //max 1 sentence. 
+  }
+  
+  Here are the rules you MUST follow when 
+  when creating the character: 1. Do not change any of the JSON corresponding values
+  if they are already provided. If a value is already provided. just copy it exactly. "`, 1)
 
   console.log(role);
 

@@ -14,9 +14,9 @@ function getTurbo(system, prompt, number) {
             {
                 model: 'gpt-3.5-turbo',
               messages: [{"role": "system", "content": system},{"role": "user", "content": prompt}],
-              max_tokens: 350,
+              max_tokens: 400,
               n: number,
-              temperature: .85,
+              temperature: 1.1,
             },
             {
               headers: {
