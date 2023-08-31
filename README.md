@@ -1,6 +1,6 @@
 # 🧪🎲 Elixir_RPG
 
-![Static Badge](https://img.shields.io/badge/status%3A-In_Development-blue)
+![Static Badge](https://img.shields.io/badge/status%3A-Concept_In_Development-blue)
 
 ## 📖 About:
 
